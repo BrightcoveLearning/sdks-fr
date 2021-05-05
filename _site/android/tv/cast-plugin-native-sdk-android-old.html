@@ -1,0 +1,1501 @@
+﻿<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Dans cette rubrique, vous allez apprendre à diffuser vos vidéos sur un téléviseur connecté à Chromecast, en utilisant le plugin Cast pour le SDK Brightcove Player pour Android.">
+  
+  <title>Le plugin Cast pour le SDK natif pour Android</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="logo du produit" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Sélectionner la langue</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="assistance"/> Contacter le support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">État<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="état du système"/> du système</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/android/tv/">TV connectée</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Le plugin Cast pour le SDK natif pour Android</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Autres documents Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Accueil Documentation</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audience de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Balise Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campagne Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engagez</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Développement du joueur Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API de la plate-forme Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK pour périphériques Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Intégrations et connecteurs CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Informations générales sur Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Accueil</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Mise en route <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-player-sdks.html">Les kits SDK natifs Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/native-video-playback.html">Lecture vidéo native</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-sdk-features.html">Fonctionnalités du SDK natif</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-sdks-feature-support.html">Tableau de support des fonctionnalités</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/running-sample-apps-native-sdk-android.html">Exécuter des exemples d'applications Android</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/running-sample-apps-native-sdk-ios.html">Exécution d'exemples d'applications iOS/TVOS</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-sdks-training-videos.html">Vidéos de formation du SDK natif</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/features/index.html">Fonctionnalités <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/features/using-360deg-videos-native-sdks.html">Vidéo à 360 degrés</a></li>
+                  
+                
+                  
+                    <li><a href="/features/advertising-sdks.html">Publicité</a></li>
+                  
+                
+                  
+                    <li><a href="/features/analytics-sdks.html">Analytique</a></li>
+                  
+                
+                  
+                    <li><a href="/features/using-captions-brightcove-native-sdks.html">Légendes</a></li>
+                  
+                
+                  
+                    <li><a href="/features/connected-tv-set-top-box-apps.html">TV connectée</a></li>
+                  
+                
+                  
+                    <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                  
+                
+                  
+                    <li><a href="/features/cross-device-resume-sdks.html">Reprise multi-appareils</a></li>
+                  
+                
+                  
+                    <li><a href="/features/live-streams-native-sdks.html">Streams en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/features/multiple-audio-tracks-native-sdks.html">Plusieurs pistes audio</a></li>
+                  
+                
+                  
+                    <li><a href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                  
+                
+                  
+                    <li><a href="/features/brightcove-native-player-controls.html">Commandes du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/features/picture-picture-native-sdks.html">Image dans l'image</a></li>
+                  
+                
+                  
+                    <li><a href="/features/video-formats-and-captioning-native-sdks.html">Formats vidéo et sous-titrage</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/android/index.html">Développement Android <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/basics/index.html">Notions de base <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/basics/overview-brightcove-player-sdk-android.html">v6.16.0 : Vue d'ensemble du lecteur SDK pour Android</a></li>
+                        
+                        <li><a href="/android/basics/architecture-brightcove-player-sdk-android.html">Architecture</a></li>
+                        
+                        <li><a href="/android/basics/android-understanding-brightcoveplayer-class.html">Classe BrightCovePlayer</a></li>
+                        
+                        <li><a href="/android/basics/android-choosing-video-view.html">Choix d'une vue vidéo</a></li>
+                        
+                        <li><a href="/android/basics/android-brightcove-registration.html">Inscription à Brightcove</a></li>
+                        
+                        <li><a href="/android/basics/understanding-events-native-sdk-android.html">Comprendre les événements</a></li>
+                        
+                        <li><a href="/android/basics/android-working-media-content.html">Utilisation du contenu multimédia</a></li>
+                        
+                        <li><a href="/android/basics/training-demand-developing-brightcove-native-player-sdk-android.html">Vidéos de formation du SDK natif</a></li>
+                        
+                        <li><a href="/android/basics/step-step-simple-video-app-using-native-sdk-android.html">Étape par étape : Application vidéo simple</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/advertising/index.html">Publicité <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/advertising/android-ad-ui-customization-server-side-ad-insertion-ssai.html">Personnalisation de l'interface utilisateur publicitaire avec SSAI</a></li>
+                        
+                        <li><a href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonces</a></li>
+                        
+                        <li><a href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                        
+                        <li><a href="/android/advertising/migrating-to-ima-plugin-6-15-0.html">Plugin IMA 6.15.0</a></li>
+                        
+                        <li><a href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des annonces côté client (CSAI)</a></li>
+                        
+                        <li><a href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                        
+                        <li><a href="/android/advertising/using-pulse-plugin-native-sdk-android.html">Plugin Invidi Pulse</a></li>
+                        
+                        <li><a href="/android/advertising/ssai-plugin-native-sdk-android.html">Plugin SSAI pour Android</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/analytics/index.html">Analytics <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/analytics/analytics-related-offline-playback-native-sdks.html">Analyses liées à la lecture hors ligne</a></li>
+                        
+                        <li><a href="/android/analytics/sending-brightcove-analytics-native-sdk-android.html">Envoyer Brightcove Analytics</a></li>
+                        
+                        <li><a href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage des analyses Brightcove</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/captions/index.html">Légendes <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/captions/removing-android-captions-background-image.html">Suppression de l'image d'arrière-plan des sous-titres</a></li>
+                        
+                        <li><a href="/android/captions/selecting-captions-programmatically-native-sdk-android.html">Sélection de légendes par programme</a></li>
+                        
+                        <li><a href="/features/synchronizing-webvtt-captions.html">Synchronisation des légendes WebVTT</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/tv/index.html">TV connectée <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/tv/cast-plugin-native-sdk-android.html">Plugin Chromecast</a></li>
+                        
+                        <li><a href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                        
+                        <li><a href="/android/tv/customizing-android-tv-controls.html">Personnalisation des contrôles Android TV</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/content-protection/index.html">Protection du contenu <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/framework/index.html">Cadre <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/framework/android-adding-viewmanaging-layout.html">Ajout d'affichage/gestion d'une disposition</a></li>
+                        
+                        <li><a href="/android/framework/android-pie-support-native-sdk-android.html">Prise en charge Android Pie</a></li>
+                        
+                        <li><a href="/android/framework/creating-plugin-native-sdk-android.html">Création d'un plugin</a></li>
+                        
+                        <li><a href="/android/framework/migrating-exoplayer-2-framework.html">Migration vers ExoPlayer 2 Framework</a></li>
+                        
+                        <li><a href="/android/framework/resizing-video-view.html">Redimensionnement de la vue vidéo</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/live/index.html">En direct <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/using-live-ssai-native-sdks.html">Utilisation de SSAI en direct</a></li>
+                        
+                        <li><a href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour le SSAI en direct</a></li>
+                        
+                        <li><a href="/features/client-side-ads-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/playback/index.html">Lecture <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/playback/hevc-selection-native-sdk-android.html">Sélection HEVC</a></li>
+                        
+                        <li><a href="/android/playback/hls-playback-native-sdk-android.html">Lecture HLS</a></li>
+                        
+                        <li><a href="/features/localization-with-native-sdks.html">Localisation du lecteur</a></li>
+                        
+                        <li><a href="/android/playback/android-managing-player-controls.html">Gestion des contrôles du joueur</a></li>
+                        
+                        <li><a href="/android/playback/multiple-audio-tracks-offline-playback-native-sdk-android.html">Plusieurs pistes audio pour la lecture hors ligne</a></li>
+                        
+                        <li><a href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                        
+                        <li><a href="/android/playback/handling-orientation-change-native-sdk-android.html">Changement d'orientation</a></li>
+                        
+                        <li><a href="/android/playback/android-source-selection.html">Sélection des sources</a></li>
+                        
+                        <li><a href="/android/playback/video-and-playlist-objects-json.html">Objets vidéo et playlist de JSON</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/troubleshooting/index.html">Dépannage <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/troubleshooting/error-messages-native-sdk-android.html">Guide des messages d'erreur</a></li>
+                        
+                        <li><a href="/android/troubleshooting/removing-android-log-messages.html">Suppression des messages du journal Android</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/resources/index.html">Ressources <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/BrightcoveOS/android-player-samples">Exemples de code Android</a></li>
+                        
+                        <li><a href="/android/resources/code-snippets-using-native-sdk-android.html">Extraits de code</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/android-sdk/javadoc/index.html">Référence SDK natif pour Android</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/index.html">Références du plugin</a></li>
+                        
+                        <li><a href="/android/resources/brightcove-player-sdk-android-previous-sdk-information.html">Versions précédentes</a></li>
+                        
+                        <li><a href="/android/resources/brightcove-native-sdk-android-release-notes.html">Notes de version</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ios/index.html">Développement iOS <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/basics/index.html">Notions de base <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/basics/overview-brightcove-player-sdk-ios.html">v6.8.1 : Présentation du kit SDK du lecteur pour iOS</a></li>
+                        
+                        <li><a href="/ios/basics/architecture-brightcove-player-sdk-ios.html">Architecture</a></li>
+                        
+                        <li><a href="/ios/basics/ios-brightcove-registration.html">Inscription à Brightcove</a></li>
+                        
+                        <li><a href="/ios/basics/ios-working-media-content.html">Utilisation du contenu multimédia</a></li>
+                        
+                        <li><a href="/ios/basics/understanding-events-native-sdk-ios.html">Comprendre les événements</a></li>
+                        
+                        <li><a href="/ios/basics/training-demand-developing-brightcove-native-player-sdk-ios.html">Vidéos de formation du SDK natif</a></li>
+                        
+                        <li><a href="/ios/basics/step-step-simple-video-app-using-objective-c.html">Étape par étape : Application vidéo simple utilisant Objective-C</a></li>
+                        
+                        <li><a href="/ios/basics/step-step-simple-video-app-using-swift.html">Étape par étape : Application vidéo simple utilisant Swift</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/advertising/index.html">Publicité <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des annonces côté client (CSAI)</a></li>
+                        
+                        <li><a href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                        
+                        <li><a href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonces</a></li>
+                        
+                        <li><a href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/analytics/index.html">Analytics <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/analytics/sending-brightcove-analytics-native-sdk-ios.html">Envoyer Brightcove Analytics</a></li>
+                        
+                        <li><a href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage des analyses Brightcove</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/captions/index.html">Légendes <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/synchronizing-webvtt-captions.html">Synchronisation des légendes WebVTT</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/tv/index.html">TV connectée <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast">Plugin Chromecast</a></li>
+                        
+                        <li><a href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/content-protection/index.html">Protection du contenu <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/framework/index.html">Cadre <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/framework/working-app-transport-security-ats.html">Utilisation de l'application Transport Security (ATS)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/live/index.html">En direct <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/using-live-ssai-native-sdks.html">Utilisation de SSAI en direct</a></li>
+                        
+                        <li><a href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour le SSAI en direct</a></li>
+                        
+                        <li><a href="/features/client-side-ads-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/playback/index.html">Lecture <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/localization-with-native-sdks.html">Localisation du lecteur</a></li>
+                        
+                        <li><a href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                        
+                        <li><a href="/ios/playback/ios-source-selection.html">Sélection des sources</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/troubleshooting/index.html">Dépannage <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/troubleshooting/error-handling-native-sdk-ios.html">Gestion des erreurs</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/resources/index.html">Ressources <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/BrightcoveOS/ios-player-samples">Exemples de code iOS</a></li>
+                        
+                        <li><a href="/ios/resources/code-snippets-using-native-sdk-ios.html">Extraits de code</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/ios-sdk/index.html">Référence du SDK natif pour iOS</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/index.html">Références du plugin</a></li>
+                        
+                        <li><a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/CHANGELOG.md">Notes de version</a></li>
+                        
+                        <li><a href="/ios/resources/brightcove-player-sdk-ios-previous-sdk-information.html">Versions précédentes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/tvos/index.html">Développement de TVOS <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/basics/index.html">Notions de base <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/tvos/basics/overview-brightcove-player-sdk-tvos.html">v6.8.1 : Présentation du kit SDK du lecteur pour TVOS</a></li>
+                        
+                        <li><a href="/ios/basics/architecture-brightcove-player-sdk-ios.html">Architecture</a></li>
+                        
+                        <li><a href="/ios/basics/ios-brightcove-registration.html">Inscription à Brightcove</a></li>
+                        
+                        <li><a href="/ios/basics/ios-working-media-content.html">Utilisation du contenu multimédia</a></li>
+                        
+                        <li><a href="/ios/basics/understanding-events-native-sdk-ios.html">Comprendre les événements</a></li>
+                        
+                        <li><a href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                        
+                        <li><a href="/ios/basics/training-demand-developing-brightcove-native-player-sdk-ios.html">Vidéos de formation du SDK natif</a></li>
+                        
+                        <li><a href="/tvos/basics/step-step-simple-tv-video-app-using-swift.html">Étape par étape : Application vidéo TV simple à l'aide de Swift</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/advertising/index.html">Publicité <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des annonces côté client (CSAI)</a></li>
+                        
+                        <li><a href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                        
+                        <li><a href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonces</a></li>
+                        
+                        <li><a href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/analytics/index.html">Analytics <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/analytics/sending-brightcove-analytics-native-sdk-ios.html">Envoyer Brightcove Analytics</a></li>
+                        
+                        <li><a href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage des analyses Brightcove</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/captions/index.html">Légendes <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/synchronizing-webvtt-captions.html">Synchronisation des légendes WebVTT</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/content-protection/index.html">Protection du contenu <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                        
+                        <li><a href="/tvos/content-protection/adding-fairplay-protection-your-apple-tv-apps.html">Apple TV avec FairPlay</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/framework/index.html">Cadre <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/framework/working-app-transport-security-ats.html">Utilisation de l'application Transport Security (ATS)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/live/index.html">En direct <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/using-live-ssai-native-sdks.html">Utilisation de SSAI en direct</a></li>
+                        
+                        <li><a href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour le SSAI en direct</a></li>
+                        
+                        <li><a href="/features/client-side-ads-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/playback/index.html">Lecture <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/tvos/playback/apple-tv-ui-controls-native-sdk-tvos.html">Contrôles de l'interface utilisateur Apple TV</a></li>
+                        
+                        <li><a href="/features/localization-with-native-sdks.html">Localisation du lecteur</a></li>
+                        
+                        <li><a href="/ios/playback/ios-source-selection.html">Sélection des sources</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/troubleshooting/index.html">Dépannage <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/troubleshooting/error-handling-native-sdk-ios.html">Gestion des erreurs</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/resources/index.html">Ressources <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/Player/AppleTV">Exemple de base Apple TV</a></li>
+                        
+                        <li><a href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/SSAI/BasicSSAItvOSPlayer">Apple TV avec SSAI</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/ios-sdk/index.html">Référence du SDK natif pour iOS</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/index.html">Références du plugin</a></li>
+                        
+                        <li><a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/CHANGELOG.md">Notes de version</a></li>
+                        
+                        <li><a href="/tvos/resources/brightcove-player-sdk-tvos-previous-sdk-information.html">Versions précédentes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/developer-support/index.html">Support développeur <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/developer-support/announcements/index.html">Annonces <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/developer-support/announcements/native-sdk-android-will-eol-support-exoplayer-1.html">Prise en charge du SDK Android EOL pour ExoPlayer 1</a></li>
+                        
+                        <li><a href="/developer-support/announcements/announcement-brightcove-sdk-android-version-support.html">Prise en charge des versions Android</a></li>
+                        
+                        <li><a href="/developer-support/announcements/apple-announces-new-app-submission-requirement.html">Exigence de soumission des applications Apple</a></li>
+                        
+                        <li><a href="/developer-support/announcements/native-sdk-ios-eol-support-iostvos-10.html">Prise en charge de l'EOL SDK iOS pour iOS/TVOS 10</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/developer-support/questions/index.html">Questions et questions <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://groups.google.com/forum/#!forum/brightcove-native-player-sdks">Archive du forum des développeurs SDK</a></li>
+                        
+                        <li><a href="/developer-support/questions/faq-brightcove-native-player-sdks.html">Foire aux questions</a></li>
+                        
+                        <li><a href="/developer-support/questions/release-notes-brightcove-native-sdks.html">Notes de version</a></li>
+                        
+                        <li><a href="/developer-support/questions/known-issues-brightcove-native-player-sdks.html">Problèmes connus</a></li>
+                        
+                        <li><a href="/developer-support/questions/report-issue-brightcove-native-sdks.html">Signaler un problème</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Affichage de la page État du système Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacter les ventes</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Ouverture d'un dossier de support</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menu de navigation"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenu de la page</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="ouvrir dans un nouvel onglet" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<h1>Le plugin Cast pour le SDK natif pour Android</h1>
+<article class="bcls-article">
+  <summary>Dans cette rubrique, vous allez apprendre à diffuser vos vidéos sur un téléviseur connecté à Chromecast, en utilisant le plugin Cast pour le SDK Brightcove Player pour Android.</summary>
+
+<section class="bcls-section">
+<h2 id="Overview">Présentation</h2>
+
+<p>Avec la technologie <a href="https://developers.google.com/cast/docs/developers">Google Cast</a> , vous pouvez initier et contrôler le contenu vidéo diffusé depuis vos appareils mobiles vers la télévision haute définition et les systèmes audio domestiques. Depuis votre application, vous pourrez appuyer sur le bouton Cast pour diffuser votre contenu sur grand écran.</p>
+
+<p>Pour créer une application Cast, vous avez besoin des composants suivants :</p>
+
+<ul>
+	<li>
+	<p>Une <strong>application expéditeur</strong> : elle réside sur votre appareil mobile et détecte les périphériques récepteurs, établit une connexion sécurisée et reflète votre contenu. L'application expéditeur est le lecteur local qui est diffusé sur le Chromecast. Après avoir diffusé sur l'application récepteur, vous pouvez la considérer comme une télécommande pour le Chromecast.</p>
+
+	<p>L'application expéditeur est fournie par le plugin Cast pour le SDK Brightcove Player pour Android. Vous en apprendrez plus dans ce sujet.</p>
+	</li>
+	<li>
+	<p>Une <strong>application récepteur</strong> - Il s'agit du code qui s'exécute sur le périphérique Chromecast. Il peut être considéré comme une application HTML d'une seule page avec des actifs CSS et JS.</p>
+
+	<p>Pour les tests, procédez comme suit :</p>
+
+	<ol class="bcls-tasklist">
+		<li>Commencez avec le <a href="https://github.com/googlecast/CastReceiver">récepteur de distribution d'échantillons de Google</a></li>
+		<li>Consultez la documentation <a href="https://developers.google.com/cast/v2/receiver_apps#default">du récepteur multimédia par défaut de Google</a> </li>
+	</ol>
+
+	<p>Pour la production, vous devez créer votre propre application récepteur, car Google ne prend pas en charge l'utilisation de son application récepteur de démonstration dans un environnement de production. Pour plus de détails, consultez la documentation Google <a href="https://developers.google.com/cast/docs/receiver_apps">Cast Receiver Applications</a> .</p>
+	</li>
+</ul>
+
+<aside class="bcls-aside bcls-aside--information">Le plugin Cast pour le SDK Brightcove Player pour Android fournit la fonctionnalité de l'application de l'expéditeur, mais vous devez implémenter votre propre application récepteur.</aside>
+</section>
+
+<section class="bcls-section">
+<h2 id="Cast_plugin">Plugin Cast</h2>
+
+<p>Le plugin Cast est construit sur le <a href="https://medium.com/google-exoplayer/new-cast-extension-and-demo-app-55816a50012">nouveau ExoPlayer Cast Extension</a> et le Google Play Services Cast Framework. Après avoir ajouté la dépendance du plugin cast, gradle tirera la dépendance Play Services Cast Framework, la dépendance ExoPlayer Cast Extension ainsi que d'autres dépendances nécessaires. Pour en savoir plus sur les dépendances utilisées, consultez la section <a href="">Dépendances Cast Plugin</a> .</p>
+
+<h3 id="Supported_SDK_version">Version SDK prise en charge</h3>
+
+<p>Pour le plugin Cast, vous devez utiliser le SDK natif Brightcove pour Android version 6.3.0+.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Getting_started">Premiers pas</h2>
+
+<p>Pour commencer à utiliser le plugin Cast, procédez comme suit :</p>
+
+<ol class="bcls-tasklist-restart">
+	<li>Dans votre fichier <strong>build.gradle</strong> , ajoutez la dépendance suivante pour inclure le plugin Cast :
+
+	<pre>
+<code class="language-swift" translate="No">implementation "com.brightcove.player:android-cast-plugin:6.3.0"</code></pre>
+	</li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Options_Provider">Fournisseur d'options</h2>
+
+<p>Ensuite, vous devez spécifier l'implémentation <a href="https://developers.google.com/android/reference/com/google/android/gms/cast/framework/OptionsProvider">OptionsProvider</a> pour le framework Google Cast. L' <code translate="No">OptionsProvider</code> interface permet de configurer plusieurs options nécessaires à l'initialisation de la classe <a href="https://developers.google.com/android/reference/com/google/android/gms/cast/framework/CastContext">CastContext</a> . C'est là que vous définissez l'ID de l'application Cast Receiver. Pour en savoir plus sur l'intégration du <code translate="No">OptionsProvider</code>, consultez le document de Google : <a href="https://developers.google.com/cast/docs/android_sender_integrate#initialize_the_cast_context">Initialisez le contexte de distribution</a>.</p>
+
+<p>Le plugin Brightcove Cast inclut une <code translate="No">DefaultOptionsProvider</code> classe, où un ID d'application Google Demo Cast Receiver par défaut est défini via une clé de chaîne définie dans le fichier <strong>strings.xml</strong> . Pour plus de détails et pour savoir comment le remplacer, reportez-vous à la section <a href="">Cast Receiver App ID</a> .</p>
+
+<ol class="bcls-tasklist">
+	<li>Que vous utilisiez la <code translate="No">DefaultOptionsProvider</code> classe ou votre propre <code translate="No">OptionsProvider</code> implémentation, vous devez définir le nom de la classe d' <code translate="No">OptionsProvider</code> implémentation dans <strong>AndroidManifest.xml de votre application</strong> comme métadonnées de paire clé-valeur, comme indiqué ici :
+
+	<pre class="line-numbers">
+<code class="language-swift" translate="No">&lt;meta-data
+android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+android:value="com.brightcove.cast.DefaultOptionsProvider" /&gt;</code></pre>
+	</li>
+</ol>
+
+<p>Si vous utilisez la <code translate="No">DefaultOptionsProvider</code> classe, vous pourrez définir <code translate="No">ExpandedControllerActivity</code> et activer/désactiver la notification Cast en définissant des informations de métadonnées similaires dans votre AndroidManifest.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Expanded_Controller_Activity">Activité du contrôleur étendu</h2>
+
+<p>L' <a href="https://developers.google.com/android/reference/com/google/android/gms/cast/framework/media/widget/ExpandedControllerActivity">ExpandedControllerActivity</a> est livré avec la bibliothèque Google Cast et vous permet de contrôler la vidéo diffusée sur votre appareil Chromecast. Cette classe offre une certaine flexibilité de personnalisation. Par exemple, cinq emplacements sont disponibles pour afficher les boutons, où le troisième emplacement est réservé au bouton Lecture non configurable. Le reste des boutons peut être défini comme d'autres boutons prédéfinis ou comme vos propres boutons personnalisés.</p>
+
+<p>Le plugin Brightcove Cast fournit la sous-classe <code translate="No">DefaultExpandedControllerActivity</code>. Nous avons activé les boutons suivants dans l'ordre suivant :</p>
+
+<ul>
+	<li><strong>Sous-titres codés</strong></li>
+	<li><strong>Ignorer le précédent</strong></li>
+	<li><strong>Jouer</strong></li>
+	<li><strong>Ignorer Suivant</strong></li>
+	<li><strong>Basculer en sourdine</strong></li>
+</ul>
+
+<p>De plus, la barre de recherche définit le même dessin par défaut que celui utilisé dans la norme <code translate="No">BrightcoveMediaController</code>:</p>
+
+<ul>
+	<li>Les progrès tirables :
+	<pre>
+<code class="language-swift" translate="No">R.drawable.default_scrubber_progress_horizontal</code></pre>
+	</li>
+	<li>Le pouce dessinable :
+	<pre>
+<code class="language-swift" translate="No">R.drawable.default_scrubber_thumb</code></pre>
+	</li>
+</ul>
+
+<p>Pour savoir comment personnaliser la barre de recherche, reportez-vous à l'application <a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-player-controls/SeekBarColorsSampleApp/src/main">SeekBarColorsAmpleApp</a>.</p>
+
+<ol class="bcls-tasklist">
+	<li>Pour définir le <code translate="No">DefaultExpandedControllerActivity</code> ou le vôtre <code translate="No">ExpandedControllerActivity</code> , définissez les métadonnées suivantes dans votre fichier <strong>AndroidManifest.xml</strong> :
+
+	<pre class="line-numbers">
+<code class="language-swift" translate="No">&lt;meta-data  android:name="com.brightcove.cast.DefaultOptionsProvider.EXPANDED_CONTROLLER_ACTIVITY_CLASS_NAME"
+android:value="com.brightcove.cast.DefaultExpandedControllerActivity" /&gt;</code></pre>
+	</li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="Cast_Notification">Notification Cast</h2>
+
+<p>Lorsque la notification Cast est activée, la notification s'affiche lorsque vous diffusez une vidéo et placez votre application en arrière-plan, par exemple, après avoir appuyé sur la touche Accueil.</p>
+
+<ol class="bcls-tasklist">
+	<li>Pour activer la notification Cast, définissez les métadonnées suivantes dans votre fichier <strong>AndroidManifest.xml</strong> et indiquez le nom de l'activité à lancer lorsque vous cliquez sur la notification :
+
+	<pre class="line-numbers">
+<code class="language-swift" translate="No">&lt;meta-data android:name="com.brightcove.cast.DefaultOptionsProvider.NOTIFICATION_TARGET_ACTIVITY_CLASS_NAME"
+android:value="com.brightcove.cast.BrightcoveControllerActivity" /&gt;</code></pre>
+	</li>
+</ol>
+
+<p>Si vous ne fournissez pas com.brightCove.cast.DefaulToptionsProvider.notification_target_activity_class_name ou si la valeur a un nom d'activité non valide, la notification Cast sera désactivée.</p>
+
+<aside class="bcls-aside bcls-aside--information">Lorsque la suppression de la <code translate="No">meta-data</code> balise du fichier <strong>AndroidManifest.xml</strong> désactive les notifications de l'application de l'expéditeur, il sera toujours possible d'afficher une notification sur le périphérique de l'expéditeur indiquant qu'un appareil est diffusé sur votre réseau Wi-Fi réseau. Il ne s'agit pas d'une notification de l'application de l'expéditeur, mais plutôt d'une notification de l'appareil expéditeur, indépendamment de toute configuration de l'application.</aside>
+</section>
+
+<section class="bcls-section">
+<h2 id="Cast_Receiver_App_Id">ID d'application Receiver Cast</h2>
+
+<p>Ensuite, définissez votre ID d'application Google Cast Receiver dans votre projet. L'application Cast Receiver est un lecteur Web responsable de la lecture de vos vidéos sur l'appareil Chromecast. Pour en savoir plus sur les applications destinataires, consultez le <a href="https://developers.google.com/cast/docs/receiver_apps">guide officiel de Google</a>. Votre application Receiver aura un ID hexadécimal unique. Il s'agit de l'ID que vous définirez dans votre application Android.</p>
+
+<ol class="bcls-tasklist">
+	<li>Par défaut, le plugin Brightcove Cast définit un ID d'application Google Demo Receiver, ce qui est utile pour démarrer et tester, mais pas pour la production. Pour remplacer cette valeur avec votre application Cast Receiver, définissez la valeur de chaîne suivante dans votre fichier <strong>strings.xml</strong> :
+
+	<pre>
+<code class="language-swift" translate="No">&lt;string name="cast_receiver_app_id"&gt;4F8B3483&lt;/string&gt;</code></pre>
+	</li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="The_Cast_Button">Le bouton Cast</h2>
+
+<p>Le bouton cast vous permet de sélectionner un appareil Chromecast dans le même réseau que votre appareil, et vous permet de vous connecter et de créer une session. Pour ajouter le bouton Cast à votre application, suivez le document de Google <a href="https://developers.google.com/cast/docs/android_sender_integrate#add_a_cast_button">Intégrer Cast : Ajouter un bouton Cast</a>.</p>
+
+<ol class="bcls-tasklist">
+	<li>Le plugin Brightcove Cast fournit une méthode utilitaire pour configurer facilement le bouton Cast. Ceci est utile lorsque vous voulez simplement ajouter le bouton Cast au menu Activité/Fragment. Voir le code suivant pour plus de détails :
+	<pre class="line-numbers">
+<code class="language-swift" translate="No">//Activity
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+   super.onCreateOptionsMenu(menu);
+   GoogleCastComponent.setUpMediaRouteButton(MainActivity.this, menu);
+   return true;
+}</code></pre>
+	</li>
+</ol>
+</section>
+
+<section class="bcls-section">
+<h2 id="The_Mini_Controller">La mini manette</h2>
+
+<p>Le Mini Controller est un fragment qui est attaché à votre activité, généralement situé en bas de la mise en page. Le Mini Controller vous permet de lire et de mettre en pause la vidéo, et indique quand une vidéo est en cours de lecture sur votre appareil Chromecast. Lorsque vous cliquez sur le Mini Controller, le contrôleur étendu est lancé.</p>
+
+<ol class="bcls-tasklist">
+	<li>Pour activer le Mini Controller, ajoutez le code suivant à la mise en page de votre activité.
+	<pre class="line-numbers">
+<code class="language-swift" translate="No">&lt;fragment
+   android:id="@+id/castMiniController"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:layout_alignParentBottom="true"
+   android:visibility="gone"
+   class="com.google.android.gms.cast.framework.media.widget.MiniControllerFragment" /&gt;</code></pre>
+	</li>
+</ol>
+
+<p>Pour en savoir plus sur les meilleures pratiques avec le Mini Controller, consultez la <a href="https://developers.google.com/cast/docs/design_checklist/sender#sender-mini-controller">liste de vérification de conception : Document Expéditeur Mini Controller</a> . Pour plus d'informations sur l'implémentation, consultez la section <a href="https://developers.google.com/cast/docs/android_sender_integrate#add_mini_controller">Intégrer Ajouter un document Mini Controller</a> .</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="The_Brightcove_GoogleCastComponent">Le composant Brightcove GoogLecastComponent</h2>
+
+<p>La classe <code translate="No">GoogleCastComponent</code>GoogleCastComponent est la classe principale du plugin Brightcove Cast. Il instancie l'ExoPlayer CastPlayer et définit ses auditeurs. Il expose quelques méthodes essentielles pour charger une vidéo ou l'ajouter à la file d'attente. La <code translate="No">GoogleCastComponent</code> classe ajoute également plusieurs écouteurs d'événement Brightcove pour gérer les événements du cycle de vie d'activité et de fragment, ainsi que d'autres écouteurs d'événements que vous pouvez utiliser pour émettre Media Info pour charger une vidéo sur votre appareil Chromecast.</p>
+
+<p>Le plugin Cast a été conçu pour nécessiter un minimum d'effort avec Video Cloud. Lors de l'utilisation de Video Cloud, la <code translate="No">BrightcoveCastMediaManager</code> classe recueille des informations provenant de la réponse Video Cloud, telles que les objets Brightcove Video et Source, chaque fois que l' <code translate="No">EventType.SET_SOURCE</code> événement est émis. Ces informations sont mises en cache et prêtes à être utilisées lorsque l'utilisateur sélectionne la lecture pour faire la file d'attente de la vidéo.</p>
+
+<ol class="bcls-tasklist">
+	<li>Afin de créer la <code translate="No">GoogleCastComponent</code> classe, vous devez passer le <code translate="No">Context</code> et <code translate="No">EventEmitter</code>:
+
+	<pre>
+<code class="language-swift" translate="No">GoogleCastComponent googleCastComponent = new GoogleCastComponent(eventEmitter, context);</code></pre>
+
+	<p>Ou vous pouvez <code translate="No">BrightcoveCastMediaManager</code> sous-classer pour écraser une partie de son comportement et le transmettre au <code translate="No">GoogleCastComponent</code>:</p>
+
+	<pre class="line-numbers">
+<code class="language-swift" translate="No">MyBrightcoveCastMediaManager myBrightcoveCastMediaManager = new MyBrightcoveCastMediaManager(context, eventEmitter);
+
+GoogleCastComponent googleCastComponent = new GoogleCastComponent(eventEmitter, context, myBrightcoveCastMediaManager);</code></pre>
+	</li>
+</ol>
+
+<p>C'est tout ce dont vous avez besoin pour commencer à diffuser des vidéos sur votre appareil Chromecast.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Listening_for_Cast_session">À l'écoute de la session Cast</h2>
+
+<p>Si vous souhaitez que votre application réagisse lorsque la connexion Cast démarre ou se termine, vous pouvez ajouter le <code translate="No">GoogleCastEventType.CAST_SESSION_STARTED</code> ou <code translate="No">GoogleCastEventType.CAST_SESSION_ENDED</code> écouteurs d'événements comme indiqué ici:</p>
+
+<pre class="line-numbers">
+<code class="language-swift" translate="No">eventEmitter.on(GoogleCastEventType.CAST_SESSION_STARTED, new EventListener() {
+   @Override
+   public void processEvent(Event event) {
+       // Session Started
+   }
+});
+eventEmitter.on(GoogleCastEventType.CAST_SESSION_ENDED, new EventListener() {
+   @Override
+   public void processEvent(Event event) {
+       // Session Ended
+   }
+});</code></pre>
+
+<p>Vous pouvez également appeler pour <code translate="No">GoogleCastComponent.isSessionAvailable()</code> vérifier la disponibilité d'une session.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Casting_a_Video">Casting d'une vidéo</h2>
+
+<p>Afin de diffuser une vidéo sur Chromecast après une connexion réussie, vous pouvez utiliser EventEmitter et émettre les informations Media Info ou utiliser directement les <code translate="No">GoogleCastComponent</code> méthodes.</p>
+
+<p>Si vous préférez émettre les informations médias, vous pouvez utiliser les événements suivants :</p>
+
+<ul>
+	<li><code translate="No">GoogleCastEventType.LOAD_MEDIA_INFO</code></li>
+	<li><code translate="No">GoogleCastEventType.LOAD_MEDIA_QUEUE_ITEM</code></li>
+	<li><code translate="No">GoogleCastEventType.ADD_MEDIA_INFO</code></li>
+	<li><code translate="No">GoogleCastEventType.ADD_MEDIA_QUEUE_ITEM</code></li>
+</ul>
+
+<p>Le tableau suivant présente les propriétés attendues pour chaque événement :</p>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th rowspan="2">Nom de l’événement</th>
+			<th colspan="2">Propriétés</th>
+		</tr>
+		<tr>
+			<th>Clé</th>
+			<th>Type de classe de valeur</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code translate="No">LOAD_MEDIA_INFO</code></td>
+			<td><code translate="No">GoogleCastComponent.CAST_MEDIA_INFO</code><br/> <code translate="No">GoogleCastComponent.CAST_MEDIA_PLAY_POSITION</code></td>
+			<td><code translate="No">MediaInfo</code> Entier</td>
+		</tr>
+		<tr>
+			<td><code translate="No">LOAD_MEDIA_QUEUE_ITEM</code></td>
+			<td><code translate="No">GoogleCastComponent.CAST_MEDIA_QUEUE_ITEM</code></td>
+			<td><code translate="No">MediaQueueItem</code></td>
+		</tr>
+		<tr>
+			<td><code translate="No">ADD_MEDIA_INFO</code></td>
+			<td><code translate="No">GoogleCastComponent.CAST_MEDIA_INFO</code><br/> <code translate="No">GoogleCastComponent.CAST_MEDIA_PLAY_POSITION</code></td>
+			<td><code translate="No">MediaInfo</code> Entier</td>
+		</tr>
+		<tr>
+			<td><code translate="No">ADD_MEDIA_QUEUE_ITEM</code></td>
+			<td><code translate="No">GoogleCastComponent.CAST_MEDIA_QUEUE_ITEM</code></td>
+			<td><code translate="No">MediaQueueItem</code></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Vous pouvez également utiliser les méthodes GooglecastComponent suivantes :</p>
+
+<ul>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">public void loadMediaInfo(MediaInfo mediaInfo, long positionMs)</code></pre>
+	</li>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">public void loadMediaInfo(MediaInfo mediaInfo)</code></pre>
+	</li>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">public PendingResult&lt;RemoteMediaClient.MediaChannelResult&gt; loadItem(MediaQueueItem mediaQueue, int playheadPosition)</code></pre>
+	</li>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">public PendingResult&lt;RemoteMediaClient.MediaChannelResult&gt; addItems(MediaQueueItem... mediaQueue )</code></pre>
+	</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="Changing_the_default_MediaInfo_data">Modification des données MediaInfo par défaut</h2>
+
+<p>Par défaut, le plugin Cast rassemble des informations sur l'objet Vidéo et Source en cours émis par le <code translate="No">EventType.SET_SOURCE event</code>. Si vous souhaitez modifier ou ajouter des informations supplémentaires, telles que l'ajout d'un objet JSON personnalisé à votre <code translate="No">MediaInfo</code> récepteur d'application, vous pouvez le faire en écrasant <code translate="No">loadMediaInfo()</code> les <code translate="No">addMediaInfo()</code> à partir de la méthode <code translate="No">BrightcoveCastMediaManager</code>. Ensuite, votre <code translate="No">BrightcoveCastMediaManager</code> sous-classe est passée en tant que paramètre constructeur à la <code translate="No">GoogleCastComponent</code> classe.</p>
+
+<p>À l'intérieur de ces méthodes, vous pouvez créer vos <code translate="No">MediaInfo</code> objets et émettre les événements appropriés comme indiqué précédemment. Assurez-vous de vérifier <code translate="No">com.brightcove.cast.util.CastMediaUtil</code>, car il fournit quelques méthodes utilitaires pour créer un à <code translate="No">MediaInfo</code> partir des objets Vidéo et Source.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Configuring_the_Cast_MediaController">Configuration du Cast MediaController</h2>
+
+<p>Pour modifier la disposition du contrôleur qui apparaît dans votre vue vidéo Brightcove lorsqu'une session Cast a démarré, procédez comme suit.</p>
+
+<ol class="bcls-tasklist-restart">
+	<li><a href="#Extend_the_BrightcoveCastMediaManager">Étendre le BrightCoveCastMediaManager</a></li>
+	<li><a href="#Set_the_MediaControllerConfig">Définir le MediaControllerConfig</a></li>
+	<li><a href="#Overwrite_the_control_bar_setup">Remplacer la configuration de la barre de contrôle</a></li>
+</ol>
+
+<h3 id="Extend_the_BrightcoveCastMediaManager">Étendre le BrightCoveCastMediaManager</h3>
+
+<p>Pour modifier le comportement par défaut du <code translate="No">BrightcoveCastMediaManager</code>, créez une sous-classe et remplacez certaines méthodes clés :</p>
+
+<ul>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">public void updateBrightcoveMediaController(boolean isRemote)</code></pre>
+
+	<p>Cette méthode est appelée par le <code translate="No">GoogleCastComponent</code> quand la session change, c'est-à-dire lorsque la session a démarré ou s'est terminée. Lorsque la session a démarré, le <code translate="No">isRemote</code> paramètre sera <code translate="No">true</code> et la <code translate="No">setupRemoteController</code> méthode est appelée. Sinon, le <code translate="No">isRemote</code> sera <code translate="No">false</code> et le <code translate="No">resetToLocalController</code> est appelé.</p>
+	</li>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">protected void setupRemoteController()</code></pre>
+
+	<p>Cette méthode émet l'événement <code translate="No">EventType.SET_MEDIA_CONTROLLER_CONFIG</code> avec l' <code translate="No">MediaControllerConfig</code> objet. Nous en parlerons plus <code translate="No">MediaControllerConfig</code> loin dans cette section. Cette méthode écoute également l' <code translate="No">BrightcoveMediaController.CONTROL_BAR_CREATED</code> événement et réagit en appelant la <code translate="No">setupBrightcoveControlBar</code> méthode.</p>
+	</li>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">protected void resetToLocalController()</code></pre>
+
+	<p>Cette méthode est responsable de la réinitialisation <code translate="No">BrightcoveMediaController</code> de la disposition du contrôleur d'origine en émettant le <code translate="No">EventType.RESTORE_DEFAULT_MEDIA_CONTROLLER</code>.</p>
+	</li>
+	<li>
+	<pre>
+<code class="language-swift" translate="No">protected void setupBrightcoveControlBar(BrightcoveControlBar controlBar)</code></pre>
+
+	<p>Une fois que l' <code translate="No">BrightcoveMediaController</code> a été recréé avec la mise en page fournie dans le <code translate="No">MediaControllerConfig</code> , vous aurez accès à la <code translate="No">BrightcoveControlBar</code> vue. De là, vous pouvez accéder à vos vues d'interface utilisateur, comme les boutons, où vous pouvez les ajouter <code translate="No">OnClickListener</code>.</p>
+	</li>
+</ul>
+
+<h3 id="Set_the_MediaControllerConfig">Définir le MediaControllerConfig</h3>
+
+<p>La <code translate="No">MediaControllerConfig</code> est une classe de configuration que vous pouvez utiliser pour modifier la disposition de contrôle par défaut de la <code translate="No">BrightcoveMediaController</code> classe. Dans cette classe, vous pouvez définir la mise en page et le <code translate="No">OnTouchListener</code>. Une fois créé et configuré, vous pouvez émettre cet objet comme indiqué ci-dessous :</p>
+
+<pre class="line-numbers">
+<code class="language-swift" translate="No">Map&lt;String, Object&gt; properties = new HashMap&lt;&gt;();
+properties.put(Event.MEDIA_CONTROLLER_CONFIG, myMediaControllerConfig);
+eventEmitter.emit(EventType.SET_MEDIA_CONTROLLER_CONFIG,properties);</code></pre>
+
+<p>L' <code translate="No">MediaControllerConfig</code> objet par défaut définit la <code translate="No">R.layout.cast_media_controller</code> comme mise en page avec un seul bouton <strong>Lecture</strong> . Lorsque vous cliquez dessus, il ouvrira une boîte de dialogue avec deux options :</p>
+
+<ul>
+	<li><strong>Lire maintenant</strong> - Lorsque cette option est sélectionnée, la <code translate="No">loadMediaInfo()</code> méthode est appelée et la vidéo sera chargée et lue dans Chromecast.</li>
+	<li><strong>Ajouter à la file d'attente</strong> - Lorsque cette option est sélectionnée, la <code translate="No">addMediaInfo()</code> méthode est appelée et la vidéo est ajoutée à la fin de la file d'attente.</li>
+</ul>
+
+<aside class="bcls-aside bcls-aside--information">Si vous souhaitez conserver la même interface utilisateur, mais souhaitez charger des informations supplémentaires dans la vidéo en cours de diffusion, vous pouvez remplacer le <code translate="No">loadMediaInfo()</code> et <code translate="No">addMediaInfo()</code> méthodes et personnalisez les informations que vous ajoutez <code translate="No">MediaInfo</code> objet.</aside>
+
+<h3 id="Overwrite_the_control_bar_setup">Remplacer la configuration de la barre de contrôle</h3>
+
+<p>Lorsque la disposition de votre contrôleur de média est définie en émettant le <code translate="No">MediaControllerConfig</code>, la <code translate="No">BrightcoveControlBar</code> vue sera créée et la <code translate="No">BrightcoveCastMediaManager.setupBrightcoveControlBar()</code> méthode sera appelée. C'est ici que vous pouvez obtenir vos composants d'interface utilisateur par ID et ajouter les écouteurs appropriés.</p>
+
+<pre class="line-numbers">
+<code class="language-swift" translate="No">@Override
+protected void setupBrightcoveControlBar(BrightcoveControlBar controlBar) {
+   Button playButton = controlBar.findViewById(R.id.cast_play);
+   if (playButton != null) {
+       playButton.setOnClickListener(new View.OnClickListener() {...});
+   }
+}</code></pre>
+</section>
+
+<section class="bcls-section">
+<h2 id="Cast_plugin_dependencies">Dépendances de plug-in Cast</h2>
+
+<p>Le plugin Cast dépend de l'extension Cast ExoPlayer :</p>
+
+<pre>
+<code class="language-swift" translate="No">compile 'com.google.android.exoplayer:extension-cast:2.7.0'</code></pre>
+
+<p>L'extension a plusieurs dépendances qui sont répertoriées dans le tableau ci-dessous :</p>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Prénom</th>
+			<th>Notation complète et version actuelle</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><a href="https://developer.android.com/reference/android/support/v7/media/MediaRouter">Mediarouter v7</a></td>
+			<td><code translate="No">com.android.support:mediarouter-v7:27.0.0</code></td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.android.com/topic/libraries/support-library/packages#v7">Appcompat v7</a></td>
+			<td><code translate="No">com.android.support:appcompat-v7:27.0.0</code></td>
+		</tr>
+		<tr>
+			<td><a href="https://developer.android.com/topic/libraries/support-library/packages#v4">Soutien v4</a></td>
+			<td><code translate="No">com.android.support:support-v4:27.0.0</code></td>
+		</tr>
+		<tr>
+			<td><a href="https://developers.google.com/android/reference/com/google/android/gms/cast/package-summary">Cadre de distribution</a></td>
+			<td><code translate="No">com.google.android.gms:play-services-cast-framework:11.4.2</code></td>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/google/ExoPlayer/tree/release-v2/library/core">ExoPlayer Core</a></td>
+			<td><code translate="No">com.google.android.exoplayer:exoplayer-core:2.7.0</code></td>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/google/ExoPlayer/tree/release-v2/library/ui">UI ExoPlayer</a></td>
+			<td><code translate="No">com.google.android.exoplayer:exoplayer-ui:2.7.0</code></td>
+		</tr>
+	</tbody>
+</table>
+</section>
+
+<section class="bcls-section">
+<h2 id="Limitations">Contraintes</h2>
+
+<p>Avec la version actuelle de Brightcove Native SDK pour Android, certaines fonctionnalités de Video Cloud ont une prise en charge limitée ou ne sont pas prises en charge lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google :</p>
+
+<ul>
+	<li>Sous-titres
+	<ul>
+		<li>Seules les légendes dans le manifeste avec DASH Delivery Dynamic DASH s'affichent comme prévu lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google.</li>
+		<li>Les sous-titres dans le manifeste avec les légendes HLS et Sidecar dans n'importe quelle configuration vidéo ne sont actuellement pas prises en charge lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google.</li>
+	</ul>
+	</li>
+	<li>Widevine Modular DRM n'est pas pris en charge lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google.</li>
+	<li>Plusieurs pistes audio ne sont pas prises en charge lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google.</li>
+	<li>La publicité côté client et côté serveur n'est pas prise en charge lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google.</li>
+	<li>Les flux Live et Live DVR ne sont pas pris en charge lors de l'utilisation du plugin Cast avec l'exemple d'application récepteur Google.</li>
+	<li>La diffusion de vidéos hors connexion n'est actuellement pas prise en charge. Lorsque vous téléchargez une vidéo, l'URL Source est modifiée pour pointer vers un fichier local. Si vous essayez ensuite de lancer cette vidéo, le plugin choisira la source locale mais le périphérique Chromecast ne pourra pas demander la vidéo.</li>
+</ul>
+
+<h3 id="Handling_currently_unsupported_features">Gestion des fonctionnalités actuellement non prises en charge</h3>
+
+<p>Le plugin Cast est responsable de la collecte des données MediaInfo, telles que l'URL vidéo, le titre, la description et l'image de l'affiche, et de les diffuser sur votre appareil Chromecast connecté. Notez que la lecture réussie de la vidéo et l'affichage des métadonnées dépendent en fin de compte de l'application Receiver.</p>
+
+<p>Il incombe au développeur d'évaluer le récepteur de l'application en fonction de ce qu'il prend en charge et de ses limites. Par conséquent, le développeur doit implémenter des éléments d'interface utilisateur qui informent l'utilisateur ce qui peut ou ne peut pas être cast. Par exemple, si Application Receiver ne prend pas en charge les vidéos avec DRM ou Publicités, votre application Android doit gérer ces scénarios.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Known_Issues">problèmes connus</h2>
+
+<h3>Android 9</h3>
+
+<p>Lorsque vous utilisez Chromecast avec Android 9, vous devez inclure une <code translate="No">FOREGROUND_SERVICE</code> autorisation. Cela permet à l'application d'utiliser des notifications pour contrôler une session de casting lorsque l'application est background et ramenée au premier plan.</p>
+
+<p>La <code translate="No">uses-permission</code> balise doit être ajoutée au fichier <strong>AndroidManifest.xml</strong> de l'application, comme suit :</p>
+
+<pre>
+<code class="language-java" translate="No">&lt;uses-permission android:name="android.permission.FOREGROUND_SERVICE"/&gt;</code></pre>
+
+<h3>Contrôle du volume</h3>
+
+<p>Le contrôle du volume dans la boîte de dialogue Cast peut ne pas diminuer jusqu'à zéro sur le périphérique d'envoi. Lorsque vous utilisez le contrôle de volume dans la boîte de dialogue Cast ou les boutons de volume sur le périphérique d'envoi, le niveau de volume affiché peut légèrement remonter pour afficher une valeur différente de zéro sur l'expéditeur. Cependant, le récepteur affichera une valeur non nulle. Il s'agit d'un comportement avec la boîte de dialogue Google Cast, et non dans le SDK Android Brightcove.</p>
+
+<h4>Services Google Play</h4>
+
+<p>La connexion Casting ne peut pas être créée si la version des services Google Play de l'expéditeur n'est pas à jour. Lorsque les services Google Play de l'expéditeur, en particulier le framework Cast Services, sont obsolètes, vous risquez de ne pas réussir à créer une connexion Cast. Cette solution est corrigée en mettant à jour les services Google Play de l'expéditeur via le Google Play Store.</p>
+</section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenu de la page</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Assistance Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">État du système</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contacter le support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formation</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Cours en ligne</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">S' inscrire à un cours</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Université de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactez-nous</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove, Inc. Tous droits réservés.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>

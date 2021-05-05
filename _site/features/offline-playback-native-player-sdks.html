@@ -1,0 +1,1509 @@
+﻿<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Dans cette rubrique, vous apprendrez comment fonctionne la lecture hors ligne avec les SDK Brightcove Native Player.">
+  
+  <title>Lecture hors ligne avec les kits SDK du lecteur natif</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="logo du produit" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Sélectionner la langue</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="assistance"/> Contacter le support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">État<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="état du système"/> du système</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/features/">Fonctionnalités</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Lecture hors ligne avec les kits SDK du lecteur natif</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Autres documents Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Accueil Documentation</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audience de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Balise Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campagne Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engagez</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Développement du joueur Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API de la plate-forme Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK pour périphériques Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Intégrations et connecteurs CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Informations générales sur Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Accueil</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Mise en route <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-player-sdks.html">Les kits SDK natifs Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/native-video-playback.html">Lecture vidéo native</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-sdk-features.html">Fonctionnalités du SDK natif</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-sdks-feature-support.html">Tableau de support des fonctionnalités</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/running-sample-apps-native-sdk-android.html">Exécuter des exemples d'applications Android</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/running-sample-apps-native-sdk-ios.html">Exécution d'exemples d'applications iOS/TVOS</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/brightcove-native-sdks-training-videos.html">Vidéos de formation du SDK natif</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/features/index.html">Fonctionnalités <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/features/using-360deg-videos-native-sdks.html">Vidéo à 360 degrés</a></li>
+                  
+                
+                  
+                    <li><a href="/features/advertising-sdks.html">Publicité</a></li>
+                  
+                
+                  
+                    <li><a href="/features/analytics-sdks.html">Analytique</a></li>
+                  
+                
+                  
+                    <li><a href="/features/using-captions-brightcove-native-sdks.html">Légendes</a></li>
+                  
+                
+                  
+                    <li><a href="/features/connected-tv-set-top-box-apps.html">TV connectée</a></li>
+                  
+                
+                  
+                    <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                  
+                
+                  
+                    <li><a href="/features/cross-device-resume-sdks.html">Reprise multi-appareils</a></li>
+                  
+                
+                  
+                    <li><a href="/features/live-streams-native-sdks.html">Streams en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/features/multiple-audio-tracks-native-sdks.html">Plusieurs pistes audio</a></li>
+                  
+                
+                  
+                    <li><a href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                  
+                
+                  
+                    <li><a href="/features/brightcove-native-player-controls.html">Commandes du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/features/picture-picture-native-sdks.html">Image dans l'image</a></li>
+                  
+                
+                  
+                    <li><a href="/features/video-formats-and-captioning-native-sdks.html">Formats vidéo et sous-titrage</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/android/index.html">Développement Android <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/basics/index.html">Notions de base <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/basics/overview-brightcove-player-sdk-android.html">v6.16.0 : Vue d'ensemble du lecteur SDK pour Android</a></li>
+                        
+                        <li><a href="/android/basics/architecture-brightcove-player-sdk-android.html">Architecture</a></li>
+                        
+                        <li><a href="/android/basics/android-understanding-brightcoveplayer-class.html">Classe BrightCovePlayer</a></li>
+                        
+                        <li><a href="/android/basics/android-choosing-video-view.html">Choix d'une vue vidéo</a></li>
+                        
+                        <li><a href="/android/basics/android-brightcove-registration.html">Inscription à Brightcove</a></li>
+                        
+                        <li><a href="/android/basics/understanding-events-native-sdk-android.html">Comprendre les événements</a></li>
+                        
+                        <li><a href="/android/basics/android-working-media-content.html">Utilisation du contenu multimédia</a></li>
+                        
+                        <li><a href="/android/basics/training-demand-developing-brightcove-native-player-sdk-android.html">Vidéos de formation du SDK natif</a></li>
+                        
+                        <li><a href="/android/basics/step-step-simple-video-app-using-native-sdk-android.html">Étape par étape : Application vidéo simple</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/advertising/index.html">Publicité <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/advertising/android-ad-ui-customization-server-side-ad-insertion-ssai.html">Personnalisation de l'interface utilisateur publicitaire avec SSAI</a></li>
+                        
+                        <li><a href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonces</a></li>
+                        
+                        <li><a href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                        
+                        <li><a href="/android/advertising/migrating-to-ima-plugin-6-15-0.html">Plugin IMA 6.15.0</a></li>
+                        
+                        <li><a href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des annonces côté client (CSAI)</a></li>
+                        
+                        <li><a href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                        
+                        <li><a href="/android/advertising/using-pulse-plugin-native-sdk-android.html">Plugin Invidi Pulse</a></li>
+                        
+                        <li><a href="/android/advertising/ssai-plugin-native-sdk-android.html">Plugin SSAI pour Android</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/analytics/index.html">Analytics <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/analytics/analytics-related-offline-playback-native-sdks.html">Analyses liées à la lecture hors ligne</a></li>
+                        
+                        <li><a href="/android/analytics/sending-brightcove-analytics-native-sdk-android.html">Envoyer Brightcove Analytics</a></li>
+                        
+                        <li><a href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage des analyses Brightcove</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/captions/index.html">Légendes <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/captions/removing-android-captions-background-image.html">Suppression de l'image d'arrière-plan des sous-titres</a></li>
+                        
+                        <li><a href="/android/captions/selecting-captions-programmatically-native-sdk-android.html">Sélection de légendes par programme</a></li>
+                        
+                        <li><a href="/features/synchronizing-webvtt-captions.html">Synchronisation des légendes WebVTT</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/tv/index.html">TV connectée <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/tv/cast-plugin-native-sdk-android.html">Plugin Chromecast</a></li>
+                        
+                        <li><a href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                        
+                        <li><a href="/android/tv/customizing-android-tv-controls.html">Personnalisation des contrôles Android TV</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/content-protection/index.html">Protection du contenu <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/framework/index.html">Cadre <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/framework/android-adding-viewmanaging-layout.html">Ajout d'affichage/gestion d'une disposition</a></li>
+                        
+                        <li><a href="/android/framework/android-pie-support-native-sdk-android.html">Prise en charge Android Pie</a></li>
+                        
+                        <li><a href="/android/framework/creating-plugin-native-sdk-android.html">Création d'un plugin</a></li>
+                        
+                        <li><a href="/android/framework/migrating-exoplayer-2-framework.html">Migration vers ExoPlayer 2 Framework</a></li>
+                        
+                        <li><a href="/android/framework/resizing-video-view.html">Redimensionnement de la vue vidéo</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/live/index.html">En direct <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/using-live-ssai-native-sdks.html">Utilisation de SSAI en direct</a></li>
+                        
+                        <li><a href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour le SSAI en direct</a></li>
+                        
+                        <li><a href="/features/client-side-ads-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/playback/index.html">Lecture <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/playback/hevc-selection-native-sdk-android.html">Sélection HEVC</a></li>
+                        
+                        <li><a href="/android/playback/hls-playback-native-sdk-android.html">Lecture HLS</a></li>
+                        
+                        <li><a href="/features/localization-with-native-sdks.html">Localisation du lecteur</a></li>
+                        
+                        <li><a href="/android/playback/android-managing-player-controls.html">Gestion des contrôles du joueur</a></li>
+                        
+                        <li><a href="/android/playback/multiple-audio-tracks-offline-playback-native-sdk-android.html">Plusieurs pistes audio pour la lecture hors ligne</a></li>
+                        
+                        <li><a href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                        
+                        <li><a href="/android/playback/handling-orientation-change-native-sdk-android.html">Changement d'orientation</a></li>
+                        
+                        <li><a href="/android/playback/android-source-selection.html">Sélection des sources</a></li>
+                        
+                        <li><a href="/android/playback/video-and-playlist-objects-json.html">Objets vidéo et playlist de JSON</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/troubleshooting/index.html">Dépannage <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/android/troubleshooting/error-messages-native-sdk-android.html">Guide des messages d'erreur</a></li>
+                        
+                        <li><a href="/android/troubleshooting/removing-android-log-messages.html">Suppression des messages du journal Android</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/android/resources/index.html">Ressources <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/BrightcoveOS/android-player-samples">Exemples de code Android</a></li>
+                        
+                        <li><a href="/android/resources/code-snippets-using-native-sdk-android.html">Extraits de code</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/android-sdk/javadoc/index.html">Référence SDK natif pour Android</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/index.html">Références du plugin</a></li>
+                        
+                        <li><a href="/android/resources/brightcove-player-sdk-android-previous-sdk-information.html">Versions précédentes</a></li>
+                        
+                        <li><a href="/android/resources/brightcove-native-sdk-android-release-notes.html">Notes de version</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ios/index.html">Développement iOS <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/basics/index.html">Notions de base <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/basics/overview-brightcove-player-sdk-ios.html">v6.8.1 : Présentation du kit SDK du lecteur pour iOS</a></li>
+                        
+                        <li><a href="/ios/basics/architecture-brightcove-player-sdk-ios.html">Architecture</a></li>
+                        
+                        <li><a href="/ios/basics/ios-brightcove-registration.html">Inscription à Brightcove</a></li>
+                        
+                        <li><a href="/ios/basics/ios-working-media-content.html">Utilisation du contenu multimédia</a></li>
+                        
+                        <li><a href="/ios/basics/understanding-events-native-sdk-ios.html">Comprendre les événements</a></li>
+                        
+                        <li><a href="/ios/basics/training-demand-developing-brightcove-native-player-sdk-ios.html">Vidéos de formation du SDK natif</a></li>
+                        
+                        <li><a href="/ios/basics/step-step-simple-video-app-using-objective-c.html">Étape par étape : Application vidéo simple utilisant Objective-C</a></li>
+                        
+                        <li><a href="/ios/basics/step-step-simple-video-app-using-swift.html">Étape par étape : Application vidéo simple utilisant Swift</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/advertising/index.html">Publicité <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des annonces côté client (CSAI)</a></li>
+                        
+                        <li><a href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                        
+                        <li><a href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonces</a></li>
+                        
+                        <li><a href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/analytics/index.html">Analytics <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/analytics/sending-brightcove-analytics-native-sdk-ios.html">Envoyer Brightcove Analytics</a></li>
+                        
+                        <li><a href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage des analyses Brightcove</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/captions/index.html">Légendes <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/synchronizing-webvtt-captions.html">Synchronisation des légendes WebVTT</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/tv/index.html">TV connectée <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast">Plugin Chromecast</a></li>
+                        
+                        <li><a href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/content-protection/index.html">Protection du contenu <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/framework/index.html">Cadre <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/framework/working-app-transport-security-ats.html">Utilisation de l'application Transport Security (ATS)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/live/index.html">En direct <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/using-live-ssai-native-sdks.html">Utilisation de SSAI en direct</a></li>
+                        
+                        <li><a href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour le SSAI en direct</a></li>
+                        
+                        <li><a href="/features/client-side-ads-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/playback/index.html">Lecture <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/localization-with-native-sdks.html">Localisation du lecteur</a></li>
+                        
+                        <li><a href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                        
+                        <li><a href="/ios/playback/ios-source-selection.html">Sélection des sources</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/troubleshooting/index.html">Dépannage <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/troubleshooting/error-handling-native-sdk-ios.html">Gestion des erreurs</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ios/resources/index.html">Ressources <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/BrightcoveOS/ios-player-samples">Exemples de code iOS</a></li>
+                        
+                        <li><a href="/ios/resources/code-snippets-using-native-sdk-ios.html">Extraits de code</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/ios-sdk/index.html">Référence du SDK natif pour iOS</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/index.html">Références du plugin</a></li>
+                        
+                        <li><a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/CHANGELOG.md">Notes de version</a></li>
+                        
+                        <li><a href="/ios/resources/brightcove-player-sdk-ios-previous-sdk-information.html">Versions précédentes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/tvos/index.html">Développement de TVOS <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/basics/index.html">Notions de base <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/tvos/basics/overview-brightcove-player-sdk-tvos.html">v6.8.1 : Présentation du kit SDK du lecteur pour TVOS</a></li>
+                        
+                        <li><a href="/ios/basics/architecture-brightcove-player-sdk-ios.html">Architecture</a></li>
+                        
+                        <li><a href="/ios/basics/ios-brightcove-registration.html">Inscription à Brightcove</a></li>
+                        
+                        <li><a href="/ios/basics/ios-working-media-content.html">Utilisation du contenu multimédia</a></li>
+                        
+                        <li><a href="/ios/basics/understanding-events-native-sdk-ios.html">Comprendre les événements</a></li>
+                        
+                        <li><a href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                        
+                        <li><a href="/ios/basics/training-demand-developing-brightcove-native-player-sdk-ios.html">Vidéos de formation du SDK natif</a></li>
+                        
+                        <li><a href="/tvos/basics/step-step-simple-tv-video-app-using-swift.html">Étape par étape : Application vidéo TV simple à l'aide de Swift</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/advertising/index.html">Publicité <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des annonces côté client (CSAI)</a></li>
+                        
+                        <li><a href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                        
+                        <li><a href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonces</a></li>
+                        
+                        <li><a href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/analytics/index.html">Analytics <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/analytics/sending-brightcove-analytics-native-sdk-ios.html">Envoyer Brightcove Analytics</a></li>
+                        
+                        <li><a href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage des analyses Brightcove</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/captions/index.html">Légendes <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/synchronizing-webvtt-captions.html">Synchronisation des légendes WebVTT</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/content-protection/index.html">Protection du contenu <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                        
+                        <li><a href="/tvos/content-protection/adding-fairplay-protection-your-apple-tv-apps.html">Apple TV avec FairPlay</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/framework/index.html">Cadre <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/framework/working-app-transport-security-ats.html">Utilisation de l'application Transport Security (ATS)</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/live/index.html">En direct <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/features/using-live-ssai-native-sdks.html">Utilisation de SSAI en direct</a></li>
+                        
+                        <li><a href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour le SSAI en direct</a></li>
+                        
+                        <li><a href="/features/client-side-ads-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/playback/index.html">Lecture <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/tvos/playback/apple-tv-ui-controls-native-sdk-tvos.html">Contrôles de l'interface utilisateur Apple TV</a></li>
+                        
+                        <li><a href="/features/localization-with-native-sdks.html">Localisation du lecteur</a></li>
+                        
+                        <li><a href="/ios/playback/ios-source-selection.html">Sélection des sources</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/troubleshooting/index.html">Dépannage <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ios/troubleshooting/error-handling-native-sdk-ios.html">Gestion des erreurs</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/tvos/resources/index.html">Ressources <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/Player/AppleTV">Exemple de base Apple TV</a></li>
+                        
+                        <li><a href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/SSAI/BasicSSAItvOSPlayer">Apple TV avec SSAI</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/ios-sdk/index.html">Référence du SDK natif pour iOS</a></li>
+                        
+                        <li><a href="https://docs.brightcove.com/index.html">Références du plugin</a></li>
+                        
+                        <li><a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/CHANGELOG.md">Notes de version</a></li>
+                        
+                        <li><a href="/tvos/resources/brightcove-player-sdk-tvos-previous-sdk-information.html">Versions précédentes</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/developer-support/index.html">Support développeur <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/developer-support/announcements/index.html">Annonces <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/developer-support/announcements/native-sdk-android-will-eol-support-exoplayer-1.html">Prise en charge du SDK Android EOL pour ExoPlayer 1</a></li>
+                        
+                        <li><a href="/developer-support/announcements/announcement-brightcove-sdk-android-version-support.html">Prise en charge des versions Android</a></li>
+                        
+                        <li><a href="/developer-support/announcements/apple-announces-new-app-submission-requirement.html">Exigence de soumission des applications Apple</a></li>
+                        
+                        <li><a href="/developer-support/announcements/native-sdk-ios-eol-support-iostvos-10.html">Prise en charge de l'EOL SDK iOS pour iOS/TVOS 10</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/developer-support/questions/index.html">Questions et questions <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="https://groups.google.com/forum/#!forum/brightcove-native-player-sdks">Archive du forum des développeurs SDK</a></li>
+                        
+                        <li><a href="/developer-support/questions/faq-brightcove-native-player-sdks.html">Foire aux questions</a></li>
+                        
+                        <li><a href="/developer-support/questions/release-notes-brightcove-native-sdks.html">Notes de version</a></li>
+                        
+                        <li><a href="/developer-support/questions/known-issues-brightcove-native-player-sdks.html">Problèmes connus</a></li>
+                        
+                        <li><a href="/developer-support/questions/report-issue-brightcove-native-sdks.html">Signaler un problème</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Affichage de la page État du système Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacter les ventes</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Ouverture d'un dossier de support</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menu de navigation"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenu de la page</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="ouvrir dans un nouvel onglet" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<h1>Lecture hors ligne avec les kits SDK du lecteur natif</h1>
+<article class="bcls-article">
+  <summary>Dans cette rubrique, vous apprendrez comment fonctionne la lecture hors ligne avec les SDK Brightcove Native Player.</summary>
+
+<section class="bcls-section">
+<h2 id="Overview">Présentation</h2>
+
+<p>La lecture hors ligne avec les SDK Brightcove Native Player pour iOS et Android permet aux éditeurs d'atteindre leurs spectateurs de toute nouvelle manière tout en assurant la sécurité de leur contenu. Nos kits SDK offrent des solutions puissamment simples pour les problèmes complexes de lecture hors ligne, y compris la gestion des téléchargements, la gestion des catalogues hors ligne, l'analyse, la gestion des données DRM et bien sûr la lecture.</p>
+
+<p>Grâce à la lecture hors ligne, les utilisateurs peuvent télécharger du contenu vidéo protégé par DRM et effacer (non crypté) sur leurs appareils et le regarder lorsqu'ils ne sont pas connectés.</p>
+
+<!-- <aside class="bcls-aside bcls-aside--tip">To use this feature, you need to be a Video Cloud customer using Dynamic Delivery.</aside> -->
+</section>
+
+<section class="bcls-section">
+<h2 id="Requirements">Exigences</h2>
+
+<p>Les kits SDK Brightcove Native Player prennent en charge la lecture hors ligne avec les versions suivantes :</p>
+
+<h3>Version du kit SDK natif de Brightcove</h3>
+<ul>
+	<li>SDK natif pour iOS 6.0.1+</li>
+	<li>SDK natif pour Android 5.0.3+</li>
+</ul>
+
+<h3>Version du système d'exploitation</h3>
+<ul>
+	<li>iOS 10.0+, mais 10.3+ est recommandé</li>
+	<li>Android 5.0+</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="Requirements">Configuration</h2>
+
+<p>Pour commencer, procédez comme suit :</p>
+<ul>
+	<li>Contactez votre responsable de compte pour activer votre compte pour la lecture hors ligne.</li>
+	<li>Assurez-vous d'utiliser Dynamic Delivery lors de l'ingestion de vos vidéos.</li>
+  <li><a href="#Prepare_videos">Préparez chaque vidéo</a> que vous souhaitez activer pour le téléchargement.</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="Content_delivery">Livraison de contenu</h2>
+
+<p>Le streaming vidéo tire parti de la fonction de streaming multi-débit de Video Cloud qui détecte la bande passante à la source et offre la meilleure qualité pour l'appareil. La fonction de lecture hors connexion prend en charge les types de diffusion en continu suivants :</p>
+
+<ul>
+	<li><strong>Android</strong>: Diffusion dynamique adaptative sur HTTP (DASH)</li>
+	<li><strong>iOS</strong>: Diffusion en continu HTTP Apple (HLS)</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="Security">Sécurité</h2>
+
+<p>La protection du contenu téléchargé est la première place à l'esprit avec notre solution hors ligne. Les kits SDK Brightcove Native Player fournissent les fonctionnalités suivantes pour garantir que votre contenu est stocké en toute sécurité sur les appareils des spectateurs :</p>
+
+<h3>Contenu protégé par DRM</h3>
+
+<ul>
+	<li>Pour le contenu protégé par DRM, les SDK natifs utilisent les technologies suivantes :
+	<ul>
+		<li><strong>Android</strong>: DASH avec <a href="https://castlabs.com/company/partners/google-widevine/">Widevine Modular</a></li>
+		<li>
+		<p><strong>iOS</strong>: HLS avec <a href="https://developer.apple.com/streaming/fps/">FairPlay</a></p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p>Le contenu vidéo ne peut être visionné que sur l'appareil et l'application qui a téléchargé le contenu.</p>
+	</li>
+	<li>
+	<p>Le contenu vidéo ne peut être regardé que jusqu'à l'expiration d'une date et d'une heure spécifiques.</p>
+
+	<p>Les SDK natifs permettent aux utilisateurs de louer ou d'acheter des vidéos. L'expiration s'applique aux locations et est définie dans la licence DRM à l'aide de l'API SDK natif pour le téléchargement de vidéos. En revanche, l'expiration définie dans le jeton Fastly s'applique au contenu en continu.</p>
+	</li>
+	<li>Les URL vidéo retournées au client expireront afin que les autres ne puissent pas les utiliser.</li>
+</ul>
+
+<h3>Tout le contenu</h3>
+
+<ul>
+	<li>Lorsque l'application est supprimée, tout le contenu téléchargé est supprimé.
+	<aside class="bcls-aside bcls-aside--information">Pour Android, cela est vrai tant que l'emplacement de stockage par défaut n'est pas remplacé.</aside>
+	</li>
+	<li>Votre application peut supprimer du contenu stocké localement à tout moment.</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="Download_management">Gestion des téléchargements</h2>
+
+<p>Les kits SDK Brightcove Native Player traitent la complexité du téléchargement de contenu sur l'appareil d'un spectateur, simplifiant grandement le processus pour les applications natives.</p>
+
+<ul>
+	<li>Les éditeurs peuvent choisir la qualité de format associé du contenu à télécharger.</li>
+	<li>Les légendes peuvent être téléchargées et affichées hors ligne.</li>
+	<li>Plusieurs pistes audio sont prises en charge par les kits SDK natifs. Pour plus d'informations sur le téléchargement de pistes supplémentaires, consultez les sections suivantes :
+	<ul>
+		<li><a href="/android/playback/multiple-audio-tracks-offline-playback-native-sdk-android.html">Plusieurs pistes audio pour la lecture hors ligne avec le SDK natif pour Android</a></li>
+		<li><a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md#downloading-secondary-tracks">Guide du développeur d'applications iOS pour la lecture hors ligne</a>.</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>Fonctionnalité</h3>
+
+<p>Les fonctionnalités suivantes peuvent être ajoutées à vos applications pour prendre en charge la gestion des téléchargements :</p>
+
+<ul>
+	<li><a href="#Display_content">Afficher le contenu</a></li>
+	<li><a href="#Check_download_size">Vérifier la taille du téléchargement</a></li>
+	<li><a href="#Show_download_status">Afficher l'état du téléchargement</a></li>
+	<li><a href="#Manage_downloads">Gestion des téléchargements</a></li>
+	<li><a href="#Show_local_storage_space">Afficher l'espace de stockage local</a></li>
+	<li><a href="#Pause_resume_cancel_download">Pause/Rsume/Annuler le téléchargement</a></li>
+</ul>
+
+<h3 id="Display_content">Afficher le contenu</h3>
+
+<p>Affichez une liste des contenus disponibles en streaming ou en téléchargement.</p>
+
+<p>Lorsque vous définissez la <code translate="No">offline_enabled</code> propriété d'une vidéo sur <strong>true</strong> , les SDK natifs marquent cette vidéo comme téléchargeable.</p>
+
+<h4 id="Prepare_videos">Préparer des vidéos</h4>
+
+<p>Pour marquer une vidéo comme téléchargeable, vous devez effectuer les opérations suivantes :</p>
+
+<ol class="bcls-tasklist">
+	<li>Si vous ne l'avez pas encore fait, contactez votre responsable de compte pour activer la lecture hors ligne de votre compte.</li>
+	<li>
+	<p>Pour chaque vidéo que vous souhaitez télécharger, définissez hors connexion activée en effectuant l'une des opérations suivantes :</p>
+
+	<h4>Utiliser Video Cloud Studio</h4>
+
+	<p>Utilisez Video Cloud Studio pour <a href="https://studio.support.brightcove.com/media/editing-video-properties-using-media-module.html#videoinfo">activer la lecture hors ligne</a>.</p>
+
+	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Hors-ligne activé" src="/assets/images/getting-started/offline/offline-enabled.png"/>
+	<figcaption class="bcls-caption--image">Hors-ligne activé</figcaption>
+	</figure>
+
+	<h4>Utiliser l'API CMS</h4>
+
+	<p>Vous pouvez également utiliser l' <a href="https://apis.support.brightcove.com/cms/getting-started/overview-cms-api.html">API CMS</a> pour définir le champ <a href="https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html">offline_enabled</a> sur la valeur <strong>true</strong>.</p>
+
+	<p>Voici un exemple utilisant curl :</p>
+
+	<pre class="line-numbers" data-start="1">
+  <code class="language-json" translate="No">curl --header "Authorization: Bearer $oauth_token" --request PATCH --data '
+  {"offline_enabled" : true}
+  ' https://cms.api.brightcove.com/v1/accounts/<span class="bcls-input">your account id</span>/videos/<span class="bcls-input">your video id</span></code></pre>
+	</li>
+</ol>
+
+<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Afficher le contenu" src="/assets/images/getting-started/offline/content-list.png"/>
+<figcaption class="bcls-caption--image">Afficher le contenu</figcaption>
+</figure>
+
+<p>Lorsque vous utilisez un contenu clair, consultez la section <a href="#Best_practices">Meilleures pratiques</a> pour obtenir des conseils sur l'affichage de votre contenu.</p>
+
+<h3 id="Check_download_size">Vérifier la taille du téléchargement</h3>
+
+<p>Brightcove recommande qu'avant de demander un téléchargement, assurez-vous qu'il y a suffisamment d'espace dans le stockage de l'appareil pour le téléchargement. Pour obtenir une estimation de la taille totale du téléchargement de la vidéo, procédez comme suit :</p>
+
+<ul>
+	<li>Pour iOS, consultez les informations de la section <strong>Vérifier la taille du téléchargement</strong> du <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md#check-download-size">Guide du développeur d'applications iOS pour la lecture hors ligne</a>.</li>
+	<li>
+	<p>Pour Android, vous pouvez obtenir une estimation dans le rappel <a href="https://docs.brightcove.com/android-sdk/javadoc/com/brightcove/player/offline/MediaDownloadable.DownloadEventListener.html#onDownloadStarted-com.brightcove.player.model.Video-long-java.util.Map-"> OnDownloadStarted</a> à partir du <code translate="No">DownloadEventListener</code>. Voici un exemple de la façon de définir l'écouteur d'événement :</p>
+
+	<pre>
+  <code class="language-java" translate="No">MediaDownloadable.DownloadEventListener downloadEventListener = new MediaDownloadable.DownloadEventListener() {
+  //Your implementation.
+  }
+  OfflineCatalog catalog = new OfflineCatalog(context, eventEmitter, accountId, policyKey);
+  catalog.addDownloadEventListener(downloadEventListener);</code></pre>
+	</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3 id="Show_local_storage_space">Afficher l'espace de stockage local</h3>
+
+<p>Informez l'utilisateur lorsqu'il n'y a pas assez de stockage local pour terminer le téléchargement de l'élément en cours et des éléments de la file d'attente.</p>
+
+<p>Les kits SDK fournissent la taille estimée et la progression afin que vous puissiez déterminer s'il y a suffisamment d'espace pour les téléchargements.</p>
+<!-- <figure class="bcls-figure">
+      <img class="bcls-image--no-border" src="//learning-services-media.brightcove.com/doc-assets/device-sdks/guides/odrm/download-space.png" alt="Local storage space">
+      <figcaption class="bcls-caption--image">Local storage space</figcaption>
+      </figure> -->
+
+<h3 id="Show_download_status">Afficher l'état du téléchargement</h3>
+
+<p>Affichez le téléchargement en cours ainsi que son état.</p>
+
+<p>La taille totale estimée, l'état actuel du téléchargement et le pourcentage des informations de progression du téléchargement seront renvoyés par les SDK.</p>
+<!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Download status" src="//learning-services-media.brightcove.com/doc-assets/device-sdks/guides/odrm/download-progress.png" />
+      <figcaption class="bcls-caption--image">Download status</figcaption>
+      </figure> -->
+
+<aside class="bcls-aside bcls-aside--tip">Pour les appareils Android, l'état du téléchargement est également affiché dans la zone de notification. Le titre de la notification est défini sur le titre de la vidéo. La notification est supprimée si le téléchargement est interrompu ou annulé. Pour plus de détails, consultez les <a href="/android/resources/code-snippets-using-native-sdk-android.html#Offline_playback_with_DRM">extraits de code utilisant le document Native SDK pour Android</a> .</aside>
+
+<h3 id="Manage_downloads">Gestion des téléchargements</h3>
+
+<h4>Téléchargement de plusieurs vidéos</h4>
+
+<p>Les kits SDK natifs permettent de mettre en file d'attente plusieurs vidéos pour les téléchargements. Par exemple, un utilisateur peut télécharger plusieurs épisodes d'une saison et les SDK natifs gèrent le processus en fournissant l'état du téléchargement pour chaque ressource.</p>
+
+<aside class="bcls-aside bcls-aside--information">Si votre application cible iOS 11.0 - 11.2, nous ne recommandons pas les téléchargements simultanés car le comportement de pause et de reprise n'est pas fiable avec plusieurs téléchargements simultanés. Le problème a été résolu avec iOS 11.3.</aside>
+<!-- <figure class="bcls-figure">
+      <img class="bcls-image--no-border" src="//learning-services-media.brightcove.com/doc-assets/device-sdks/guides/odrm/download-queue.png" alt="Download queue">
+      <figcaption class="bcls-caption--image">Download queue</figcaption>
+      </figure> -->
+
+  <h4>Téléchargement de pistes secondaires (iOS)</h4>
+  <p>
+    Avec iOS 13, Apple a modifié le fonctionnement des téléchargements. Pour plus d'informations, consultez le <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md#downloading-secondary-tracks">Guide du développeur iOS App Developer to Video Downloading and Offline Playback</a> Guide.
+  </p>
+  <p>
+    En raison de ce changement, l'exemple d'application iOS Téléchargement hors connexion peut sembler retélécharger des vidéos avec plusieurs pistes audio. Cela est dû au fait que la progression du téléchargement est donnée pour chaque piste. Ainsi, la barre de progression redémarre à partir de zéro pour chaque piste audio supplémentaire.
+  </p>
+  <p>
+    Voici un bref aperçu de <code translate="No">AVMediaSelectionOptions</code>, sous-titres et pistes audio alternatives : <a href="https://developer.apple.com/documentation/avfoundation/media_playback_and_selection/adding_subtitles_and_alternative_audio_tracks?preferredLanguage=occ">Ajout de sous-titres et de pistes audio alternatives</a>
+  </p>
+  <h5>Déterminer le téléchargement total</h5>
+  <p>
+    Existe-t-il un moyen d'obtenir <code translate="No">didProgressTo</code> pour le téléchargement total pour un jeton vidéo ?
+  </p>
+  <p>
+    Non. Pour un jeton vidéo hors ligne, il n'y a pas de valeur de progression de téléchargement agrégée. Le développeur de l'application détermine le nombre de téléchargements d'actifs qui se produiront. Le premier téléchargement d'actifs est la vidéo principale et les pistes audio et texte préférées. Il s'agit généralement du plus grand téléchargement et la progression passera de 0,00 à 100,00.
+  </p>
+  <p>
+    Si une demande de téléchargement inclut des sélections de médias supplémentaires (que le développeur de l'application demande explicitement), le temps total de téléchargement est simplement celui de la vidéo principale et de la sélection multimédia préférée, plus celle de chaque sélection de média supplémentaire. Lors de la représentation de la progression totale dans l'interface utilisateur, choisissez une valeur d'échelle pour chaque téléchargement de telle sorte que la somme de tous les téléchargements totalisera 100 % et additionne les temps de téléchargement échelonné de chaque sélection de médias.
+  </p>
+
+  <h5>Identification des types d'objets</h5>
+  <p>
+    Existe-t-il un moyen d'identifier à quel type d'objet (vidéo ou piste de texte) chaque <code translate="No">didProgressTo</code> événement lié ?
+  </p>
+  <p>
+    Oui. Les téléchargements supplémentaires sont des objets Apple Media Selection Option (<code translate="No">AVMediaSelectionOption</code>), et non des pistes. L'objet de sélection de média en cours de téléchargement est identifié dans le rappel de progression. (<a href="https://docs.brightcove.com/ios-sdk/Protocols/BCOVOfflineVideoManagerDelegate.html#//api/name/offlineVideoToken:aggregateDownloadTask:didProgressTo:forMediaSelection:">BCOVofflineVideoManagerDelegate.h</a>)
+  </p>
+  <p>
+    Apple fournit des méthodes pour examiner les attributs d'une option de sélection de médias. Pour plus de détails, consultez l'option <a href="https://developer.apple.com/documentation/avfoundation/avmediaselectionoption">AvMediaElectionOption</a>d'Apple.
+  </p>
+  <p>
+    Vous pouvez voir les valeurs de métadonnées dans la console de débogueur Xcode lors de l'exécution de l' <a href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/Offline">exemple d'application OfflinePlayer</a> (ne soyez pas trompé par les deux options anglaises - c'est juste un exemple d'application)
+  </p>
+  <pre class="line-numbers">
+<code class="language-objectivec" translate="No">OfflinePlayer[523:355259] AVMediaSelection option 0 | legible display name: English
+OfflinePlayer[523:355259] AVMediaSelection option 0 | audible display name: English
+OfflinePlayer[523:355259] AVMediaSelection option 1 | legible display name: English
+OfflinePlayer[523:355259] AVMediaSelection option 1 | audible display name: English</code></pre>
+<p>
+  Vous pouvez voir comment cela se fait dans le <a href="https://github.com/BrightcoveOS/ios-player-samples/blob/master/Offline/OfflinePlayer/objc/OfflinePlayer/ManagersUtilities/DownloadManager.m#L253-L262">code DownloadManager</a>.
+</p>
+
+
+<h3 id="Pause_resume_cancel_download">Pause/Rsume/Annuler le téléchargement</h3>
+
+<p>Autoriser l'utilisateur à suspendre, reprendre ou annuler le téléchargement de contenu.</p>
+
+<p>La fonctionnalité de téléchargement reprendra là où elle s'était arrêtée si l'utilisateur interrompt ou reprend ou si le téléchargement est interrompu. Par exemple, si vous perdez la connexion Wi-Fi pendant le téléchargement, il reprendra là où il s'est arrêté lorsque vous êtes reconnecté.</p>
+
+<p>Si vous annulez un téléchargement vidéo, les progrès réalisés seront effacés.</p>
+<!-- <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Pause/resume/cancel download" src="//learning-services-media.brightcove.com/doc-assets/device-sdks/guides/odrm/download-cancelled.png" />
+      <figcaption class="bcls-caption--image">Pause/resume/cancel download</figcaption>
+      </figure> --></section>
+
+<section class="bcls-section">
+<h2 id="Local_catalog_management">Gestion des catalogues locaux</h2>
+
+<p>Les kits SDK Brightcove Native Player simplifient le processus de gestion du contenu local téléchargé.</p>
+
+<p>Les fonctionnalités suivantes peuvent être ajoutées à vos applications pour prendre en charge la gestion des catalogues locaux :</p>
+
+<ul>
+	<li><a href="#Show_downloaded_content">Afficher le contenu téléchargé</a></li>
+	<li><a href="#Play_local_content">Lire du contenu local</a></li>
+	<li><a href="#Delete_local_content">Supprimer le contenu local</a></li>
+</ul>
+
+<h3 id="Show_downloaded_content">Afficher le contenu téléchargé</h3>
+
+<p>Afficher tous les épisodes téléchargés pour chaque show/saison.</p>
+
+<p>Les kits SDK renvoient des métadonnées et des détails de lecture pour tout le contenu téléchargé. Ces métadonnées comprennent le titre de la vidéo, la description, les miniatures, les sous-titres disponibles, les pistes audio disponibles, etc.</p>
+
+<p>Il existe de nouvelles propriétés de métadonnées spécifiques à la lecture hors ligne, dont les suivantes :</p>
+
+<h4>Contenu protégé par DRM</h4>
+
+<ul>
+	<li>Identifiant de jeton</li>
+	<li>Date d'expiration de la licence</li>
+</ul>
+
+<h4>Tout le contenu</h4>
+
+<ul>
+	<li>Heure de début et de fin du téléchargement</li>
+	<li>Nom de la vignette téléchargée avec son URL de fichier</li>
+	<li>Nom de l'affiche téléchargé avec son URL de fichier</li>
+	<li>URL de fichier relative et dérivée du bundle vidéo</li>
+</ul>
+
+<p>Vous pouvez ensuite filtrer les résultats de votre implémentation spécifique.</p>
+
+<aside class="bcls-aside bcls-aside--tip">Vous pourrez voir le temps restant pour une licence de location.</aside>
+
+<h3 id="Delete_local_content">Supprimer le contenu local</h3>
+
+<p>Autoriser les utilisateurs à supprimer du contenu du stockage local.</p>
+
+<p>Les kits SDK exposent une méthode de suppression d'une vidéo avec ses métadonnées et les ressources associées.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Content_playback">Lecture de contenu</h2>
+
+<p>Les kits SDK natifs vous permettent de lire du contenu dans les situations suivantes :</p>
+
+<ul>
+	<li>Lecture d'une vidéo pendant qu'elle est téléchargée.</li>
+	<li>Lecture d'une vidéo une fois qu'elle a été téléchargée. Le contenu téléchargé peut être lu localement lorsque l'appareil est hors ligne ou en ligne. La vidéo hors ligne ne peut être lue qu'à partir du stockage local.</li>
+	<li>Si vous choisissez de diffuser une version en ligne de la vidéo, vous devez récupérer un nouvel objet vidéo à partir du service de lecture.</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="Analytics">Statistiques</h2>
+
+<p>Des analyses ont été introduites pour mesurer les données liées au flux hors ligne. Pour plus d'informations, consultez le document <a href="/android/analytics/analytics-related-offline-playback-native-sdks.html">Analytics lié à la lecture hors connexion avec les SDK natifs</a> .</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Samples">Les échantillons</h2>
+
+<p>Le tableau suivant contient des liens vers des exemples de code pour vous montrer comment démarrer la lecture hors ligne :</p>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th style="width:25%">d'application LG</th>
+			<th style="width:75%">Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><a href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/Offline">Lecture hors connexion iOS</a></td>
+			<td>Téléchargez et lisez des vidéos HLS, y compris celles protégées par le cryptage FairPlay. Pour plus d'informations sur les développeurs, reportez-vous au <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md">Guide des développeurs d'applications iOS pour la lecture hors ligne</a>.</td>
+		</tr>
+		<tr>
+			<td><a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-exoplayer/OfflinePlaybackSampleApp">Lecture hors ligne Android</a></td>
+			<td>Téléchargez et lisez des vidéos DASH, y compris celles protégées par le chiffrement Widevine.</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+
+<section class="bcls-section">
+<h2 id="Notes">Remarques</h2>
+
+<p>Les remarques suivantes s'appliquent à la fonctionnalité de lecture hors connexion prise en charge par les SDK natifs :</p>
+
+<h3>Tous</h3>
+<h4>Advertising</h4>
+<p>Ni la publicité côté client ni côté serveur n'est prise en charge par la lecture hors ligne.</p>
+
+<h4>HLSe</h4>
+<p>Actuellement, le contenu HLSE n'est pas pris en charge avec la lecture hors ligne à l'aide du SDK natif Brightcove pour Android, iOS ou tvOS.</p>
+
+<h4>Mode basse consommation</h4>
+<p>Le mode de faible consommation sur les appareils peut affecter certaines fonctionnalités, y compris le téléchargement. Pour plus d'informations, consultez les sections suivantes :</p>
+<ul>
+	<li><a href="https://developer.android.com/about/versions/pie/power">Gestion de l'alimentation Android 9 (API niveau 28)</a></li>
+	<li><a href="https://support.apple.com/en-us/HT205234">Mode faible consommation sur votre iPhone</a></li>
+	<li><a href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/LowPowerMode.html">Réagir en mode basse consommation sur les iPhones</a></li>
+</ul>
+
+<h4>Vidéos partagées</h4>
+<p>Les vidéos partagées peuvent être téléchargées en mode hors connexion uniquement si la vidéo d'origine peut l'être. La propriété est héritée de la vidéo originale et ne peut pas être modifiée uniquement pour la vidéo partagée.</p>
+
+<h4>Audio uniquement</h4>
+<p>Les kits SDK natifs prennent en charge le contenu audio uniquement avec la lecture hors connexion. Vous contrôlez ce que les spectateurs voient, qu'il s'agisse d'une image d'affiche ou d'un écran personnalisé.</p>
+<p>
+	Le SDK natif pour Android nécessite un <code translate="No">VideoView</code>, et le SDK natif pour iOS nécessite un <code translate="No">UIView</code>. Pour cette raison, l'audio d'arrière-plan n'est pas pris en charge. Cela signifie que l'audio ne continue pas à jouer lorsqu'un utilisateur envoie l'application à l'arrière-plan.
+</p>
+
+<h3>Android</h3>
+<h4>Suppression de l'application</h4>
+<p>Lorsque l'application est supprimée, tout le contenu téléchargé est supprimé. Ceci est vrai tant que l'emplacement de stockage par défaut n'est pas remplacé.</p>
+
+<h3>iOS</h3>
+<h4>AirPlay</h4>
+<p>En tant que fonctionnalité de sécurité, vous ne pouvez pas diffuser une vidéo HLS hors ligne vers un périphérique AirPlay pour la lecture. Apple confirme qu'il s'agit d'une <code translate="No">AVFoundation</code> limitation.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="FAQ">FAQ</h2>
+
+<p>Ci-dessous vous trouverez les réponses à quelques questions générales.</p>
+
+<h3>Contenu protégé par DRM</h3>
+<details style="padding:0;">
+    <summary style="font-size:1.25em;">L'utilisateur peut-il changer l'horloge système pour contourner la date d'expiration ?</summary>
+    <p ><strong>Android</strong>: L'expiration absolue détermine la date et l'heure jusqu'à laquelle une licence est valide. Ceci est appliqué par Widevine et la couche DRM Android. Théoriquement, la couche DRM dans Android doit empêcher l'utilisateur de contourner la période d'expiration. Tous les problèmes que nous avons pu trouver sont décrits dans les notes de mise à jour du système d'exploitation Android.<br/> <br/> <strong>iOS</strong>: L'expiration de la licence est appliquée par FairPlay. iOS gère toutes les vérifications des changements d'horloge, etc. Une application a la possibilité de vérifier l'expiration de la licence pour alerter l'utilisateur que la licence a expiré. Il peut être préférable de lire simplement une vidéo expirée et de recevoir une erreur de lecture.</p>
+<!-- <p class="bcls-answer">Absolute expiration determines the date and time until which a license is valid. This is enforced by Widevine and the Android DRM layer. Theoretically, the DRM layer in Android must prevent the user from bypassing the expiration period. Any issues that we may have found is described in the <a href="https://docs.brightcove.com/android-sdk/release-notes.txt">Native SDK for Android release notes</a>.</p> -->
+</details>
+<br/>
+
+<details style="padding:0;">
+    <summary style="font-size:1.25em;">La licence et les vidéos hors ligne continueront à être chargées alors que l'application est en arrière-plan ?</summary>
+    <p><strong>Android</strong>: Oui. Généralement, la licence est téléchargée immédiatement, mais même la licence peut être téléchargée pendant que l'application est back-base.<br/> <br/> <strong>iOS</strong>: Le chargement des licences devrait se produire au premier plan. Nous avons une <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/ios/dynamic/BrightcovePlayerSDK.framework/Headers/BCOVOfflineVideoManager.h#L631">méthode pour précharger la licence</a>. Le téléchargement du contenu vidéo principal peut se produire lorsque l'application est en arrière-plan.</p>
+<!-- <p class="bcls-answer">License loading should happen in the foreground. We have a method to preload the license.
+      Downloading of the main video content can happen while the app is in the background.</p> -->
+</details>
+
+<h3>Tout le contenu</h3>
+<details style="padding:0;">
+    <summary style="font-size:1.25em;">Quel est le format vidéo utilisé pour télécharger du contenu hors ligne ?</summary>
+    <p><strong>Android</strong>: DASH protégé par DRM ou DASH non chiffré.<br/> <br/> <strong>iOS</strong>: HLS à la vapeur. Vous pouvez spécifier un débit pour le téléchargement afin d'utiliser une variante spécifique.</p>
+</details>
+<br/>
+
+<details style="padding:0;">
+    <summary style="font-size:1.25em;">Les vidéos téléchargées sont-elles lues localement ou en streaming lorsque l'utilisateur est en ligne ?</summary>
+    <p>Une vidéo téléchargée peut être lue en ligne ou hors ligne, mais elle utilisera toujours la vidéo téléchargée. Si vous choisissez de lire une version en ligne de la vidéo, vous devez récupérer un nouvel objet vidéo à partir du service de lecture. La vidéo hors ligne ne peut être lue qu'à partir du stockage local.</p>
+</details>
+<br/>
+
+
+
+<p class="bcls-question"></p>
+
+
+</section>
+
+<section class="bcls-section">
+<h2 id="Best_practices">Meilleures pratiques</h2>
+
+<p>Les instructions suivantes devraient vous aider lors du développement de votre application pour la lecture hors ligne.</p>
+
+<h3>Affichage des boutons pause/annulation</h3>
+
+<p>Les boutons Pause et Annuler doivent s'afficher lorsque le téléchargement de la vidéo a démarré.</p>
+
+<p><strong>Android :</strong> Vous devez afficher les boutons pause et annulation dans le cadre de l'appel du <code translate="No">onDownloadStarted</code> rappel dans le <code translate="No">DownloadEventListener</code>. Pour plus d'informations, consultez l' <a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-exoplayer/OfflinePlaybackSampleApp">exemple d'application Lecture hors connexion</a>.</p>
+
+<p><strong>iOS :</strong> Pour plus d'informations sur la création d'une application pour la lecture hors ligne, reportez-vous au <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md">Guide du développeur d'applications iOS</a>.</p>
+
+<h3>Affichage du contenu clair</h3>
+
+<p>Si votre compte n'est pas compatible DRM ou si vous travaillez avec un contenu clair, les kits SDK natifs Brightcove n'exécuteront pas de demande de licence côté serveur. Par conséquent, le contenu clair n'est pas considéré comme disponible à la location ou à l'achat. Dans la plupart des cas, pour un contenu clair, il est recommandé de masquer les boutons de <strong>location</strong> et d' <strong>achat</strong> et d'afficher un seul bouton de <strong>téléchargement</strong> à la place.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Enabling_the_feature">Activation de la fonction</h2>
+
+<p>Contactez votre responsable de compte pour en savoir plus sur la tarification et pour activer la fonctionnalité de lecture hors connexion pour votre compte.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Troubleshooting">dépannage</h2>
+
+<p>Les conseils suivants peuvent vous aider à étudier les problèmes lors du téléchargement de vidéos.</p>
+
+<p>Une erreur peut se produire lorsqu'un utilisateur tente de télécharger une ressource à un débit binaire supérieur à celui que l'appareil peut gérer en raison d'un réseau lent.</p>
+
+<p>Pour éviter cela, vous pouvez ajouter du code pour vérifier les capacités de l'appareil et empêcher les périphériques ayant des connexions lentes de tenter de télécharger des ressources à débit élevé. Vous pouvez tester avec un appareil réel tout en bloquant la connexion, et afficher le trafic réseau avec l'outil <a href="https://www.charlesproxy.com/">proxy Charles</a> .</p>
+
+<h3>Android</h3>
+
+<p>Pour plus d'informations sur la gestion des erreurs, consultez les <a href="/android/troubleshooting/error-messages-native-sdk-android.html">messages d'erreur du document Native SDK pour Android</a> . Cela inclut les messages d'erreur liés à la lecture hors ligne.</p>
+
+<h3>iOS</h3>
+
+<p>Pour plus d'informations sur la gestion des erreurs, consultez le document <a href="/ios/troubleshooting/error-handling-native-sdk-ios.html">Gestion des erreurs avec le SDK natif pour iOS</a> .</p>
+
+<p>Lorsque le code de lecture hors ligne reçoit une erreur, nous l'attrapons et lançons une erreur NSError. Pour obtenir l'erreur sous-jacente, vous pouvez essayer ceci :</p>
+
+<pre class="line-numbers">
+  <code class="language-objectivec" translate="No">NSError *underlyingError = initialError.userInfo[NSUnderlyingErrorKey];</code></pre>
+
+<p>Pour plus d'informations, consultez le <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md">Guide des développeurs d'applications iOS pour la lecture hors ligne</a>.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Known_issues">Problèmes connus</h2>
+
+<p>Pour obtenir la liste des problèmes connus pour les systèmes d'exploitation Android et iOS qui affectent la lecture hors connexion avec les SDK natifs, consultez le document de support <a href="/developer-support/questions/known-issues-brightcove-native-player-sdks.html">Problèmes connus</a> .</p>
+</section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenu de la page</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Assistance Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">État du système</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contacter le support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formation</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Cours en ligne</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">S' inscrire à un cours</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Université de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactez-nous</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove, Inc. Tous droits réservés.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
