@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de classe BCOVPUILayoutView</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/elasticity">élasticité</option>
+		
+		<option value="//api/name/minimumWidth">largeur minimale</option>
+		
+		<option value="//api/name/removed">supprimé</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de classe BCOVPUILayoutView</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Hérite de</th>
+	<td>UIView</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVPUILayoutView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Les objets de vue BCOVPUILayoutView sont utilisés pour disposer des contrôles dans un <a href="../Classes/BCOVPUIBasicControlView.html">BCOVPUIBasicControlView</a>. Les vues de mise en page sont généralement créées avec BCOVPUIBasicControlView&rsquo;s +layoutViewWithControlFromTag:width:elasticity: method et contiennent un élément standard de l'interface utilisateur du lecteur tel qu'un bouton de lecture, une étiquette de code temporel ou un curseur de progression. Vous pouvez également créer des vues de mise en page vides dans lesquelles ajouter vos propres sous-vues. Les propriétés de la vue de mise en page déterminent exactement comment les vues sont positionnées les unes par rapport aux autres dans les mises en page à largeur variable.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/minimumWidth" title="minimumWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minimumWidth">&nbsp;&nbsp;largeur minimale</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>La plus petite largeur qui sera définie pour la vue lors du redimensionnement pour la mise en page. Si <a href="#//api/name/elasticity">élasticité</a> est mis à zéro, ce sera la largeur exacte de la vue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) float minimumWidth</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>La plus petite largeur qui sera définie pour la vue lors du redimensionnement pour la mise en page. Si <a href="#//api/name/elasticity">élasticité</a> est mis à zéro, ce sera la largeur exacte de la vue.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPUILayoutView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elasticity" title="elasticity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elasticity">&nbsp;&nbsp;élasticité</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>L'élasticité détermine à quel point chaque vue est redimensionnée pour remplir la largeur disponible de l'interface utilisateur du lecteur&rsquo;s barre de contrôle par rapport à toutes les autres vues. S'il y a deux vues de mise en page dans une barre de contrôle et que l'une a une élasticité de 1,0 et l'autre une élasticité de 2,0, cette dernière augmentera deux fois plus lorsque la vue sera redimensionnée. Chaque ligne d'une mise en page de contrôle doit généralement contenir au moins une vue de mise en page avec une élasticité supérieure à zéro. Une vue avec une élasticité de zéro restera à sa largeur minimale.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) élasticité flottante</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>L'élasticité détermine à quel point chaque vue est redimensionnée pour remplir la largeur disponible de l'interface utilisateur du lecteur&rsquo;s barre de contrôle par rapport à toutes les autres vues. S'il y a deux vues de mise en page dans une barre de contrôle et que l'une a une élasticité de 1,0 et l'autre une élasticité de 2,0, cette dernière augmentera deux fois plus lorsque la vue sera redimensionnée. Chaque ligne d'une mise en page de contrôle doit généralement contenir au moins une vue de mise en page avec une élasticité supérieure à zéro. Une vue avec une élasticité de zéro restera à sa largeur minimale.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPUILayoutView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removed" title="removed"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removed">&nbsp;&nbsp;supprimé</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Les &ldquo;supprimé&rdquo; La propriété peut être définie sur OUI ou NON pour masquer ou afficher rapidement une vue de mise en page particulière. C'est plus efficace que de définir un tout nouveau <a href="../Classes/BCOVPUIControlLayout.html">BCOVPUIControlLayout</a> avec une vue supprimée ou ajoutée. Appelez -setNeedsLayout sur le <a href="../Classes/BCOVPUIBasicControlView.html">BCOVPUIBasicControlView</a> après avoir défini cette propriété pour afficher la nouvelle disposition.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite, getter=isRemoved) BOOL supprimé</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Les &ldquo;supprimé&rdquo; La propriété peut être définie sur OUI ou NON pour masquer ou afficher rapidement une vue de mise en page particulière. C'est plus efficace que de définir un tout nouveau <a href="../Classes/BCOVPUIControlLayout.html">BCOVPUIControlLayout</a> avec une vue supprimée ou ajoutée. Appelez -setNeedsLayout sur le <a href="../Classes/BCOVPUIBasicControlView.html">BCOVPUIBasicControlView</a> après avoir défini cette propriété pour afficher la nouvelle disposition.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPUILayoutView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

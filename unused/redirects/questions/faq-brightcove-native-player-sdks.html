@@ -1,0 +1,80 @@
+---
+title: 'FAQ pour les SDK Brightcove Native Player' la
+description: Dans cette rubrique, vous pouvez afficher les réponses à un certain nombre de questions fréquemment posées.
+parent: Questions and Issues 
+grandparent: Developer Support
+---
+
+
+<!-- The location of this document has changed. Please update your bookmark. You should be redirected to the new document location. 
+      DO NOT UPDATE THIS DOCUMENT. Instead, find the new location and update there. 
+      There is redirect code at the bottom of this document. -->
+      
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+<section class="bcls-section" id="top">
+<p>Vous trouverez ci-dessous une liste de questions fréquemment posées associées aux SDK Brightcove Native Player. Vous avez une question que vous ne voyez pas ici ? <a href="mailto:training@brightcove.com">Faites le nous savoir!</a></p>
+</section>
+
+<section class="bcls-section">
+<h2 id="General_questions">Questions générales</h2>
+
+<p class="bcls-question">Les sous-titres codés sont-ils pris en charge ?</p>
+
+<p class="bcls-answer">Les SDK Player prennent en charge WebVTT (HLS) dans le manifeste ainsi que les sous-titres WebVTT side-car et 608/708. Pour plus de détails sur l'assistance, consultez le <a href="/features/video-formats-and-captioning-native-sdks.html">Formats vidéo et sous-titrage</a> document.</p>
+
+<p class="bcls-question">Puis-je personnaliser la barre de recherche ?</p>
+
+<p class="bcls-answer">Oui. Si vous utilisez les commandes Brightcove Native Player, vous pouvez personnaliser les éléments, y compris la barre de recherche. Pour plus d'informations, consultez le <a href="/features/brightcove-native-player-controls.html">Commandes natives du lecteur Brightcove</a> document.</p>
+
+<p class="bcls-question">Puis-je superposer la vidéo avec des commandes personnalisées ?</p>
+
+<p class="bcls-answer">Les SDK Player ne vous obligent pas à utiliser ses commandes. Vous pouvez choisir de les utiliser ou non. Si vous utilisez les commandes Brightcove Native Player, vous pouvez personnaliser les éléments. Pour plus d'informations, consultez le <a href="/features/brightcove-native-player-controls.html">Commandes natives du lecteur Brightcove</a> document.</p>
+
+<p class="bcls-question">Puis-je ajouter une fonctionnalité vidéo ff/rew de 10 secondes ?</p>
+
+<p class="bcls-answer">Les SDK Player prennent en charge la recherche, vous pouvez donc implémenter cette fonctionnalité.</p>
+
+<p class="bcls-question">Le Chromecast est-il compatible ?</p>
+
+<p class="bcls-answer">Les kits de développement logiciel Brightcove Native prennent en charge la diffusion de vidéos sur des téléviseurs connectés à Chromecast.<br />
+Pour les appareils Android, utilisez le <a href="/android/tv/cast-plugin-native-sdk-android.html">Plugin Cast pour le SDK natif pour Android</a>.<br />
+Pour les appareils iOS, utilisez le <a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast">Plugin Cast pour le SDK natif pour iOS</a>.</p>
+
+<p class="bcls-question">Les listes de lecture sont-elles prises en charge ?</p>
+
+<p class="bcls-answer">Oui, les kits SDK natifs de Brightcove fournissent des méthodes pour récupérer une vidéo ou une liste de lecture à partir de l'API de lecture. Pour plus de détails, voir ce qui suit :<br />
+<a href="https://github.com/BrightcoveOS/android-player-samples/tree/master/brightcove-exoplayer/VideoListSampleApp">VideoListSampleApp pour le SDK natif pour Android</a><br />
+<a href="https://github.com/brightcove/brightcove-player-sdk-ios#retrieving-brightcove-assets-using-the-playback-service-">Récupération des ressources Brightcove à l'aide du service de lecture pour le SDK natif pour iOS</a></p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Android_specific">Spécifique à Android</h2>
+
+<p class="bcls-question">Comment puis-je faire fonctionner HLS sur Android ?</p>
+
+<p class="bcls-answer">Le Player SDK de Brightcove pour Android fournit une fonctionnalité de lecture HLS pour Android 4.1 et plus récent.</p>
+
+<p class="bcls-question">Et HLSe ?</p>
+
+<p class="bcls-answer">Le Player SDK de Brightcove pour Android prend en charge la lecture avec HLSe.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="iOS_specific">Spécifique à iOS</h2>
+
+<p class="bcls-question">Est-ce qu'AirPlay est pris en charge ?</p>
+
+<p class="bcls-answer">Le SDK du lecteur pour iOS prend en charge AirPlay tant que vous n'avez pas de publicités. <a href="https://support.apple.com/en-us/HT204289">AirPlay d'Apple</a> vous permet de diffuser sans fil du contenu à partir de vos appareils Apple.</p>
+
+<p class="bcls-question">L'Apple TV est-elle prise en charge ?</p>
+
+<p class="bcls-answer">La dernière version du Player SDK pour iOS prend en charge le système d'exploitation tvOS d'Apple TV.</p>
+</section>
+</article>
+<script>
+  var h1 = document.querySelector('h1'), path = location.pathname, new_location = path.replace('support', 'developer-support'), message = '<h3>Cette page a été déplacée vers <a href="https://sdks.support.brightcove.com' + new_location + '">https://sdks.support.brightcove.com' + new_location + '</a>. Veuillez mettre à jour votre signet ! Vous serez redirigé dans 5 secondes.<h3>'; console.log('new_location', new_location); h1.insertAdjacentHTML('afterend', message); réorienter(); fonction redirection() { var t = window.setTimeout(go_to_new_location, 5000); } fonction go_to_new_location() { window.location.pathname = new_location; }
+
+</script>

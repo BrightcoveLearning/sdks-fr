@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence Brightcove Native Player pour iOS</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="hierarchy.html">Hiérarchie</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence Brightcove Native Player pour iOS</h1>
+
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>Plugin Google Cast pour Brightcove Player SDK pour iOS, version 6.9.0.1697</h1> <h1>Conditions</h1>
+
+<ul>
+<li>Xcode 11.0+</li>
+<li>ARC</li>
+</ul>
+
+
+<h1>Plateformes prises en charge</h1>
+
+<p>iOS 11.0 et supérieur.</p>
+
+Installation<h1></h1>
+
+<p>Le plug-in Google Cast pour Brightcove Player SDK fournit un cadre de bibliothèque statique pour l'installation.</p>
+
+<p>Le plug-in Google Cast prend en charge la version 4.5.0 du SDK Google Cast pour iOS. Les notes de version de Google Cast peuvent être trouvées <a href="https://developers.google.com/cast/docs/release-notes">ici</a>.</p>
+
+<h2>CocoaPods</h2>
+
+<p>Vous pouvez utiliser <a href="http://cocoapods.org">CocoaPods</a> pour ajouter le plug-in Google Cast pour Brightcove Player SDK à votre projet. Vous pouvez trouver les dernières spécifications de pod Brightcove-Player-GoogleCast <a href="https://github.com/brightcove/BrightcoveSpecs/tree/master/Brightcove-Player-GoogleCast">ici</a>. Le pod incorporera automatiquement la version correcte de GoogleCast. CocoaPods 1.0 ou plus récent est requis.</p>
+
+<p>Exemple de Podfile CocoaPod :</p>
+
+<p>```source bash &lsquo;<a href="https://github.com/CocoaPods/Specs" title="">https://github.com/CocoaPods/Specs'</a> la source &rsquo;<a href="https://github.com/brightcove/BrightcoveSpecs.git" title="">https://github.com/brightcove/BrightcoveSpecs.git'</a></p>
+
+<p>plateforme :ios, &lsquo;11,0&rsquo;</p>
+
+<p>use_frameworks !</p>
+
+<p>cible &lsquo;Exemple d'application&rsquo; faire la cosse &lsquo;Brightcove-Player-GoogleCast&rsquo; fin ```</p>
+
+<p>L'installation de Brightcove-Player-GoogleCast installe automatiquement la dépendance Brightcove-Player-Core. En fonction de vos besoins, vous pouvez choisir d'inclure soit la structure dynamique Brightcove-Player-Core, soit la structure statique. Par défaut, le framework Core dynamique est installé. Pour choisir le framework Core statique, votre Podfile ressemblerait à ceci :</p>
+
+<p>```source bash &lsquo;https://github.com/CocoaPods/Specs&rsquo; la source &lsquo;https://github.com/brightcove/BrightcoveSpecs.git&rsquo;</p>
+
+<p>plateforme :ios, &lsquo;11,0&rsquo;</p>
+
+<p>use_frameworks !</p>
+
+<p>cible &lsquo;Exemple d'application&rsquo; faire la cosse &lsquo;Brightcove-Player-GoogleCast-statique&rsquo; fin ```</p>
+
+<p>Lors de la mise à jour de votre installation, il&rsquo;C'est une bonne idée d'actualiser la copie locale de votre référentiel BrightcoveSpecs pour vous assurer que vous disposez des derniers podspecs localement, tout comme vous le feriez pour mettre à jour votre référentiel maître CococaPods. Utilisation <code>mise à jour du dépôt de pod</code> faire cela.</p>
+
+<h2>Manuel</h2>
+
+<p>Pour ajouter manuellement le plug-in Google Cast pour Brightcove Player SDK à votre projet :</p>
+
+<ol>
+<li>Suivre la <a href="https://developers.google.com/cast/docs/ios_sender/#manual_setup">Configuration manuelle du SDK Google Cast</a> guider.</li>
+<li>Suivre la <a href="https://github.com/brightcove/brightcove-player-sdk-ios#ManualInstallation">Installation manuelle du kit de développement logiciel Brightcove Player</a> guider.</li>
+<li>Téléchargez le <a href="https://github.com/brightcove/brightcove-player-sdk-ios-googlecast">Plugin Google Cast pour le SDK Brightcove Player</a> cadre.</li>
+<li>Sur le &ldquo;Général&rdquo; onglet de votre application cible, ajoutez BrightcoveGoogleCast.framework à partir du téléchargement du plug-in Google Cast pour Brightcove Player SDK à la liste des <strong>Frameworks, bibliothèques, contenu intégré</strong>.</li>
+<li>Sur le &ldquo;Paramètres de construction&rdquo; de l'onglet cible de votre application, assurez-vous que le &ldquo;Chemins de recherche du framework&rdquo; inclure les chemins vers les cadres. Cela aurait dû être fait automatiquement à moins que le framework ne soit stocké dans un répertoire racine différent de celui de votre projet.</li>
+</ol>
+
+
+<h2>Importations</h2>
+
+<p>Le plug-in Google Cast pour Brightcove Player SDK peut être importé dans le code de différentes manières ; <code>@import BrightcoveGoogleCast ;</code> , <code>#import &lt;BrightcoveGoogleCast/BrightcoveGoogleCast.h&gt;</code> ou <code>#import &lt;BrightcoveGoogleCast/[classe spécifique].h&gt;</code>. Vous pouvez importer le <code>Google Cast</code> et <code>BrightcovePlayerSDK</code> modules de manière similaire.</p>
+
+<h1>Avant que tu commences</h1>
+
+<p>Avant d'essayer d'utiliser ce plugin, vous devez déjà être familiarisé avec les éléments suivants :</p>
+
+<ul>
+<li><a href="https://developers.google.com/cast/docs/registration">Enregistrez votre candidature</a>. Cela vous guidera tout au long de la création de votre application destinataire et vous accordera un ID d'application. Pour commencer, vous pouvez utiliser l'ID de l'application de démonstration &lsquo;4F8B3483&rsquo;.</li>
+<li><a href="https://developers.google.com/cast/docs/ios_sender">Configuration pour le développement avec Cast Application Framework (CAF) pour iOS </a>. Cela vous guidera tout au long de la configuration des droits nécessaires pour votre application.</li>
+<li><a href="https://developers.google.com/cast/docs/ios_sender/integrate#initialize_the_cast_context">Initialiser le contexte de diffusion</a>. Cela vous guidera tout au long de l'initialisation du contexte de diffusion avec l'ID de votre application réceptrice.</li>
+<li><a href="https://developers.google.com/cast/docs/ios_sender/integrate#add_mini_controllers">Ajouter des mini-contrôleurs</a>. Cela vous expliquera comment tirer parti du SDK Google Cast&rsquo;s mini commandes multimédia.</li>
+</ul>
+
+
+<h1>Démarrage rapide</h1>
+
+<p>Le plugin BrightcoveGoogleCast est un pont entre <a href="https://developers.google.com/cast/docs/ios_sender/">SDK Google Cast pour iOS</a> et le <a href="https://github.com/brightcove/brightcove-player-sdk-ios">Kit de développement logiciel Brightcove Player pour iOS</a>.</p>
+
+<p>Cet extrait montre son utilisation de base.</p>
+
+<pre><code>[1] self.googleCastManager = [BCOVGoogleCastManager nouveau] ; [2] id&lt;BCOVPlaybackController&gt; playbackController = [BCOVPlayerSDKManager.sharedManager createPlaybackController]; [3] [playbackController addSessionConsumer:self.googleCastManager] ; </code></pre>
+
+<p>Décomposer le code en étapes :</p>
+
+<ol>
+<li>Créer une référence au <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> singleton.</li>
+<li>Créez une instance de BCOVPlaybackController à utiliser.</li>
+<li>Ajoutez votre <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> référence en tant que consommateur de session à votre instance BCOVPlaybackController.</li>
+</ol>
+
+
+<h1>Récepteur Brightcove CAF</h1>
+
+<p>L'ID d'application pour le récepteur Brightcove CAF est <code>341387A3</code> et est affecté à la constante <code>kBCOVCAFReceiverApplicationID</code>. Vous pouvez vérifier l'ID de l'application en vérifiant le <a href="https://players.brightcove.net/videojs-chromecast-receiver/2/config.json">Récepteur CAF config.json</a>.</p>
+
+<p>Si vous utilisez le récepteur Brightcove CAF, vous&rsquo;ll besoin d'initialiser ces variables comme ceci :</p>
+
+<pre><code>[1] BCOVReceiverAppConfig *receiverAppConfig = [BCOVReceiverAppConfig nouveau] ; receiverAppConfig.accountId = kAccountID; receiverAppConfig.policyKey = kServicePolicyKey; [2] self.googleCastManager = [[BCOVGoogleCastManager alloc] initForBrightcoveReceiverApp:receiverAppConfig] ; </code></pre>
+
+<p>Les propriétés suivantes peuvent également être définies sur <a href="Classes/BCOVReceiverAppConfig.html"><code>BCOVReceiverAppConfig</code></a> comme requis:</p>
+
+<ul>
+<li>splashScreen (pour personnaliser l'image de l'écran de démarrage)</li>
+<li>playerUrl (pour utiliser un lecteur personnalisé)</li>
+<li>authToken (à utiliser avec PAS/EPA)</li>
+<li>watermarkingToken (à utiliser avec Forensic Watermaking)</li>
+<li>adConfigId (à utiliser avec SSAI)</li>
+<li>userId (à utiliser avec le suivi analytique)</li>
+<li>applicationId (à utiliser avec le suivi analytique)</li>
+</ul>
+
+
+<h1>Déléguer les méthodes</h1>
+
+<p><a href="Protocols/BCOVGoogleCastManagerDelegate.html">BCOVGoogleCastManagerDélégué</a> a des méthodes déléguées que vous pouvez utiliser pour être averti lorsque des événements majeurs liés à la distribution se sont produits ou sont sur le point de se produire, par exemple</p>
+
+<ul>
+<li><code>- (void)switchedToLocalPlayback :(NSTimeInterval)lastKnownStreamPosition ;</code></li>
+<li><code>- (vide)basculé vers la lecture à distance ;</code></li>
+<li><code>- (void)currentCastedVideoDidComplete ;</code></li>
+<li><code>- (void)castedVideoFailedToPlay ;</code></li>
+<li><code>- (void)appropriéSourceNotFound;</code></li>
+<li>- (void)willBuildMediaInformationBuilder:(GCKMediaInformationBuilder *_Nonnull);<code></code></li>
+<li>- (void)willSendMediaLoadOptions:(GCKMediaLoadOptions *_Nonnull);<code></code></li>
+</ul>
+
+
+<p>Pour une liste complète avec des descriptions, reportez-vous au <a href="https://docs.brightcove.com/ios-plugins/googlecast/Protocols/BCOVGoogleCastManagerDelegate.html">Référence du protocole BCOVGoogeCastManagerDelegate</a>.</p>
+
+<p>Pour profiter de ces événements, placez un délégué sur le <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> singleton.</p>
+
+<pre><code> self.googleCastManager.delegate = self; </code></pre>
+
+<h1>Sélection de la source</h1>
+
+<p>Les <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> tentera de trouver une source appropriée à utiliser. Il recherchera les sources dans cet ordre :</p>
+
+<ol>
+<li>HTTPS HLS v3</li>
+<li>TABLEAU DE BORD HTTPS</li>
+<li>HTTPS MP4</li>
+<li>HTTP HLS v3</li>
+<li>DASH HTTP</li>
+<li>HTTP MP4</li>
+</ol>
+
+
+<p>Si aucun de ces éléments n'est trouvé, la méthode déléguée <code>appropriéSourceNotFound</code> sera appelé.</p>
+
+<p>Votre compte Video Cloud devra être configuré pour prendre en charge HLS v3, assurez-vous que DASH est activé ou qu'une source MP4 soit disponible pour chaque vidéo.</p>
+
+<h1>Personnalisations</h1>
+
+<p>Il existe deux propriétés, en plus de la propriété de délégué, que vous pouvez définir sur le <a href="Classes/BCOVGoogleCastManager.html">BCOVGoogleCastManager</a> classer. Ceux-ci sont:</p>
+
+<ul>
+<li><code>GCKImage *fallbackPosterImage</code>: Le GCKImage qui sera utilisé lorsqu'il n'y a pas d'image d'affiche disponible pour une vidéo.</li>
+<li><code>CGSize posterImageSize</code>: La hauteur et la largeur que vous souhaitez utiliser pour l'image d'objet GCKImage qui est créée. La valeur par défaut est 480h x 720w.</li>
+</ul>
+
+
+<h1>Problèmes connus / Limitations</h1>
+
+<h2>Lors de l'utilisation d'un récepteur par défaut non modifié (y compris le récepteur de démonstration), les limitations suivantes s'appliquent :</h2>
+
+<ul>
+<li>Les DRM ne sont pas pris en charge.</li>
+<li>Les pistes audio multiples ne sont pas prises en charge.</li>
+<li>Les publicités côté client et côté serveur ne sont pas prises en charge.</li>
+<li>Les flux DVR en direct et en direct ne sont pas pris en charge.</li>
+</ul>
+
+
+<h2>Lors de l'utilisation du récepteur Brightcove CAF, les limitations suivantes s'appliquent :</h2>
+
+<ul>
+<li>La publicité côté client n'est pas prise en charge.</li>
+</ul>
+
+
+<h1>Soutien</h1>
+
+<p>Si vous avez des questions, avez besoin d'aide ou souhaitez faire part de vos commentaires, veuillez utiliser le <a href="https://supportportal.brightcove.com/s/login/">Portail d'assistance</a> ou contactez votre gestionnaire de compte. Pour recevoir une notification des nouvelles versions du logiciel SDK, abonnez-vous aux SDK Brightcove Native Player <a href="https://groups.google.com/g/brightcove-native-player-sdks">Groupe Google</a>.</p>
+						
+						
+					</div>
+					
+
+					<div class="index-container">
+						
+
+						
+						<div class="index-column">
+							<h2 class="index-title">Références de classe</h2>
+							<ul>
+								
+								<li>BCOVGoogleCastManager<a href="Classes/BCOVGoogleCastManager.html"></a></li>
+								
+								<li>BCOVReceiverAppConfig<a href="Classes/BCOVReceiverAppConfig.html"></a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							
+							<h2 class="index-title">Références de protocole</h2>
+							<ul>
+								
+								<li><a href="Protocols/BCOVGoogleCastManagerDelegate.html">BCOVGoogleCastManagerDélégué</a></li>
+								
+							</ul>
+							
+
+							
+
+							
+						</div>
+						
+					</div>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+							
+							
+							<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+---
+title: Description de « Le filigrane judiciaire avec les SDK natifs » : « Dans cette rubrique, vous apprendrez à utiliser les kits SDK natifs de Brightcove pour diffuser des vidéos protégées par Forensic Watermarking. »
+parent: Features 
+grandparent: Home
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Introduction">introduction</h2>
+    <p>
+      Avec Forensic Watermarking, vous pouvez protéger votre contenu premium contre le piratage et le partage de contenu non autorisé. Cette fonctionnalité ajoute un filigrane invisible à vos vidéos, vous permettant de suivre toute fuite de contenu.
+    </p>
+    <p>Pour plus d'informations, consultez le <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html">Aperçu: Filigrane médico-légal</a> document.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Requirements">Conditions</h2>
+    <p>Les exigences suivantes sont nécessaires pour prendre en charge cette fonctionnalité :</p>
+    <h3>Installer</h3>
+    <p>Il existe des exigences de configuration en plus de la configuration de votre lecteur. Pour plus de détails, consultez le <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html">Aperçu: Filigrane médico-légal</a> document.</p>
+
+    <h3>Version du système d'exploitation de l'appareil</h3>
+    <ul>
+      <li>Android 6.0 et plus récent</li>
+      <li>iOS 11.0 et plus récent</li>
+    </ul>
+
+    <h3>Version du SDK Brightcove</h3>
+    <ul>
+      <li>SDK natif pour Android 6.16.3 et plus récent</li>
+      <li>SDK natif pour iOS 6.9.0 et versions ultérieures</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Using_Playback_Rights_Android">Implémentation Android</h2>
+    <p>La configuration du filigrane judiciaire est effectuée au niveau de la vidéo.</p>
+    
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Le lecteur doit être intégré à votre système d'enregistrement afin qu'un ID de spectateur soit transmis à la balise Web d'analyse (dans le <code translate="No">user</code> champ).</p>
+        <p>Par exemple:</p>
+  <pre class="line-numbers"><code class="language-java" translate="No">HashMap&lt;String, String&gt; baseParams = new HashMap&lt;&gt;();
+  baseParams.put(Analytics.Fields.USER, &quot;viewer id&quot;);
+  baseParams.put(Analytics.Fields.APPLICATION_ID, &quot;application id&quot;);
+  
+  HashMap&lt;String, Object&gt; eventParams = new HashMap&lt;&gt;();
+  eventParams.put(Analytics.Fields.BASE_PARAMS, baseParams);
+  eventEmitter.emit(EventType.ADD_ANALYTICS_BASE_PARAMS, eventParams);          
+</code></pre>
+      </li>
+      <li>
+        <p>Dans le <code translate="No">Catalog.findVideo</code> ou <code translate="No">Catalog.findPlaylist</code> appels de méthode, ajoutez le <code translate="No">VideoUtil</code> méthode pour ajouter votre jeton de filigrane.</p>
+
+        <p><strong>Dans le rappel onVideo</strong></p>
+        <pre><code class="language-java" translate="No">public void onVideo(Video video) {
+    VideoUtil.addWatermarkingToken(video, yourWatermarkingToken);
+    brightcoveVideoView.add(video);
+} 
+</code></pre>
+        <p><strong>Dans le rappel onPlaylist</strong></p>
+        <pre><code class="language-java" translate="No">public void onPlaylist(Playlist playlist) {
+  for (Video video : testPlaylist.getVideos()) {
+      VideoUtil.addWatermarkingToken(video, yourWatermarkingToken);
+  }
+  brightcoveVideoView.addAll(testPlaylist.getVideos());
+}
+</code></pre>
+      </li>
+      <!-- <li>
+        <p>
+          <p>In the player Activity’s <code translate="No">onCreate</code> method, add this call, before any Catalog calls to retrieve your video or playlist:</p>
+          <pre><code class="language-java" translate="No">VideoUtil.setWatermarkingToken(yourWatermarkingToken);
+</code></pre>
+        </p>
+      </li> -->
+      <li>
+        <p>Avec cet appel en place, lorsque le catalogue récupère les métadonnées de la vidéo ou de la liste de lecture à partir de l'API de lecture, le <code translate="No">VideoUtil</code> la classe remplacera l'espace réservé du jeton de filigrane <code translate="No">{WMT}</code> avec la valeur du jeton, où qu'elle se trouve dans les URL sources de la vidéo. Ce jeton peut être remplacé pour chaque vidéo d'une liste de lecture pouvant être filigranée.</p>
+      </li>
+    </ol>
+
+    <h3>Chromecast</h3>
+    <p>Pour diffuser une vidéo filigranée, vous devez fournir votre ID d'application, votre jeton de filigrane et votre ID utilisateur lors de la création de votre <code translate="No">BrightcoveCastCustomData</code> objet avec le plugin Cast.</p>
+      <p>Dans votre code pour configurer le <code translate="No">BrightcoveCastCustomData</code> objet, ajoutez cette ligne :</p>
+      <pre><code class="language-java" translate="No">public static void setupGoogleCast() {
+GoogleCastComponent.Builder castPluginBuilder = new GoogleCastComponent.Builder(eventEmitter, context)
+        .setAutoPlay(isAutoPlayEnabled)
+        .setQueuingSupported(isQueuingSupported);
+
+    BrightcoveCastCustomData.Builder customDataBuilder = new BrightcoveCastCustomData.Builder(context)
+        .setApplicationId(yourApplicationId)
+        .setWatermarkingToken(yourWatermarkingToken);
+        .setUserId(yourUserId);
+        // Add the custom data elements to the castPluginBuilder
+        
+    castPluginBuilder
+        .setEnableCustomData(true)
+        .setCustomData(customDataBuilder.build());
+}            
+</code></pre>
+
+    <p>Lorsque vous ouvrez une connexion Cast avec une vidéo filigranée, vous devriez voir un <code translate="No">customData</code> objet formaté comme ceci :</p>
+    <pre><code class="language-json" translate="No">{
+      &quot;accountId&quot;: &quot;yourAccountId&quot;,
+      &quot;analyticsParams&quot;: {
+          &quot;application&quot;: &quot;yourApplicationId&quot;,
+          &quot;user&quot;: &quot;yourUserId&quot;
+      },
+      &quot;catalogParams&quot;: {
+          &quot;type&quot;: &quot;video&quot;,
+          &quot;id&quot;: &quot;videoId&quot;,
+          &quot;policyKey&quot;: &quot;yourPolicyKey&quot;,
+          &quot;watermarkingToken&quot;: &quot;yourWatermarkingToken&quot;
+      }
+  }  
+</code></pre>
+
+    <h3>Lecture hors ligne</h3>
+    <p>Le processus de téléchargement d'une vidéo peut impliquer plusieurs appels de catalogue pour récupérer les métadonnées vidéo actuelles. Brightcove recommande d'ajouter le <code translate="No">onVideo</code> code de rappel ci-dessus à vos rappels qui peuvent être présents lors de l'acquisition de licences d'achat ou de location et lors du téléchargement de la vidéo.
+    </p>
+    <p>Une fois la vidéo téléchargée, la lecture hors ligne devrait fonctionner comme d'habitude.</p>
+    <p>
+      Pour plus de détails, consultez le <a href="https://github.com/BrightcoveOS/android-player-samples/blob/master/brightcove-exoplayer/OfflinePlaybackSampleApp/src/main/java/com/brightcove/player/samples/offlineplayback/MainActivity.java">Exemple d'application de lecture hors ligne</a>.
+    </p>
+
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="iOS_Implementation">Implémentation iOS</h2>
+    <p>
+      Pour configurer un lecteur afin qu'il utilise Forensic Watermarking, procédez comme suit :
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Le lecteur doit être intégré à votre système d'enregistrement afin qu'un ID de spectateur soit transmis à la balise Web d'analyse (dans le <code translate="No">user</code> champ).</p>
+        <p>Ici, vous fournirez des valeurs pour l'ID utilisateur et l'ID d'application :</p>
+        <pre class="line-numbers"><code class="language-objectivec" translate="No">@try
+  {
+    [BCOVGlobalConfiguration.sharedConfig setValue:@{
+      @&quot;privateUser&quot;: @&quot;your user id&quot;,
+      @&quot;privateApplication&quot;: @&quot;your application id&quot;
+    }
+    forKey:@&quot;privateSessionAnalytics&quot;];
+  }
+  @catch (NSException *e)
+  {
+    NSLog(@&quot;%@&quot;, e.description);
+  }       
+</code></pre>
+      </li>
+      <li>
+        <p>Dans le cadre de la demande de catalogue Brightcove pour une seule vidéo ou une liste de lecture, vous fournirez votre jeton de filigrane NAGRA. Cela se fait à l'aide du <code translate="No">watermarkingToken</code> biens.</p>
+        <p>Ajoutez votre jeton de filigrane au service de lecture.</p>
+        <pre class="line-numbers"><code class="language-objectivec" translate="No">/**
+* The watermarking token for use with Forensic Watermarking
+*/
+@property (nonatomic, copy) NSString *watermarkingToken;
+...
+playbackService.watermarkingToken = self.watermarkingToken;     
+</code></pre>
+      </li>
+      <li>
+        <p>Faites votre demande au catalogue Brightcove pour une seule vidéo ou une liste de lecture.</p>
+        <p>Pour une demande de vidéo :</p>
+<pre class="line-numbers"><code class="language-objectivec" translate="No">- (void)findVideoWithVideoID:(NSString *)videoID parameters:
+  (NSDictionary *)parameters completion:(void (^)
+  (BCOVVideo *video, NSDictionary *jsonResponse, NSError *error))completionHandler;
+</code></pre>
+        <p>Pour une demande de playlist :</p>
+<pre class="line-numbers"><code class="language-objectivec" translate="No">- (void)findPlaylistWithPlaylistID:(NSString *)playlistID parameters:
+  (NSDictionary *)parameters completion:(void (^)
+  (BCOVPlaylist *playlist, NSDictionary *jsonResponse, NSError *error))completionHandler;
+</code></pre>   
+      </li>
+    </ol>
+    <p>Pour plus de détails, consultez la section Forensic Watermarking de la référence Native SDK for iOS.</p>
+
+    <h3>Chromecast</h3>
+    <p>Pour la diffusion, vous devrez fournir le jeton de filigrane et les champs userId.</p>
+      <p>Dans votre code pour configurer le <code translate="No">BrightcoveCastCustomData</code> objet, ajoutez cette ligne :</p>
+      <pre><code class="language-objectivec" translate="No">BCOVReceiverAppConfig *appConfig = [BCOVReceiverAppConfig new];
+...
+appConfig.userId = @&quot;ios-client@brightcove.com&quot;;
+appConfig.watermarkingToken = watermarkingToken;
+...                 
+</code></pre>
+
+    <p>Dans la console de débogage, vous pouvez voir les valeurs de configuration qui seront utilisées pour votre session Chromecast.</p>
+    <pre><code class="language-json" translate="No">Google Cast Custom Data: {
+  accountId = &lt;your_account_id&gt;;
+  analyticsParams =     {
+      application = &quot;&quot;;
+      user = &quot;ios-client@brightcove.com&quot;;
+  };
+  catalogParams =     {
+      adConfigId = &quot;&quot;;
+      bcovAuthToken = &quot;&quot;;
+      id = &lt;your_video_id&gt;;
+      policyKey = &quot;&lt;your_policy_key&quot;;
+      type = video;
+      watermarkingToken = &quot;&lt;your_watermark_token&quot;;
+  };    
+</code></pre>
+
+    <h3>Lecture hors ligne</h3>
+    <p>La lecture hors ligne devrait fonctionner comme d'habitude une fois la vidéo téléchargée.</p>
+
+    <p>
+      Pour commencer avec cette fonctionnalité, consultez le <a href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/OfflinePlayback.md">Guide du développeur d'applications iOS pour la lecture hors ligne</a> référence.
+    </p>
+  </section> 
+
+  <section class="bcls-section">
+    <h2 id="Limitations">Limites</h2>
+    <p>Pour plus de détails sur les limitations de cette fonctionnalité, consultez le <a href="https://apis.support.brightcove.com/general/overview-forensic-watermarking.html#Limitations">Aperçu: Filigrane médico-légal</a> document.</p>
+  </section>
+
+</article>

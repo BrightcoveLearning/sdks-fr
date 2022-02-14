@@ -1,0 +1,38 @@
+---
+title: 'Apple annonce une nouvelle exigence de soumission d'applications' la
+description: Apple annonce que vous devrez créer vos projets à l'aide du SDK iOS 12.1 lors de la soumission de nouvelles applications à l'App Store.
+parent: Announcements 
+grandparent: Developer Support
+---
+
+
+<!-- The location of this document has changed. Please update your bookmark. You should be redirected to the new document location. 
+      DO NOT UPDATE THIS DOCUMENT. Instead, find the new location and update there. 
+      There is redirect code at the bottom of this document. -->
+      
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+<section class="bcls-section">
+<h2 id="Requirements_for_App_Store">Configuration requise pour l'App Store</h2>
+
+<p>Pour tirer parti des nouvelles fonctionnalités fournies par le SDK iOS, Apple exigera que toutes les nouvelles applications soumises à l'App Store soient créées avec le SDK iOS 12.1 ou une version ultérieure. Cette exigence prend effet à compter du <strong>Mars 2019</strong>.</p>
+
+<p>Cela signifie que pour soumettre de nouvelles applications, vous devrez utiliser Xcode 10.1, qui fournit les outils pour créer des applications pour les derniers SDK, notamment iOS 12, tvOS 12 et Swift 4.2.</p>
+
+<p>Pour plus de détails, consultez le <a href="https://developer.apple.com/ios/submit/">Soumettre des applications iOS à l'App Store</a> Documentation.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Native_SDKs_support">Prise en charge native du SDK</h2>
+
+<p>Suivant l'exemple d'Apple, le Brightcove Native SDK pour iOS/tvOS v6.3.10+ prend en charge la construction avec Xcode 10.1. Si vous ne l'avez pas déjà fait, veuillez migrer vers Xcode 10.1 dès que possible.</p>
+
+<aside class="bcls-aside bcls-aside--information">Le Brightcove Native SDK pour iOS/tvOS v6.3.5+ ne prend plus en charge la construction avec Xcode 8.</aside>
+</section>
+</article>
+<script>
+  var h1 = document.querySelector('h1'), path = location.pathname, new_location = path.replace('support', 'developer-support'), message = '<h3>Cette page a été déplacée vers <a href="https://sdks.support.brightcove.com' + new_location + '">https://sdks.support.brightcove.com' + new_location + '</a>. Veuillez mettre à jour votre signet ! Vous serez redirigé dans 5 secondes.<h3>'; console.log('new_location', new_location); h1.insertAdjacentHTML('afterend', message); réorienter(); fonction redirection() { var t = window.setTimeout(go_to_new_location, 5000); } fonction go_to_new_location() { window.location.pathname = new_location; }
+
+</script>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence du protocole BCOVMutableAnalytics</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/account">Compte</option>
+		
+		<option value="//api/name/destination">destination</option>
+		
+		<option value="//api/name/source">la source</option>
+		
+		<option value="//api/name/uniqueIdentifierEnabled">uniqueIdentifierActivé</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence du protocole BCOVMutableAnalytics</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforme à</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVPlaybackController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Lorsque ces propriétés sont modifiées, les changements prendront effet lors de la prochaine session livrée. Pour appliquer ces propriétés à toutes les sessions, modifiez-les avant l'appel à <a href="../Protocols/BCOVPlaybackController.html#//api/name/setVideos:">[BCOVPlaybackController setVidéos :]</a>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/account" title="account"></a>
+	<h3 class="method-title"><code><a href="#//api/name/account">&nbsp;&nbsp;Compte</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cette propriété définira la valeur de l'ID de compte pour Brightcove Analytics. La définition de cette propriété remplacera également la valeur accountId sur toute vidéo récupérée via une requête API Brightcove Media.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, copie) NSString *compte</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cette propriété définira la valeur de l'ID de compte pour Brightcove Analytics. La définition de cette propriété remplacera également la valeur accountId sur toute vidéo récupérée via une requête API Brightcove Media.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/destination" title="destination"></a>
+	<h3 class="method-title"><code><a href="#//api/name/destination">&nbsp;&nbsp;destination</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cette propriété doit être un URI avec une structure valide et doit contenir une autorité. La valeur par défaut de cette propriété, si elle n'est pas remplacée, sera &ldquo;bcsdk://&rdquo; suivi de l'identifiant du bundle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, copie) NSString *destination</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cette propriété doit être un URI avec une structure valide et doit contenir une autorité. La valeur par défaut de cette propriété, si elle n'est pas remplacée, sera &ldquo;bcsdk://&rdquo; suivi de l'identifiant du bundle.</p>
+
+<p>Prière de se référer à <a href="http://en.wikipedia.org/wiki/URI">http://en.wikipedia.org/wiki/URI</a>_scheme#Generic_syntax pour plus d'informations et des exemples de syntaxe d'URI.</p>
+
+<p>En particulier, une destination sans partie hiérarchique (par exemple juste un schéma) est considérée comme invalide, de même que toute valeur sans schéma.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/source" title="source"></a>
+	<h3 class="method-title"><code><a href="#//api/name/source">&nbsp;&nbsp;la source</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cette propriété doit être un URI avec une structure valide et doit contenir une autorité. La valeur par défaut est nulle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, copie) NSString *source</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cette propriété doit être un URI avec une structure valide et doit contenir une autorité. La valeur par défaut est nulle.</p>
+
+<p>Prière de se référer à <a href="http://en.wikipedia.org/wiki/URI">http://en.wikipedia.org/wiki/URI</a>_scheme#Generic_syntax pour plus d'informations et des exemples de syntaxe d'URI.</p>
+
+<p>En particulier, une source sans partie hiérarchique (par exemple juste un schéma) est considérée comme invalide, de même que toute valeur sans schéma.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uniqueIdentifierEnabled" title="uniqueIdentifierEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uniqueIdentifierEnabled">&nbsp;&nbsp;uniqueIdentifierActivé</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cette propriété bascule la génération d'identifiant unique côté client. Si activé, le SDK identifiera les uniques utilisant l'appareil&rsquo;s identifiant du fournisseur. S'il est désactivé, le SDK ne fournira aucune valeur unique et les analyses s'appuieront sur des heuristiques côté serveur pour déterminer les uniques.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">@property (nonatomic, assign, getter=isUniqueIdentifierEnabled) BOOL uniqueIdentifierEnabled<code></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cette propriété bascule la génération d'identifiant unique côté client. Si activé, le SDK identifiera les uniques utilisant l'appareil&rsquo;s identifiant du fournisseur. S'il est désactivé, le SDK ne fournira aucune valeur unique et les analyses s'appuieront sur des heuristiques côté serveur pour déterminer les uniques.</p>
+
+<p>La valeur par défaut est OUI.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

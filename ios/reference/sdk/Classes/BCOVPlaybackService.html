@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de classe BCOVPlaybackService</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/sharedURLSession">SharedURLSession</option>
+		
+		<option value="//api/name/watermarkingToken">filigraneJeton</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/cuePointFromJSONDictionary:">+ cuePointFromJSONDictionary :</option>
+		
+		<option value="//api/name/playlistFromJSONDictionary:">+ playlistDeJSONDictionnaire :</option>
+		
+		<option value="//api/name/sourceFromJSONDictionary:">+ sourceFromJSONDictionary :</option>
+		
+		<option value="//api/name/videoFromJSONDictionary:">+ vidéo à partir du dictionnaire JSON :</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/findPlaylistWithPlaylistID:authToken:parameters:completion:">- findPlaylistWithPlaylistID:authToken:parameters:completion :</option>
+		
+		<option value="//api/name/findPlaylistWithPlaylistID:parameters:completion:">- findPlaylistWithPlaylistID:paramètres:achèvement :</option>
+		
+		<option value="//api/name/findPlaylistWithReferenceID:authToken:parameters:completion:">- findPlaylistWithReferenceID:authToken:parameters:completion :</option>
+		
+		<option value="//api/name/findPlaylistWithReferenceID:parameters:completion:">- findPlaylistWithReferenceID:paramètres:achèvement :</option>
+		
+		<option value="//api/name/findVideoWithReferenceID:authToken:parameters:completion:">- findVideoWithReferenceID:authToken:parameters:completion :</option>
+		
+		<option value="//api/name/findVideoWithReferenceID:parameters:completion:">- findVideoWithReferenceID:paramètres:achèvement :</option>
+		
+		<option value="//api/name/findVideoWithVideoID:authToken:parameters:completion:">- findVideoWithVideoID:authToken:parameters:completion :</option>
+		
+		<option value="//api/name/findVideoWithVideoID:parameters:completion:">- findVideoWithVideoID:paramètres:achèvement :</option>
+		
+		<option value="//api/name/initWithAccountId:policyKey:">- initWithAccountId:policyKey :</option>
+		
+		<option value="//api/name/initWithRequestFactory:">- initWithRequestFactory :</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de classe BCOVPlaybackService</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Hérite de</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVPlaybackService.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>La classe BCOVPlaybackService fournit des méthodes asynchrones pour récupérer des informations sur les vidéos à partir de l'API de lecture de Brightcove.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sharedURLSession" title="sharedURLSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedURLSession">&nbsp;&nbsp;SharedURLSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSURLSession partagée sur tous les appels réseau au BCOVPlaybackService. Cet objet est créé lors de l'initialisation du service de lecture. Si vous souhaitez utiliser votre propre NSURLSession, vous pouvez le définir ici. S'il est défini sur nil, la NSURLSession par défaut sera recréée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, fort) NSURLSession *sharedURLSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>NSURLSession partagée sur tous les appels réseau au BCOVPlaybackService. Cet objet est créé lors de l'initialisation du service de lecture. Si vous souhaitez utiliser votre propre NSURLSession, vous pouvez le définir ici. S'il est défini sur nil, la NSURLSession par défaut sera recréée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/watermarkingToken" title="watermarkingToken"></a>
+	<h3 class="method-title"><code><a href="#//api/name/watermarkingToken">&nbsp;&nbsp;filigraneJeton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Le jeton de filigrane à utiliser avec Forensic Watermarking</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, copie) NSString *watermarkingToken</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Le jeton de filigrane à utiliser avec Forensic Watermarking</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithAccountId:policyKey:" title="initWithAccountId:policyKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithAccountId:policyKey:">&ndash;&nbsp;initWithAccountId:policyKey :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise un BCOVPlaybackService. Il utilise accountId et policyKey pour créer un <a href="../Classes/BCOVPlaybackServiceRequestFactory.html">BCOVPlaybackServiceRequestFactory</a> intérieurement.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (instancetype)initWithAccountId:(NSString *)<code><em>identifiant de compte</em> policyKey:(NSString *)<em>policyKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifiant de compte</code></th>
+						<td><p>Identifiant de compte à utiliser pour chaque demande. Ne doit pas être nul.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">policyKey<code></code></th>
+						<td><p>PolicyKey à utiliser pour chaque requête. Peut être nul.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une instance initialisée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialise un BCOVPlaybackService. Il utilise accountId et policyKey pour créer un <a href="../Classes/BCOVPlaybackServiceRequestFactory.html">BCOVPlaybackServiceRequestFactory</a> intérieurement.</p>
+
+<p>Si vous utilisez le service de lecture Edge, la valeur policyKey doit être nulle</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithRequestFactory:" title="initWithRequestFactory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithRequestFactory:">&ndash;&nbsp;initWithRequestFactory :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise un BCOVPlaybackService avec un <a href="../Classes/BCOVPlaybackServiceRequestFactory.html">BCOVPlaybackServiceRequestFactory</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (instancetype)initWithRequestFactory:(BCOVPlaybackServiceRequestFactory *)<code><em>demandeUsine</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>demandeUsine</code></th>
+						<td><p>Request Factory à utiliser pour créer des demandes d'URL.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une instance initialisée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialise un BCOVPlaybackService avec un <a href="../Classes/BCOVPlaybackServiceRequestFactory.html">BCOVPlaybackServiceRequestFactory</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findPlaylistWithPlaylistID:parameters:completion:" title="findPlaylistWithPlaylistID:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findPlaylistWithPlaylistID:parameters:completion:">&ndash;&nbsp;findPlaylistWithPlaylistID:paramètres:achèvement :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de liste de lecture dans une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findPlaylistWithPlaylistID:(NSString *)<em>ID de la liste de lecture</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVPlaylist *playlist , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ID de la liste de lecture</code></th>
+						<td><p>L'ID de la liste de lecture à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter aux requêtes de l'API Playback. Ces valeurs remplaceront les valeurs par défaut en cas de conflit. Peut utiliser les paramètres kBCOVPlaybackServiceParameterKeyOffset et kBCOVPlaybackServiceParameterKeyLimit. Voir &ldquo;Pagination de la liste de lecture&rdquo; dessus.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de liste de lecture dans une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findPlaylistWithPlaylistID:authToken:parameters:completion:" title="findPlaylistWithPlaylistID:authToken:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findPlaylistWithPlaylistID:authToken:parameters:completion:">&ndash;&nbsp;findPlaylistWithPlaylistID:authToken:parameters:completion :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de liste de lecture dans une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findPlaylistWithPlaylistID:(NSString *)<em>ID de la liste de lecture</em> authToken :(NSString *)<em>jeton d'authentification</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVPlaylist *playlist , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ID de la liste de lecture</code></th>
+						<td><p>L'ID de la liste de lecture à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jeton d'authentification</code></th>
+						<td><p>Le jeton d'autorisation avec lequel valider la vidéo&rsquo;licence</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter aux requêtes de l'API Playback. Ces valeurs remplaceront les valeurs par défaut en cas de conflit. Peut utiliser les paramètres kBCOVPlaybackServiceParameterKeyOffset et kBCOVPlaybackServiceParameterKeyLimit. Voir &ldquo;Pagination de la liste de lecture&rdquo; dessus.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de liste de lecture dans une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findPlaylistWithReferenceID:parameters:completion:" title="findPlaylistWithReferenceID:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findPlaylistWithReferenceID:parameters:completion:">&ndash;&nbsp;findPlaylistWithReferenceID:paramètres:achèvement :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findPlaylistWithReferenceID:(NSString *)<em>Pièce d'identité</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVPlaylist *playlist , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Pièce d'identité</code></th>
+						<td><p>L'ID de référence de la vidéo à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter à la lecture Peut utiliser les paramètres kBCOVPlaybackServiceParameterKeyOffset et kBCOVPlaybackServiceParameterKeyLimit. Voir &ldquo;Pagination de la liste de lecture&rdquo; dessus. Requêtes API. Ces valeurs remplaceront les valeurs par défaut en cas de conflit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findPlaylistWithReferenceID:authToken:parameters:completion:" title="findPlaylistWithReferenceID:authToken:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findPlaylistWithReferenceID:authToken:parameters:completion:">&ndash;&nbsp;findPlaylistWithReferenceID:authToken:parameters:completion :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findPlaylistWithReferenceID:(NSString *)<em>Pièce d'identité</em> authToken :(NSString *)<em>jeton d'authentification</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVPlaylist *playlist , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Pièce d'identité</code></th>
+						<td><p>L'ID de référence de la vidéo à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jeton d'authentification</code></th>
+						<td><p>Le jeton d'autorisation avec lequel valider la vidéo&rsquo;licence</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter à la lecture Peut utiliser les paramètres kBCOVPlaybackServiceParameterKeyOffset et kBCOVPlaybackServiceParameterKeyLimit. Voir &ldquo;Pagination de la liste de lecture&rdquo; dessus. Requêtes API. Ces valeurs remplaceront les valeurs par défaut en cas de conflit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVPlaylist.html">BCOVPlaylist</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findVideoWithVideoID:parameters:completion:" title="findVideoWithVideoID:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findVideoWithVideoID:parameters:completion:">&ndash;&nbsp;findVideoWithVideoID:paramètres:achèvement :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID vidéo dans une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findVideoWithVideoID:(NSString *)<em>ID vidéo</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVVideo *video , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ID vidéo</code></th>
+						<td><p>L'ID de la vidéo à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter aux requêtes de l'API Playback. Ces valeurs remplaceront les valeurs par défaut en cas de conflit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID vidéo dans une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findVideoWithVideoID:authToken:parameters:completion:" title="findVideoWithVideoID:authToken:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findVideoWithVideoID:authToken:parameters:completion:">&ndash;&nbsp;findVideoWithVideoID:authToken:parameters:complétion :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID vidéo dans une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findVideoWithVideoID:(NSString *)<em>ID vidéo</em> authToken :(NSString *)<em>jeton d'authentification</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVVideo *video , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ID vidéo</code></th>
+						<td><p>L'ID de la vidéo à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jeton d'authentification</code></th>
+						<td><p>Le jeton d'autorisation avec lequel valider la vidéo&rsquo;licence</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter aux requêtes de l'API Playback. Ces valeurs remplaceront les valeurs par défaut en cas de conflit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID vidéo dans une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findVideoWithReferenceID:parameters:completion:" title="findVideoWithReferenceID:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findVideoWithReferenceID:parameters:completion:">&ndash;&nbsp;findVideoWithReferenceID:paramètres:achèvement :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findVideoWithReferenceID:(NSString *)<em>Pièce d'identité</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVVideo *video , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Pièce d'identité</code></th>
+						<td><p>L'ID de référence de la vidéo à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter aux requêtes de l'API Playback. Ces valeurs remplaceront les valeurs par défaut en cas de conflit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findVideoWithReferenceID:authToken:parameters:completion:" title="findVideoWithReferenceID:authToken:parameters:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findVideoWithReferenceID:authToken:parameters:completion:">&ndash;&nbsp;findVideoWithReferenceID:authToken:parameters:completion :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) findVideoWithReferenceID:(NSString *)<em>Pièce d'identité</em> authToken :(NSString *)<em>jeton d'authentification</em> paramètres :(NSDictionary *)<em>paramètres</em> achèvement:(void ( ^ ) ( BCOVVideo *video , NSDictionary *jsonResponse , NSError *error ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Pièce d'identité</code></th>
+						<td><p>L'ID de référence de la vidéo à rechercher.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>jeton d'authentification</code></th>
+						<td><p>Le jeton d'autorisation avec lequel valider la vidéo&rsquo;licence</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>paramètres</code></th>
+						<td><p>Paramètres de requête NSString supplémentaires à ajouter aux requêtes de l'API Playback. Ces valeurs remplaceront les valeurs par défaut en cas de conflit.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>bloc qui sera invoqué à la fin de la requête. L'exécution de l'achèvementHandler se produira sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère un <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> du service Playback API par son ID de référence sur une file d'attente d'arrière-plan.</p>
+
+<p>Si le completeHandler fournit une NSError, le <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> sera nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sourceFromJSONDictionary:" title="sourceFromJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sourceFromJSONDictionary:">+&nbsp;sourceFromJSONDictionary :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise une source du dictionnaire JSON. Propriétés qui ne&rsquo;t map aux propriétés de première classe sur la source sont ajoutés au dictionnaire de propriétés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">+ (BCOVSource *)sourceFromJSONDictionary:(NSDictionary *)<code><em>json</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">json<code></code></th>
+						<td><p>Dictionnaire représentant la source désérialisée.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>La source initialisée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialise une source du dictionnaire JSON. Propriétés qui ne&rsquo;t map aux propriétés de première classe sur la source sont ajoutés au dictionnaire de propriétés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointFromJSONDictionary:" title="cuePointFromJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointFromJSONDictionary:">+&nbsp;cuePointFromJSONDictionary :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise un point de repère du dictionnaire JSON. Propriétés qui ne&rsquo;t map aux propriétés de première classe sur le point de repère sont ajoutés au dictionnaire de propriétés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">+ (BCOVCuePoint *)cuePointFromJSONDictionary:(NSDictionary *)<code><em>json</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">json<code></code></th>
+						<td><p>Dictionnaire représentant le point de repère désérialisé.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Le point de repère initialisé.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialise un point de repère du dictionnaire JSON. Propriétés qui ne&rsquo;t map aux propriétés de première classe sur le point de repère sont ajoutés au dictionnaire de propriétés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playlistFromJSONDictionary:" title="playlistFromJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playlistFromJSONDictionary:">+&nbsp;playlistDeJSONDictionnaire :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise une liste de lecture à partir du dictionnaire JSON. Propriétés qui ne&rsquo;La carte des propriétés de première classe sur la liste de lecture est ajoutée au dictionnaire des propriétés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">+ (BCOVPlaylist *)playlistFromJSONDictionary:(NSDictionary *)<code><em>json</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">json<code></code></th>
+						<td><p>Dictionnaire représentant la playlist désérialisée.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>La liste de lecture initialisée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialise une liste de lecture à partir du dictionnaire JSON. Propriétés qui ne&rsquo;La carte des propriétés de première classe sur la liste de lecture est ajoutée au dictionnaire des propriétés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/videoFromJSONDictionary:" title="videoFromJSONDictionary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoFromJSONDictionary:">+&nbsp;videoFromJSONDictionary :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initialise une vidéo du dictionnaire JSON. Propriétés qui ne&rsquo;La carte des propriétés de première classe sur la vidéo est ajoutée au dictionnaire des propriétés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">+ (BCOVVideo *)videoFromJSONDictionary:(NSDictionary *)<code><em>json</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">json<code></code></th>
+						<td><p>Dictionnaire représentant la vidéo désérialisée.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>La vidéo initialisée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Initialise une vidéo du dictionnaire JSON. Propriétés qui ne&rsquo;La carte des propriétés de première classe sur la vidéo est ajoutée au dictionnaire des propriétés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackService.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

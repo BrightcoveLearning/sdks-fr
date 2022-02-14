@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de classe BCOVCuePointCollection</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/ignoreCuePoints">ignorer les CuePoints</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/collectionWithArray:">+ collectionWithArray :</option>
+		
+		<option value="//api/name/emptyCollection">+ videCollection</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/array">- déployer</option>
+		
+		<option value="//api/name/count">- compter</option>
+		
+		<option value="//api/name/cuePointsAfterTime:">- cuePointsAfterTime :</option>
+		
+		<option value="//api/name/cuePointsAfterTime:atOrBeforeTime:">- cuePointsAfterTime:atOrBeforeTime :</option>
+		
+		<option value="//api/name/cuePointsAfterTime:beforeTime:">- cuePointsAfterTime:beforeTime :</option>
+		
+		<option value="//api/name/cuePointsAtOrAfterTime:">- cuePointsAtOrAfterTime :</option>
+		
+		<option value="//api/name/cuePointsAtOrAfterTime:atOrBeforeTime:">- cuePointsAtOrAfterTime:atOrBeforeTime :</option>
+		
+		<option value="//api/name/cuePointsAtOrAfterTime:beforeTime:">- cuePointsAtOrAfterTime:beforeTime :</option>
+		
+		<option value="//api/name/cuePointsAtOrBeforeTime:">- cuePointsAtOrBeforeTime :</option>
+		
+		<option value="//api/name/cuePointsAtTime:">- cuePointsAtTime :</option>
+		
+		<option value="//api/name/cuePointsBeforeTime:">- cuePointsBeforeTime :</option>
+		
+		<option value="//api/name/cuePointsOfType:">- cuePointsOfType :</option>
+		
+		<option value="//api/name/initWithArray:">- initWithArray :</option>
+		
+		<option value="//api/name/initWithCuePoint:">- initWithCuePoint :</option>
+		
+		<option value="//api/name/isEqualToCollection:">- isEqualToCollection :</option>
+		
+		<option value="//api/name/objectAtIndexedSubscript:">- objectAtIndexedSubscript :</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de classe BCOVCuePointCollection</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Hérite de</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforme à</th>
+	<td>NSCopie<br />NSFastEnumeration</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVCuePointCollection.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Une collection de points de repère, chaque élément classé par sa position selon l'ordre naturel des valeurs CMTime.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithArray:" title="initWithArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithArray:">&ndash;&nbsp;initWithArray :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Construit et renvoie un BCOVCuePointCollection à partir des points de repère dans le <a href="#//api/name/array">déployer</a>. La collection retournée sera ordonnée en fonction des positions des points de repère. L'ordre de plusieurs points de repère avec la même position n'est pas garanti.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (instancetype)initWithArray:(NSArray *)<code><em>points de repère</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>points de repère</code></th>
+						<td><p>La nouvelle collection de points de repère&rsquo;points de repère.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>La nouvelle collection de points de repère avec les points de repère spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Construit et renvoie un BCOVCuePointCollection à partir des points de repère dans le <a href="#//api/name/array">déployer</a>. La collection retournée sera ordonnée en fonction des positions des points de repère. L'ordre de plusieurs points de repère avec la même position n'est pas garanti.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCuePoint:" title="initWithCuePoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCuePoint:">&ndash;&nbsp;initWithCuePoint :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Construit et renvoie un BCOVCuePointCollection avec un seul point de repère.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)initWithCuePoint:(BCOVCuePoint *)<em>point de repère</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>point de repère</code></th>
+						<td><p>La nouvelle collection de points de repère&rsquo;point de repère.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>La nouvelle collection de points de repère avec le point de repère spécifié.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Construit et renvoie un BCOVCuePointCollection avec un seul point de repère.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/array" title="array"></a>
+	<h3 class="method-title"><code><a href="#//api/name/array">&ndash;&nbsp;déployer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie cette collection&rsquo;s objets point de repère dans un tableau. Les éléments du tableau auront le même ordre que l'ordre des points de repère dans cette collection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)tableau</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Cette collection&rsquo;s points de repère dans un tableau.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie cette collection&rsquo;s objets point de repère dans un tableau. Les éléments du tableau auront le même ordre que l'ordre des points de repère dans cette collection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="method-title"><code><a href="#//api/name/count">&ndash;&nbsp;compter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie le nombre de points de repère dans cette collection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger) compte</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Le nombre de points de repère dans cette collection.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie le nombre de points de repère dans cette collection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAfterTime:" title="cuePointsAfterTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAfterTime:">&ndash;&nbsp;cuePointsAfterTime :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection après l'heure spécifiée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAfterTime :(CMTime)<em>temps</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>Le temps après lequel les points de repère correspondants doivent être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection après l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection après l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsBeforeTime:" title="cuePointsBeforeTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsBeforeTime:">&ndash;&nbsp;cuePointsBeforeTime :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère de cette collection avant l'heure spécifiée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsBeforeTime :(CMTime)<em>temps</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>Le temps avant lequel les points de repère correspondants doivent être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection avant l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère de cette collection avant l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAtTime:" title="cuePointsAtTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAtTime:">&ndash;&nbsp;cuePointsAtTime :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère de cette collection exactement à l'heure spécifiée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAtTime :(CMTime)<em>temps</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>L'heure à laquelle les points de repère correspondants doivent être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection exactement à l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère de cette collection exactement à l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAtOrAfterTime:" title="cuePointsAtOrAfterTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAtOrAfterTime:">&ndash;&nbsp;cuePointsAtOrAfterTime :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection à ou après l'heure spécifiée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAtOrAfterTime:(CMTime)<em>temps</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>L'heure à laquelle ou après laquelle les points de repère correspondants doivent être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection à ou après l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection à ou après l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAtOrBeforeTime:" title="cuePointsAtOrBeforeTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAtOrBeforeTime:">&ndash;&nbsp;cuePointsAtOrBeforeTime :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection à ou avant l'heure spécifiée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAtOrBeforeTime :(CMTime)<em>temps</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>L'heure à laquelle ou avant laquelle les points de repère correspondants doivent être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère dans cette collection à ou avant l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection à ou avant l'heure spécifiée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAfterTime:beforeTime:" title="cuePointsAfterTime:beforeTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAfterTime:beforeTime:">&ndash;&nbsp;cuePointsAfterTime:beforeTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère de cette collection entre les heures spécifiées.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAfterTime :(CMTime)<em>borne inférieure</em> avantHeure :(Heure CM)<em>limite supérieure</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>borne inférieure</code></th>
+						<td><p>La limite inférieure, à laquelle ou en dessous de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>limite supérieure</code></th>
+						<td><p>La limite supérieure, à laquelle ou au-dessus de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection entre les heures spécifiées.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère de cette collection entre les heures spécifiées.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAfterTime:atOrBeforeTime:" title="cuePointsAfterTime:atOrBeforeTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAfterTime:atOrBeforeTime:">&ndash;&nbsp;cuePointsAfterTime:atOrBeforeTime :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection entre les heures spécifiées, y compris la limite supérieure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAfterTime :(CMTime)<em>borne inférieure</em> àOrBeforeTime :(CMTime)<em>limite supérieure</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>borne inférieure</code></th>
+						<td><p>La limite inférieure, à laquelle ou en dessous de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>limite supérieure</code></th>
+						<td><p>La limite supérieure, au-dessus de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection entre les heures spécifiées.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection entre les heures spécifiées, y compris la limite supérieure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAtOrAfterTime:beforeTime:" title="cuePointsAtOrAfterTime:beforeTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAtOrAfterTime:beforeTime:">&ndash;&nbsp;cuePointsAtOrAfterTime:beforeTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection entre les heures spécifiées, y compris la limite inférieure.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAtOrAfterTime:(CMTime)<em>borne inférieure</em> avantHeure :(Heure CM)<em>limite supérieure</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>borne inférieure</code></th>
+						<td><p>La limite inférieure, en dessous de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>limite supérieure</code></th>
+						<td><p>La limite supérieure, à laquelle ou au-dessus de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection entre les heures spécifiées.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection entre les heures spécifiées, y compris la limite inférieure.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsAtOrAfterTime:atOrBeforeTime:" title="cuePointsAtOrAfterTime:atOrBeforeTime:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsAtOrAfterTime:atOrBeforeTime:">&ndash;&nbsp;cuePointsAtOrAfterTime:atOrBeforeTime:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection, aux heures spécifiées ou entre celles-ci.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsAtOrAfterTime:(CMTime)<em>borne inférieure</em> àOrBeforeTime :(CMTime)<em>limite supérieure</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>borne inférieure</code></th>
+						<td><p>La limite inférieure, en dessous de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>limite supérieure</code></th>
+						<td><p>La limite supérieure, au-dessus de laquelle les points de repère ne doivent pas être renvoyés.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère dans cette collection, à ou entre les moments spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection, aux heures spécifiées ou entre celles-ci.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cuePointsOfType:" title="cuePointsOfType:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePointsOfType:">&ndash;&nbsp;cuePointsOfType :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie tous les points de repère dans cette collection du type spécifié.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance)cuePointsOfType:(NSString *)<em>taper</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>taper</code></th>
+						<td><p>Le type de points de repère à renvoyer.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Tous les points de repère de cette collection, du type spécifié.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie tous les points de repère dans cette collection du type spécifié.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isEqualToCollection:" title="isEqualToCollection:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isEqualToCollection:">&ndash;&nbsp;isEqualToCollection :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie OUI si cette instance a les mêmes points de repère dans le même ordre que <code>collection</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (BOOL)isEqualToCollection:(BCOVCuePointCollection *)<code><em>collection</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">collection<code></code></th>
+						<td><p>Collection avec laquelle comparer cette instance.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Si cette instance est équivalente à <code>collection</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie OUI si cette instance a les mêmes points de repère dans le même ordre que <code>collection</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/objectAtIndexedSubscript:" title="objectAtIndexedSubscript:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/objectAtIndexedSubscript:">&ndash;&nbsp;objectAtIndexedSubscript :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie le point de repère à l'index spécifié, ou nil si l'index spécifié est supérieur à l'index le plus élevé dans la collection.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (BCOVCuePoint *)objectAtIndexedSubscript:(NSUInteger)<code><em>indice</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>indice</code></th>
+						<td><p>L'index dans cette collection du point de repère souhaité.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Le point de repère à l'index spécifié, ou nil si cette collection n'a pas de point de repère à cet index.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie le point de repère à l'index spécifié, ou nil si l'index spécifié est supérieur à l'index le plus élevé dans la collection.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ignoreCuePoints" title="ignoreCuePoints"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ignoreCuePoints">&nbsp;&nbsp;ignorer les CuePoints</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) BOOL ignoreCuePoints</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/collectionWithArray:" title="collectionWithArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/collectionWithArray:">+&nbsp;collectionWithArray :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une nouvelle collection de points de repère contenant les points de repère spécifiés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (type d'instance)collectionWithArray:(NSArray *)<em>points de repère</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>points de repère</code></th>
+						<td><p>Un <a href="#//api/name/array">déployer</a> d'objets de point de repère à inclure dans la collection.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une nouvelle collection de points de repère contenant les points de repère spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une nouvelle collection de points de repère contenant les points de repère spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/emptyCollection" title="emptyCollection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/emptyCollection">+&nbsp;VideCollection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une collection de points de repère singleton ne contenant aucun point de repère.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (type d'instance)videCollection</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une collection de points de repère singleton ne contenant aucun point de repère.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une collection de points de repère singleton ne contenant aucun point de repère.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVCuePointCollection.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence du protocole BCOVPlaybackController</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/adsDisabled">annoncesDésactivé</option>
+		
+		<option value="//api/name/allowsBackgroundAudioPlayback">allowBackgroundAudioPlayback</option>
+		
+		<option value="//api/name/allowsExternalPlayback">permetExterneLecture</option>
+		
+		<option value="//api/name/analytics">analytique</option>
+		
+		<option value="//api/name/autoAdvance">Avance automatique</option>
+		
+		<option value="//api/name/autoPlay">lecture automatique</option>
+		
+		<option value="//api/name/delegate">déléguer</option>
+		
+		<option value="//api/name/options">options</option>
+		
+		<option value="//api/name/pictureInPictureActive">pictureInPictureActive</option>
+		
+		<option value="//api/name/pictureInPictureController">pictureInPictureController</option>
+		
+		<option value="//api/name/shutter">obturateur</option>
+		
+		<option value="//api/name/shutterFadeTime">obturateurFadeTime</option>
+		
+		<option value="//api/name/thumbnailScrubbingEnabled">vignetteScrubbingActivé</option>
+		
+		<option value="//api/name/thumbnailSeekingEnabled">miniatureRechercheActivé</option>
+		
+		<option value="//api/name/usesExternalPlaybackWhileExternalScreenIsActive">utiliseExternalPlaybackWhileExternalScreenIsActive</option>
+		
+		<option value="//api/name/view">vue</option>
+		
+		<option value="//api/name/viewProjection">vueProjection</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addFairPlayApplicationCertificate:identifier:">- addFairPlayApplicationCertificate:identifier :</option>
+		
+		<option value="//api/name/addSessionConsumer:">- addSessionConsumer :</option>
+		
+		<option value="//api/name/advanceToNext">- avancer vers suivant</option>
+		
+		<option value="//api/name/pause">- pause</option>
+		
+		<option value="//api/name/pauseAd">- pauseAnnonce</option>
+		
+		<option value="//api/name/play">- jouer</option>
+		
+		<option value="//api/name/removeSessionConsumer:">- removeSessionConsumer :</option>
+		
+		<option value="//api/name/resumeAd">- reprendreAnnonce</option>
+		
+		<option value="//api/name/resumeVideoAtTime:withAutoPlay:">- resumeVideoAtTime:withAutoPlay :</option>
+		
+		<option value="//api/name/seekToTime:completionHandler:">- seekToTime:completionHandler :</option>
+		
+		<option value="//api/name/seekToTime:toleranceBefore:toleranceAfter:completionHandler:">- seekToTime:toleranceBefore:toleranceAfter:completionHandler :</option>
+		
+		<option value="//api/name/seekWithoutAds:completionHandler:">- seekWithoutAds:completionHandler :</option>
+		
+		<option value="//api/name/setPreferredPeakBitRate:">- setPreferredPeakBitRate :</option>
+		
+		<option value="//api/name/setVideos:">- setVidéos :</option>
+		
+		<option value="//api/name/updateAudienceSegmentTargetingValues:">- updateAudienceSegmentTargetingValues :</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence du protocole BCOVPlaybackController</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforme à</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVPlaybackController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Protocole adopté par les objets qui fournissent une fonctionnalité de lecture.</p>
+
+<p>Les implémentations de ce protocole formel doivent prendre en charge ses opérations de lecture standard, mais peuvent étendre l'API pour exécuter des fonctions supplémentaires spécifiques à leur ensemble de fonctionnalités.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;déléguer</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Délégué pour ce BCOVPlaybackController.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) délégué id&lt;BCOVPlaybackControllerDelegate&gt;</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Délégué pour ce BCOVPlaybackController.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/autoAdvance" title="autoAdvance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoAdvance">&nbsp;&nbsp;Avance automatique</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>S'il faut passer à la session de lecture suivante lorsque sa session de lecture précédente envoie kBCOVPlaybackSessionLifecycleEventEnd. Si cet événement est envoyé plus d'une fois par une session de lecture, les envois suivants sont ignorés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">@property (nonatomic, assign, getter=isAutoAdvance) BOOL autoAdvance<code></code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>True si cette file d'attente doit envoyer la session suivante lorsque la session précédente envoie kBCOVPlaybackSessionLifecycleEventEnd.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>S'il faut passer à la session de lecture suivante lorsque sa session de lecture précédente envoie kBCOVPlaybackSessionLifecycleEventEnd. Si cet événement est envoyé plus d'une fois par une session de lecture, les envois suivants sont ignorés.</p>
+
+<p>La valeur par défaut est NON.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/autoPlay" title="autoPlay"></a>
+	<h3 class="method-title"><code><a href="#//api/name/autoPlay">&nbsp;&nbsp;lecture automatique</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>S'il faut commencer à lire une nouvelle session de lecture dès sa réception.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isAutoPlay) BOOL lecture automatique</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>S'il faut commencer la lecture dès qu'une nouvelle session est reçue.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>S'il faut commencer à lire une nouvelle session de lecture dès sa réception.</p>
+
+<p>La valeur par défaut est NON.</p>
+
+<p>REMARQUE: L'activation de la lecture automatique en conjonction avec la définition d'un taux personnalisé sur AVPlayer peut provoquer un comportement inattendu.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/view" title="view"></a>
+	<h3 class="method-title"><code><a href="#//api/name/view">&nbsp;&nbsp;vue</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie un UIView pour présenter la lecture dans une hiérarchie de vues. La vue est réutilisée dans toutes les sessions de lecture envoyées à ce contrôleur.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, en lecture seule, fort) UIView *view</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une UIView pour présenter la lecture dans une hiérarchie de vues.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie un UIView pour présenter la lecture dans une hiérarchie de vues. La vue est réutilisée dans toutes les sessions de lecture envoyées à ce contrôleur.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/options" title="options"></a>
+	<h3 class="method-title"><code><a href="#//api/name/options">&nbsp;&nbsp;options</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Un dictionnaire de paires clé-valeur utilisé pour définir des options dans le contrôleur de lecture. Lorsque vous définissez des options, vous devez conserver les options actuelles du dictionnaire en créant une copie modifiable du dictionnaire existant, en définissant votre valeur, puis en affectant votre nouveau dictionnaire à cette propriété. Peut être nul.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomique, lecture-écriture, copie) NSDictionary *options</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Le dictionnaire d'options actuel utilisé par le contrôleur de lecture.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Un dictionnaire de paires clé-valeur utilisé pour définir des options dans le contrôleur de lecture. Lorsque vous définissez des options, vous devez conserver les options actuelles du dictionnaire en créant une copie modifiable du dictionnaire existant, en définissant votre valeur, puis en affectant votre nouveau dictionnaire à cette propriété. Peut être nul.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/analytics" title="analytics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/analytics">&nbsp;&nbsp;analytique</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie le contrôleur de lecture&rsquo;s objet d'analyse.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, lecture seule, copie) id&lt;BCOVMutableAnalytics&gt; analytics</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie le contrôleur de lecture&rsquo;s objet d'analyse.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/adsDisabled" title="adsDisabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adsDisabled">&nbsp;&nbsp;annoncesDésactivé</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>SSAI uniquement : Si vous utilisez d'autres plug-ins publicitaires, utilisez <a href="#//api/name/seekWithoutAds:completionHandler:"><code>seekWithoutAds:completionHandler :</code></a> au lieu.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) BOOL adsDisabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>SSAI uniquement : Si vous utilisez d'autres plug-ins publicitaires, utilisez <a href="#//api/name/seekWithoutAds:completionHandler:"><code>seekWithoutAds:completionHandler :</code></a> au lieu.</p>
+
+<p>Désactive la lecture d'annonces qui pourrait autrement se produire après un forward -seekTo :. L'utilisation prévue est, par exemple, de reprendre la lecture vidéo lorsqu'une application a été fermée et relancée ; l'application peut chercher à gagner du temps et les annonces qui ont déjà été vues ne seront pas <a href="#//api/name/play">jouer</a> de nouveau. Définissez adsDisabled sur YES, puis appelez l'une des méthodes -seekToTime:, et enfin définissez adsDisabled sur NO dans le gestionnaire d'achèvement -seekToTime:. La valeur par défaut de adsDisabled est NO.</p>
+
+<p>Notez qu'à moins que le <a href="../Classes/BCOVPlaybackSessionLifecycleEvent.html">BCOVPlaybackSessionLifecycleEvent</a> kBCOVPlaybackSessionLifecycleEventReady a été reçu, le gestionnaire d'achèvement -seekTo: ne sera jamais appelé. Pour cette raison, il est recommandé d'appeler -seekTo: depuis le -playbackController:playbackSession:didReceiveLifecycleEvent <a href="#//api/name/delegate">déléguer</a> pour l'événement kBCOVPlaybackSessionLifecycleEventReady.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowsBackgroundAudioPlayback" title="allowsBackgroundAudioPlayback"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowsBackgroundAudioPlayback">&nbsp;&nbsp;allowBackgroundAudioPlayback</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Autoriser la lecture audio lorsque l'application est passée en arrière-plan.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) BOOL allowBackgroundAudioPlayback</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Autoriser la lecture audio lorsque l'application est passée en arrière-plan.</p>
+
+<p>La valeur par défaut est NON.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/allowsExternalPlayback" title="allowsExternalPlayback"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allowsExternalPlayback">&nbsp;&nbsp;permetExterneLecture</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>La propriété allowExternalPlayback de la session de lecture en cours&rsquo;s AVPlayer, ainsi que celui de toute session ultérieure, est défini sur cette valeur.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) BOOL allowExternalPlayback</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>La propriété allowExternalPlayback de la session de lecture en cours&rsquo;s AVPlayer, ainsi que celui de toute session ultérieure, est défini sur cette valeur.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/usesExternalPlaybackWhileExternalScreenIsActive" title="usesExternalPlaybackWhileExternalScreenIsActive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/usesExternalPlaybackWhileExternalScreenIsActive">&nbsp;&nbsp;utiliseExternalPlaybackWhileExternalScreenIsActive</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>La propriété usesExternalPlaybackWhileExternalScreenIsActive de la session de lecture en cours&rsquo;s AVPlayer, ainsi que celui de toute session ultérieure, est défini sur cette valeur. Cette propriété n'a aucun effet si <a href="#//api/name/allowsExternalPlayback">permetExterneLecture</a> c'est faux.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) BOOL usesExternalPlaybackWhileExternalScreenIsActive</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>La propriété usesExternalPlaybackWhileExternalScreenIsActive de la session de lecture en cours&rsquo;s AVPlayer, ainsi que celui de toute session ultérieure, est défini sur cette valeur. Cette propriété n'a aucun effet si <a href="#//api/name/allowsExternalPlayback">permetExterneLecture</a> c'est faux.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pictureInPictureActive" title="pictureInPictureActive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pictureInPictureActive">&nbsp;&nbsp;pictureInPictureActive</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Réglez-le sur OUI si l'incrustation d'image devient active et sur NON lorsqu'elle se désactive.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomique, readwrite, assign, getter=isPictureInPictureActive) BOOL pictureInPictureActive</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Réglez-le sur OUI si l'incrustation d'image devient active et sur NON lorsqu'elle se désactive.</p>
+
+<p>Cela ne doit être basculé que si <a href="#//api/name/allowsBackgroundAudioPlayback">allowBackgroundAudioPlayback</a> est réglé sur OUI. Si <a href="#//api/name/allowsBackgroundAudioPlayback">allowBackgroundAudioPlayback</a> est défini sur NON, cette propriété peut être ignorée.</p>
+
+<p>La valeur par défaut est NON.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setPreferredPeakBitRate:" title="setPreferredPeakBitRate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setPreferredPeakBitRate:">&ndash;&nbsp;setPreferredPeakBitRate :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Réglez-le sur votre valeur de débit binaire de pointe préférée. Cette valeur sera définie sur la session en cours et les sessions futures, à moins qu'elle ne soit modifiée via le menu (facultatif) Débit préféré.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setPreferredPeakBitRate :(double)<em>préféréPeakBitRate</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Réglez-le sur votre valeur de débit binaire de pointe préférée. Cette valeur sera définie sur la session en cours et les sessions futures, à moins qu'elle ne soit modifiée via le menu (facultatif) Débit préféré.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateAudienceSegmentTargetingValues:" title="updateAudienceSegmentTargetingValues:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateAudienceSegmentTargetingValues:">&ndash;&nbsp;updateAudienceSegmentTargetingValues :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Définit les clés/valeurs de ciblage du segment d'audience que vous souhaitez transmettre dans les demandes d'annonces. Ceci n'est actuellement pris en charge qu'avec IMA + VAST.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateAudienceSegmentTargetingValues :(NSDictionary *)<em>audienceSegmentCiblageValeurs</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Définit les clés/valeurs de ciblage du segment d'audience que vous souhaitez transmettre dans les demandes d'annonces. Ceci n'est actuellement pris en charge qu'avec IMA + VAST.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/thumbnailScrubbingEnabled" title="thumbnailScrubbingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/thumbnailScrubbingEnabled">&nbsp;&nbsp;vignetteScrubbingActivé</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Active ou désactive le nettoyage des vignettes pour ce contrôleur de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite, assign) BOOL thumbnailScrubbingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Active ou désactive le nettoyage des vignettes pour ce contrôleur de lecture.</p><div class="warning"><p><strong>Avertissement:</strong> <em>Obsolète :</em> Utilisation <a href="#//api/name/thumbnailSeekingEnabled">miniatureRechercheActivé</a> au lieu</p>
+
+<p>La valeur par défaut est OUI</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/thumbnailSeekingEnabled" title="thumbnailSeekingEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/thumbnailSeekingEnabled">&nbsp;&nbsp;miniatureRechercheActivé</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Active ou désactive la recherche de vignettes pour ce contrôleur de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite, assign) BOOL thumbnailSeekingEnabled</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Active ou désactive la recherche de vignettes pour ce contrôleur de lecture.</p>
+
+<p>La valeur par défaut est OUI</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutter" title="shutter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutter">&nbsp;&nbsp;obturateur</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>UNE <a href="#//api/name/view">vue</a> qui obscurcit ou révèle le joueur <a href="#//api/name/view">vue</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, readwrite) Obturateur BOOL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Réglez l'obturateur sur OUI pour masquer le lecteur actuel <a href="#//api/name/view">vue</a> derrière un volet noir opaque <a href="#//api/name/view">vue</a>. Réglez l'obturateur sur NON pour faire l'obturateur <a href="#//api/name/view">vue</a> transparent, révélant le joueur <a href="#//api/name/view">vue</a>.</p>
+
+<p>La méthode de définition des propriétés de l'obturateur est envoyée au thread principal.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shutterFadeTime" title="shutterFadeTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shutterFadeTime">&nbsp;&nbsp;obturateurFadeTime</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Réglez le shutterFadeTime sur la durée, en secondes, du <a href="#//api/name/shutter">obturateur</a> animation de transition d'état. La valeur par défaut est zéro.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, lecture-écriture) NSTimeInterval shutterFadeTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Réglez le shutterFadeTime sur la durée, en secondes, du <a href="#//api/name/shutter">obturateur</a> animation de transition d'état. La valeur par défaut est zéro.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/viewProjection" title="viewProjection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/viewProjection">&nbsp;&nbsp;vueProjection</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Position de la caméra virtuelle lors de la visualisation des flux Video 360 Les valeurs par défaut sont : Inclinaison de 0 degrés : Zoom à 0 degré : 1.0 rouleau : 0 degrés</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, lecture-écriture, copie) BCOVVideo360ViewProjection *viewProjection</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Position de la caméra virtuelle lors de la visualisation des flux Video 360 Les valeurs par défaut sont : Inclinaison de 0 degrés : Zoom à 0 degré : 1.0 rouleau : 0 degrés</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pictureInPictureController" title="pictureInPictureController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pictureInPictureController">&nbsp;&nbsp;pictureInPictureController</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>L'AVPictureInPictureController pour ce contrôleur de lecture. Peut être nul si <code>showPictureInPictureButton</code> n'est pas activé sur <a href="../Classes/BCOVPUIPlayerViewOptions.html">BCOVPUIPlayerViewOptions</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, faible, en lecture seule) AVPictureInPictureController *pictureInPictureController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>L'AVPictureInPictureController pour ce contrôleur de lecture. Peut être nul si <code>showPictureInPictureButton</code> n'est pas activé sur <a href="../Classes/BCOVPUIPlayerViewOptions.html">BCOVPUIPlayerViewOptions</a>.</p>
+
+<p>Vous ne devez pas définir votre propre <a href="#//api/name/delegate">déléguer</a> sur cette instance d'AVPictureInPictureController, et utilisez à la place <a href="../Protocols/BCOVPUIPlayerViewDelegate.html">BCOVPUIPlayerViewDelegate</a> qui passera par chacun des AVPictureInPictureController <a href="#//api/name/delegate">déléguer</a> méthodes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addSessionConsumer:" title="addSessionConsumer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addSessionConsumer:">&ndash;&nbsp;addSessionConsumer :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enregistre un consommateur de session avec un conteneur, pour être averti des nouvelles sessions. Les consommateurs ajoutés seront conservés par ce conteneur. Si une session existait déjà dans le conteneur au moment de la souscription, le consommateur spécifié recevra le <code>-didAdvanceToPlaybackSession :</code> un message.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (void)addSessionConsumer:(id&lt;BCOVPlaybackSessionConsumer&gt;)<code><em>consommateur</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>consommateur</code></th>
+						<td><p>Le consommateur de session ajouté au conteneur.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Enregistre un consommateur de session avec un conteneur, pour être averti des nouvelles sessions. Les consommateurs ajoutés seront conservés par ce conteneur. Si une session existait déjà dans le conteneur au moment de la souscription, le consommateur spécifié recevra le <code>-didAdvanceToPlaybackSession :</code> un message.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeSessionConsumer:" title="removeSessionConsumer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeSessionConsumer:">&ndash;&nbsp;removeSessionConsumer :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Supprime un consommateur de session du conteneur. L'effet de ceci est que le conteneur libère sa propriété du consommateur, et le consommateur n'aura plus de nouvelles sessions à consommer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (void)removeSessionConsumer:(id&lt;BCOVPlaybackSessionConsumer&gt;)<code><em>consommateur</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>consommateur</code></th>
+						<td><p>Le consommateur de session supprimé du conteneur.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Supprime un consommateur de session du conteneur. L'effet de ceci est que le conteneur libère sa propriété du consommateur, et le consommateur n'aura plus de nouvelles sessions à consommer.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/advanceToNext" title="advanceToNext"></a>
+	<h3 class="method-title"><code><a href="#//api/name/advanceToNext">&ndash;&nbsp;avancer vers suivant</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Demande à cette instance de passer à la prochaine session de lecture. Cela n'a aucun effet s'il n'y a pas d'autres sessions de lecture. Notez que la prochaine session de lecture peut être livrée de manière asynchrone.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)avance au suivant</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Demande à cette instance de passer à la prochaine session de lecture. Cela n'a aucun effet s'il n'y a pas d'autres sessions de lecture. Notez que la prochaine session de lecture peut être livrée de manière asynchrone.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/play" title="play"></a>
+	<h3 class="method-title"><code><a href="#//api/name/play">&ndash;&nbsp;jouer</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Lit la vidéo de contenu. Lors de la première lecture, les points de repère à la position kBCOVCuePointPositionTypeBefore seront déclenchés et la vidéo sera lue à l'aide de [AVPlayer play].</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (vide) jouer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Lit la vidéo de contenu. Lors de la première lecture, les points de repère à la position kBCOVCuePointPositionTypeBefore seront déclenchés et la vidéo sera lue à l'aide de [AVPlayer play].</p>
+
+<p>Ce comportement par défaut peut être outrepassé lors de l'utilisation de plugins. Pour plus d'informations sur les remplacements de plug-in, reportez-vous à <a href="../Classes/BCOVSessionProviderExtension.html">BCOVSessionProviderExtension</a> méthodes de catégorie dans le plugin pour une méthode comme abc_play :.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pause" title="pause"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pause">&ndash;&nbsp;pause</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Suspend la vidéo de contenu. Il s'agit d'un appel proxy vers [AVPlayer pause].</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (annuler) pause</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Suspend la vidéo de contenu. Il s'agit d'un appel proxy vers [AVPlayer pause].</p>
+
+<p>Ce comportement par défaut peut être outrepassé lors de l'utilisation de plugins. Pour plus d'informations sur les remplacements de plug-in, reportez-vous à <a href="../Classes/BCOVSessionProviderExtension.html">BCOVSessionProviderExtension</a> méthodes de catégorie dans le plugin pour une méthode comme abc_pause :.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekToTime:completionHandler:" title="seekToTime:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekToTime:completionHandler:">&ndash;&nbsp;seekToTime:completeHandler :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Appel par procuration à <code>[AVPlayer seekToTime:toleranceBefore:toleranceAfter:completionHandler:]</code> avec une tolérance de 0,1 seconde. N'appelez cette méthode qu'après avoir reçu l'événement kBCOVPlaybackSessionLifecycleEventReady.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)seekToTime :(CMTime)<em>temps</em> completeHandler:(void ( ^ ) ( BOOL terminé ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>Il est temps de passer à.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>Bloc à appeler lorsque l'opération de recherche est terminée ou interrompue.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Appel par procuration à <code>[AVPlayer seekToTime:toleranceBefore:toleranceAfter:completionHandler:]</code> avec une tolérance de 0,1 seconde. N'appelez cette méthode qu'après avoir reçu l'événement kBCOVPlaybackSessionLifecycleEventReady.</p>
+
+<p>Ce comportement par défaut peut être outrepassé lors de l'utilisation de plugins. Pour plus d'informations sur les remplacements de plug-in, reportez-vous à <a href="../Classes/BCOVSessionProviderExtension.html">BCOVSessionProviderExtension</a> méthodes de catégorie dans le plugin pour une méthode comme abc_seekToTime:completionHandler:.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekToTime:toleranceBefore:toleranceAfter:completionHandler:" title="seekToTime:toleranceBefore:toleranceAfter:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekToTime:toleranceBefore:toleranceAfter:completionHandler:">&ndash;&nbsp;seekToTime:toleranceBefore:toleranceAfter:completionHandler:</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Appel par procuration à <code>[AVPlayer seekToTime:toleranceBefore:toleranceAfter:completionHandler:]</code> N'appelez cette méthode qu'après avoir reçu l'événement kBCOVPlaybackSessionLifecycleEventReady.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)seekToTime :(CMTime)<em>temps</em> toléranceAvant :(Heure CM)<em>toléranceAvant</em> toléranceAprès :(CMTime)<em>toléranceAprès</em> completeHandler:(void ( ^ ) ( BOOL terminé ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>Il est temps de passer à.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toléranceAvant</code></th>
+						<td><p>Tolérance admissible avant la cible recherchée.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toléranceAprès</code></th>
+						<td><p>Tolérance admissible avant la cible recherchée.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>Bloc à appeler lorsque l'opération de recherche est terminée ou interrompue.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Appel par procuration à <code>[AVPlayer seekToTime:toleranceBefore:toleranceAfter:completionHandler:]</code> N'appelez cette méthode qu'après avoir reçu l'événement kBCOVPlaybackSessionLifecycleEventReady.</p>
+
+<p>Ce comportement par défaut peut être outrepassé lors de l'utilisation de plugins. Pour plus d'informations sur les remplacements de plug-in, reportez-vous à <a href="../Classes/BCOVSessionProviderExtension.html">BCOVSessionProviderExtension</a> méthodes de catégorie dans le plugin pour une méthode comme abc_<a href="#//api/name/seekToTime:completionHandler:">seekToTime:completeHandler :</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/seekWithoutAds:completionHandler:" title="seekWithoutAds:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/seekWithoutAds:completionHandler:">&ndash;&nbsp;seekWithoutAds:completionHandler :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Appel par procuration à <code>[AVPlayer seekToTime:completionHandler:]</code> Définit l'heure de lecture actuelle à l'heure spécifiée et exécute le bloc spécifié lorsque l'opération de recherche est terminée ou interrompue. Les annonces programmées avant l'heure de recherche ne seront pas diffusées. Les annonces programmées avant l'heure de recherche ne sont pas considérées comme ayant été lues et tout utilisateur cherchant à une heure de lecture plus tôt entraînera la diffusion de ces annonces. <a href="#//api/name/play">jouer</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)seekWithoutAds :(CMTime)<em>temps</em> completeHandler:(void ( ^ ) ( BOOL terminé ))<em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>Il est temps de passer à.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>Bloc à appeler lorsque l'opération de recherche est terminée ou interrompue.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Appel par procuration à <code>[AVPlayer seekToTime:completionHandler:]</code> Définit l'heure de lecture actuelle à l'heure spécifiée et exécute le bloc spécifié lorsque l'opération de recherche est terminée ou interrompue. Les annonces programmées avant l'heure de recherche ne seront pas diffusées. Les annonces programmées avant l'heure de recherche ne sont pas considérées comme ayant été lues et tout utilisateur cherchant à une heure de lecture plus tôt entraînera la diffusion de ces annonces. <a href="#//api/name/play">jouer</a>.</p>
+
+<p><code>seekWithoutAds:completionHandler :</code> est dans le but de reprendre la lecture après qu'une application cliente a été fermée et relancée. Il est recommandé que playbackController.<a href="#//api/name/autoPlay">lecture automatique</a> être défini sur NON lors de l'utilisation de seekWithoutAds.</p>
+
+<p>N'appelez cette méthode qu'après avoir reçu l'événement kBCOVPlaybackSessionLifecycleEventReady.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resumeVideoAtTime:withAutoPlay:" title="resumeVideoAtTime:withAutoPlay:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resumeVideoAtTime:withAutoPlay:">&ndash;&nbsp;resumeVideoAtTime:withAutoPlay:</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Demande à cette instance de réinitialiser la session en cours. S'il n'y a pas de session en cours, cette méthode n'a aucun effet. Une fois cette méthode appelée, elle enverra l'événement kBCOVPlaybackSessionLifecycleEventResumeBegin pour indiquer que la réinitialisation a commencé. Si une erreur se produit n'importe où pendant la réinitialisation, cette méthode enverra l'événement kBCOVPlaybackSessionLifecycleEventResumeFail. Si la réinitialisation réussit, le kBCOVPlaybackSessionLifecycleEventResumeComplete sera envoyé.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)reprendreVideoAtTime :(CMTime)<em>temps</em> avec lecture automatique :(BOOL)<em>lecture automatique</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>temps</code></th>
+						<td><p>Cherchez le temps de réglage après la réinitialisation.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lecture automatique</code></th>
+						<td><p>Automatiquement <a href="#//api/name/play">jouer</a> nouvelle session une fois qu'il est redémarré.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Demande à cette instance de réinitialiser la session en cours. S'il n'y a pas de session en cours, cette méthode n'a aucun effet. Une fois cette méthode appelée, elle enverra l'événement kBCOVPlaybackSessionLifecycleEventResumeBegin pour indiquer que la réinitialisation a commencé. Si une erreur se produit n'importe où pendant la réinitialisation, cette méthode enverra l'événement kBCOVPlaybackSessionLifecycleEventResumeFail. Si la réinitialisation réussit, le kBCOVPlaybackSessionLifecycleEventResumeComplete sera envoyé.</p>
+
+<p>N'appelez pas cette méthode une deuxième fois tant que vous n'avez pas reçu kBCOVPlaybackSessionLifecycleEventResumeFail ou kBCOVPlaybackSessionLifecycleEventResumeComplete du premier appel.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setVideos:" title="setVideos:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setVideos:">&ndash;&nbsp;setVidéos :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Spécifie la source à partir de laquelle cette instance tirera ses prochaines vidéos pour la lecture. La première session de lecture sera envoyée dès qu'elle sera disponible, remplaçant toute session de lecture en cours. Les sessions de lecture peuvent être livrées de manière asynchrone.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (void)setVideos:(id&lt;NSFastEnumeration&gt;)<code><em>vidéos</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vidéos</code></th>
+						<td><p>La source de <a href="../Classes/BCOVVideo.html">BCOVVidéo</a> objets à partir desquels cette instance doit construire des sessions de lecture.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Spécifie la source à partir de laquelle cette instance tirera ses prochaines vidéos pour la lecture. La première session de lecture sera envoyée dès qu'elle sera disponible, remplaçant toute session de lecture en cours. Les sessions de lecture peuvent être livrées de manière asynchrone.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resumeAd" title="resumeAd"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resumeAd">&ndash;&nbsp;reprendreAnnonce</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Demande à cette instance de reprendre la lecture de l'annonce. Cette méthode n'a aucun effet lorsqu'une publicité est déjà en cours de lecture, ou si aucun composant publicitaire n'a été intégré à ce contrôleur de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (annuler) CVAnnonce</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Demande à cette instance de reprendre la lecture de l'annonce. Cette méthode n'a aucun effet lorsqu'une publicité est déjà en cours de lecture, ou si aucun composant publicitaire n'a été intégré à ce contrôleur de lecture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pauseAd" title="pauseAd"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pauseAd">&ndash;&nbsp;pauseAnnonce</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Demande à cette instance de <a href="#//api/name/pause">pause</a> lecture d'annonces. Cette méthode n'a aucun effet lorsqu'une publicité est déjà en pause, ou si aucun composant publicitaire n'a été intégré à ce contrôleur de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (annuler)pauseAnnonce</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Demande à cette instance de <a href="#//api/name/pause">pause</a> lecture d'annonces. Cette méthode n'a aucun effet lorsqu'une publicité est déjà en pause, ou si aucun composant publicitaire n'a été intégré à ce contrôleur de lecture.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addFairPlayApplicationCertificate:identifier:" title="addFairPlayApplicationCertificate:identifier:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addFairPlayApplicationCertificate:identifier:">&ndash;&nbsp;addFairPlayApplicationCertificate:identifiant :</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cette méthode est utilisée pour ajouter un certificat d'application FairPlay au contrôleur de lecture&rsquo;s liste des certificats d'application FairPlay disponibles. Les certificats seront conservés pendant toute la durée de vie du contrôleur de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void) addFairPlayApplicationCertificate :(NSData *)<em>applicationCertificatDonnées</em> identifiant :(NSString *)<em>identifiant</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Cette méthode est utilisée pour ajouter un certificat d'application FairPlay au contrôleur de lecture&rsquo;s liste des certificats d'application FairPlay disponibles. Les certificats seront conservés pendant toute la durée de vie du contrôleur de lecture.</p>
+
+<p>Si vous utilisez Dynamic Delivery, les certificats d'application sont récupérés automatiquement par le plug-in FairPlay, cette méthode n'est donc pas nécessaire. Vous pouvez toutefois utiliser cette méthode pour précharger votre certificat d'application afin d'accélérer la lecture de la première vidéo cryptée FairPlay. Les certificats sont stockés et réutilisés pour les vidéos suivantes.</p>
+
+<p>@param applicationCertificateData Le certificat d'application FairPlay dans un objet NSData. S'il est défini sur nil, tout certificat d'application existant pour l'identifiant donné sera supprimé. @param identifier Une chaîne utilisée pour localiser le certificat d'application. Cette chaîne ne peut pas être nulle. - Pour la livraison dynamique, l'identifiant doit être l'URL qui a été utilisée pour récupérer ce certificat. - Pour les anciens comptes Video Cloud, ce paramètre doit être défini sur kBCOVDefaultFairPlayApplicationCertificateIdentifier pour s'appliquer à tous les comptes. - Si vous utilisez plusieurs comptes Video Cloud hérités, définissez ce paramètre sur l'ID de compte.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVPlaybackController.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de catégorie BCOVPlayerSDKManager(BCOVIMAAdditions)</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:">- createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy :</option>
+		
+		<option value="//api/name/createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:options:">- createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:options :</option>
+		
+		<option value="//api/name/createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:">- createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider :</option>
+		
+		<option value="//api/name/createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:options:">- createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:options :</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de catégorie BCOVPlayerSDKManager(BCOVIMAAdditions)</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Déclaré en</th>
+	<td>BCOVIMAComposant.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Méthodes de catégorie ajoutées à BCOVPlayerSDKManager pour prendre en charge IMA.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:" title="createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:">&ndash;&nbsp;createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crée et renvoie un nouveau contrôleur de lecture avec l'objet IMASettings, l'objet IMAAdsRenderingSettings, la stratégie d'affichage et le conteneur d'annonces spécifiés. Le contrôleur de lecture renvoyé sera configuré avec un fournisseur de session IMA.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (id&lt;BCOVPlaybackController&gt;)createIMAPlaybackControllerWithSettings:(IMASettings *)<code><em>Les paramètres</em> adsRenderingSettings:(IMAAdsRenderingSettings *)<em>adsRenderingSettings</em> adsRequestPolicy :(BCOVIMAAdsRequestPolicy *)<em>annoncesDemandePolitique</em> adContainer :(UIView *)<em>adContainer</em> viewController:(UIViewController *)<em>adContainerViewController</em> CompanSlots :(NSArray *)<em>compagnonSlots</em> viewStrategy :(BCOVPlaybackControllerViewStrategy)<em>stratégie</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Les paramètres</code></th>
+						<td><p>Un IMASettings qui sera utilisé pour configurer tout objet IMAAdsLoader utilisé par le contrôleur de lecture renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adsRenderingSettings<code></code></th>
+						<td><p>Un IMAAdsRenderingSettings qui sera utilisé pour configurer tout objet IMAAdsManager utilisé par le contrôleur de lecture renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>annoncesDemandePolitique</code></th>
+						<td><p><a href="../Classes/BCOVIMAAdsRequestPolicy.html">BCOVIMAAdsRequestPolitique</a> instance pour générer des IMAAdsRequests à utiliser par une session de lecture d'entrée donnée.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainer<code></code></th>
+						<td><p>la vue dans laquelle l'annonce sera affichée et l'interface utilisateur des informations sur l'annonce sera rendue.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainerViewController<code></code></th>
+						<td><p>Le contrôleur de vue contenant le conteneur d'annonces. S'il n'est pas fourni ici, doit être défini sur IMAAdDisplayContainer avant de faire une demande d'annonces ou de flux.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>compagnonSlots</code></th>
+						<td><p>la liste des instances IMACompanionAdSlot. Peut être nul ou vide.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stratégie</code></th>
+						<td><p>Une stratégie de vue qui détermine la vue pour le contrôleur de lecture renvoyé.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Un nouveau contrôleur de lecture avec les paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Crée et renvoie un nouveau contrôleur de lecture avec l'objet IMASettings, l'objet IMAAdsRenderingSettings, la stratégie d'affichage et le conteneur d'annonces spécifiés. Le contrôleur de lecture renvoyé sera configuré avec un fournisseur de session IMA.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p><code class="declared-in-ref">BCOVIMAComposant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:options:" title="createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:options:">&ndash;&nbsp;createIMAPlaybackControllerWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:viewStrategy:options :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crée et renvoie un nouveau contrôleur de lecture avec l'objet IMASettings, l'objet IMAAdsRenderingSettings, la stratégie d'affichage et le conteneur d'annonces spécifiés. Le contrôleur de lecture renvoyé sera configuré avec un fournisseur de session IMA.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (id&lt;BCOVPlaybackController&gt;)createIMAPlaybackControllerWithSettings:(IMASettings *)<code><em>Les paramètres</em> adsRenderingSettings:(IMAAdsRenderingSettings *)<em>adsRenderingSettings</em> adsRequestPolicy :(BCOVIMAAdsRequestPolicy *)<em>annoncesDemandePolitique</em> adContainer :(UIView *)<em>adContainer</em> viewController:(UIViewController *)<em>adContainerViewController</em> CompanSlots :(NSArray *)<em>compagnonSlots</em> viewStrategy :(BCOVPlaybackControllerViewStrategy)<em>stratégie</em> options :(NSDictionnaire *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Les paramètres</code></th>
+						<td><p>Un IMASettings qui sera utilisé pour configurer tout objet IMAAdsLoader utilisé par le contrôleur de lecture renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adsRenderingSettings<code></code></th>
+						<td><p>Un IMAAdsRenderingSettings qui sera utilisé pour configurer tout objet IMAAdsManager utilisé par le contrôleur de lecture renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>annoncesDemandePolitique</code></th>
+						<td><p><a href="../Classes/BCOVIMAAdsRequestPolicy.html">BCOVIMAAdsRequestPolitique</a> instance pour générer des IMAAdsRequests à utiliser par une session de lecture d'entrée donnée.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainer<code></code></th>
+						<td><p>la vue dans laquelle l'annonce sera affichée et l'interface utilisateur des informations sur l'annonce sera rendue.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainerViewController<code></code></th>
+						<td><p>Le contrôleur de vue contenant le conteneur d'annonces. S'il n'est pas fourni ici, doit être défini sur IMAAdDisplayContainer avant de faire une demande d'annonces ou de flux.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>compagnonSlots</code></th>
+						<td><p>la liste des instances IMACompanionAdSlot. Peut être nul ou vide.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stratégie</code></th>
+						<td><p>Une stratégie de vue qui détermine la vue pour le contrôleur de lecture renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">options<code></code></th>
+						<td><p>Un NSDictionnaire des options IMA. Peut être nul ou vide. Les seules clés d'option valides sont kBCOVIMAOptionIMAPlaybackSessionDelegateKey kBCOVIMAOptionBlockAdTargetingAPIsKey Voir le &ldquo;Ciblage publicitaire par appareil&rdquo; section du plug-in IMA README pour plus d'informations.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Un nouveau contrôleur de lecture avec les paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Crée et renvoie un nouveau contrôleur de lecture avec l'objet IMASettings, l'objet IMAAdsRenderingSettings, la stratégie d'affichage et le conteneur d'annonces spécifiés. Le contrôleur de lecture renvoyé sera configuré avec un fournisseur de session IMA.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p><code class="declared-in-ref">BCOVIMAComposant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:" title="createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:">&ndash;&nbsp;createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crée et renvoie un nouveau BCOVIMASessionProvider avec les paramètres spécifiés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (id&lt;BCOVPlaybackSessionProvider&gt;)createIMASessionProviderWithSettings:(IMASettings *)<code><em>Les paramètres</em> adsRenderingSettings:(IMAAdsRenderingSettings *)<em>adsRenderingSettings</em> adsRequestPolicy :(BCOVIMAAdsRequestPolicy *)<em>annoncesDemandePolitique</em> adContainer :(UIView *)<em>adContainer</em> viewController:(UIViewController *)<em>adContainerViewController</em> CompanSlots :(NSArray *)<em>compagnonSlots</em> amontSessionProvider :(id&lt;BCOVPlaybackSessionProvider&gt;)<em>fournisseur</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Les paramètres</code></th>
+						<td><p>Un IMASettings qui sera utilisé pour configurer tout objet IMAAdsLoader utilisé par le fournisseur de session renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adsRenderingSettings<code></code></th>
+						<td><p>Un IMAAdsRenderingSettings qui sera utilisé pour configurer tout objet IMAAdsManager utilisé par le fournisseur de session renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>annoncesDemandePolitique</code></th>
+						<td><p><a href="../Classes/BCOVIMAAdsRequestPolicy.html">BCOVIMAAdsRequestPolitique</a> instance pour générer des IMAAdsRequests à utiliser par une session de lecture d'entrée donnée.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainer<code></code></th>
+						<td><p>la vue dans laquelle l'annonce sera affichée et l'interface utilisateur des informations sur l'annonce sera rendue.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainerViewController<code></code></th>
+						<td><p>Le contrôleur de vue contenant le conteneur d'annonces. S'il n'est pas fourni ici, doit être défini sur IMAAdDisplayContainer avant de faire une demande d'annonces ou de flux.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>compagnonSlots</code></th>
+						<td><p>la liste des instances IMACompanionAdSlot. Peut être nul ou vide.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fournisseur</code></th>
+						<td><p>Un fournisseur de session pour attacher en amont et livrer des sessions de lecture au fournisseur de session renvoyé.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Un nouveau BCOVIMASessionProvider avec les paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Crée et renvoie un nouveau BCOVIMASessionProvider avec les paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p><code class="declared-in-ref">BCOVIMAComposant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:options:" title="createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:options:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:options:">&ndash;&nbsp;createIMASessionProviderWithSettings:adsRenderingSettings:adsRequestPolicy:adContainer:viewController:companionSlots:upstreamSessionProvider:options :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crée et renvoie un nouveau BCOVIMASessionProvider avec les paramètres spécifiés.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (id&lt;BCOVPlaybackSessionProvider&gt;)createIMASessionProviderWithSettings:(IMASettings *)<code><em>Les paramètres</em> adsRenderingSettings:(IMAAdsRenderingSettings *)<em>adsRenderingSettings</em> adsRequestPolicy :(BCOVIMAAdsRequestPolicy *)<em>annoncesDemandePolitique</em> adContainer :(UIView *)<em>adContainer</em> viewController:(UIViewController *)<em>adContainerViewController</em> CompanSlots :(NSArray *)<em>compagnonSlots</em> amontSessionProvider :(id&lt;BCOVPlaybackSessionProvider&gt;)<em>fournisseur</em> options :(NSDictionnaire *)<em>options</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>Les paramètres</code></th>
+						<td><p>Un IMASettings qui sera utilisé pour configurer tout objet IMAAdsLoader utilisé par le fournisseur de session renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adsRenderingSettings<code></code></th>
+						<td><p>Un IMAAdsRenderingSettings qui sera utilisé pour configurer tout objet IMAAdsManager utilisé par le fournisseur de session renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>annoncesDemandePolitique</code></th>
+						<td><p><a href="../Classes/BCOVIMAAdsRequestPolicy.html">BCOVIMAAdsRequestPolitique</a> instance pour générer des IMAAdsRequests à utiliser par une session de lecture d'entrée donnée.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainer<code></code></th>
+						<td><p>la vue dans laquelle l'annonce sera affichée et l'interface utilisateur des informations sur l'annonce sera rendue.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adContainerViewController<code></code></th>
+						<td><p>Le contrôleur de vue contenant le conteneur d'annonces. S'il n'est pas fourni ici, doit être défini sur IMAAdDisplayContainer avant de faire une demande d'annonces ou de flux.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>compagnonSlots</code></th>
+						<td><p>la liste des instances IMACompanionAdSlot. Peut être nul ou vide.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fournisseur</code></th>
+						<td><p>Un fournisseur de session pour attacher en amont et livrer des sessions de lecture au fournisseur de session renvoyé.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">options<code></code></th>
+						<td><p>Un NSDictionnaire des options IMA. Peut être nul ou vide. Les seules clés d'option valides sont kBCOVIMAOptionIMAPlaybackSessionDelegateKey kBCOVIMAOptionBlockAdTargetingAPIsKey Voir le &ldquo;Ciblage publicitaire par appareil&rdquo; section du plug-in IMA README pour plus d'informations.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Un nouveau BCOVIMASessionProvider avec les paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Crée et renvoie un nouveau BCOVIMASessionProvider avec les paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p><code class="declared-in-ref">BCOVIMAComposant.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

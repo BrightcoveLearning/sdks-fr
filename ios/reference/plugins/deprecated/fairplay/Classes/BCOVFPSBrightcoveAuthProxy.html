@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de classe BCOVFPSBrightcoveAuthProxy</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">BCOVFairPlay </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/fpsBaseURL">URLBasefps</option>
+		
+		<option value="//api/name/keyRequestURL">URLRequête clé</option>
+		
+		<option value="//api/name/sharedURLSession">SharedURLSession</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithApplicationId:publisherId:">- initWithApplicationId:publisherId :</option>
+		
+		<option value="//api/name/initWithPublisherId:applicationId:">- initWithPublisherId:applicationId :</option>
+		
+		<option value="//api/name/retrieveApplicationCertificate:">- récupérer le certificat d'application :</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de classe BCOVFPSBrightcoveAuthProxy</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Hérite de</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforme à</th>
+	<td><a href="../Protocols/BCOVFPSAuthorizationProxy.html">BCOVFPSAthorizationProxy</a></td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVFPSBrightcoveAuthProxy.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Classe responsable de l'interaction avec les services Brightcove FairPlay.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Autres méthodes</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/fpsBaseURL" title="fpsBaseURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fpsBaseURL">&nbsp;&nbsp;URLBasefps</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>L'URL de base pour les demandes de licence liées à FairPlay. L'URL par défaut pointe vers fps.brightcove.com. S'il est défini sur nil, le NSURL par défaut pointant vers fps.brightcove.com sera recréé.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, fort, null_resettable) NSURL *fpsBaseURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>L'URL de base pour les demandes de licence liées à FairPlay. L'URL par défaut pointe vers fps.brightcove.com. S'il est défini sur nil, le NSURL par défaut pointant vers fps.brightcove.com sera recréé.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVFPSBrightcoveAuthProxy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/keyRequestURL" title="keyRequestURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/keyRequestURL">&nbsp;&nbsp;URLRequête clé</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>L'URL de demande de clé pour les demandes de clé liées à FairPlay. Normalement défini sur nil, auquel cas l'URL de demande de clé sera récupérée à partir de la réponse de l'API Video Cloud Playback.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, fort, nullable) NSURL *keyRequestURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>L'URL de demande de clé pour les demandes de clé liées à FairPlay. Normalement défini sur nil, auquel cas l'URL de demande de clé sera récupérée à partir de la réponse de l'API Video Cloud Playback.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVFPSBrightcoveAuthProxy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sharedURLSession" title="sharedURLSession"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sharedURLSession">&nbsp;&nbsp;SharedURLSession</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>NSURLSession partagée sur tous les appels réseau au BCOVFPSBrightcoveAuthProxy. Cet objet est créé lors de l'initialisation du service de lecture. Si vous souhaitez utiliser votre propre NSURLSession, vous pouvez le définir ici. S'il est défini sur nil, la NSURLSession par défaut sera recréée.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, fort, null_resettable) NSURLSession *sharedURLSession</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>NSURLSession partagée sur tous les appels réseau au BCOVFPSBrightcoveAuthProxy. Cet objet est créé lors de l'initialisation du service de lecture. Si vous souhaitez utiliser votre propre NSURLSession, vous pouvez le définir ici. S'il est défini sur nil, la NSURLSession par défaut sera recréée.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVFPSBrightcoveAuthProxy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithPublisherId:applicationId:" title="initWithPublisherId:applicationId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithPublisherId:applicationId:">&ndash;&nbsp;initWithPublisherId:applicationId:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Crée un <a href="../Protocols/BCOVFPSAuthorizationProxy.html">BCOVFPSAthorizationProxy</a> pour interagir avec fps.brightcove.com.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance nullable)initWithPublisherId:(NSString *)<em>pubId</em> applicationId :(chaîne NSString *)<em>appId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">pubId<code></code></th>
+						<td><p>L'identifiant de l'éditeur. Ne doit pas être nul.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">appId<code></code></th>
+						<td><p>L'identifiant de l'application enregistré auprès de fps.brightcove.com. Peut être nul si vous n'utilisez pas fps.brightcove.com.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Un proxy initialisé.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Crée un <a href="../Protocols/BCOVFPSAuthorizationProxy.html">BCOVFPSAthorizationProxy</a> pour interagir avec fps.brightcove.com.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVFPSBrightcoveAuthProxy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/retrieveApplicationCertificate:" title="retrieveApplicationCertificate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/retrieveApplicationCertificate:">&ndash;&nbsp;récupérerApplicationCertificat :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Récupère le certificat d'application. Cela doit être fait dès que possible et doit être mis en cache pendant pas plus de 6 heures.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration">- (void)retrieveApplicationCertificate:(void ( ^ ) ( NSData *__nullable applicationCetificate , NSError *__nullable error ))<code><em>achèvementGestionnaire</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>achèvementGestionnaire</code></th>
+						<td><p>Exécuté lorsque la demande est terminée. Si applicationCetificate est nil, l'erreur sera renseignée. Le bloc sera exécuté sur le thread principal.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Récupère le certificat d'application. Cela doit être fait dès que possible et doit être mis en cache pendant pas plus de 6 heures.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVFPSBrightcoveAuthProxy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Unavailable Methods" name="task_Unavailable Methods"></a>
+						<h2 class="task-title">Méthodes non disponibles</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance nullable) init</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Deprecated Methods" name="task_Deprecated Methods"></a>
+						<h2 class="task-title">Méthodes déconseillées</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithApplicationId:publisherId:" title="initWithApplicationId:publisherId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithApplicationId:publisherId:">&ndash;&nbsp;initWithApplicationId:publisherId :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (type d'instance nullable)initWithApplicationId:(NSString *)<em>appId</em> IDéditeur :(NSString *)<em>pubId</em></code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2017 Brightcove. Tous les droits sont réservés. Mis à jour: 2017-03-02</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+</body>
+</html>

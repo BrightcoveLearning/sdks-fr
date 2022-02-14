@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de classe BCOVTVPlayerViewOptions</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/accessibilityDelegate">accessibilitéDélégué</option>
+		
+		<option value="//api/name/automaticControlTypeSelection">AutomaticControlTypeSelection</option>
+		
+		<option value="//api/name/fastForwardAndRewindRate">FastForwardAndRewindTaux</option>
+		
+		<option value="//api/name/hideControlsAnimationDuration">masquerContrôlesAnimationDurée</option>
+		
+		<option value="//api/name/hideControlsInterval">masquerIntervalleContrôles</option>
+		
+		<option value="//api/name/jumpInterval">Intervalle de saut</option>
+		
+		<option value="//api/name/presentingViewController">présentationViewController</option>
+		
+		<option value="//api/name/showControlsAnimationDuration">showControlsAnimationDurée</option>
+		
+		<option value="//api/name/useLocalizedVariantForVideoInfo">useLocalizedVariantForVideoInfo</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de classe BCOVTVPlayerViewOptions</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Hérite de</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVTVPlayerView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Configuration optionnelle pour une vue joueur.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/presentingViewController" title="presentingViewController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentingViewController">&nbsp;&nbsp;présentationViewController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Ce contrôleur de vue sera utilisé pour les fonctionnalités qui nécessitent un contrôleur de vue de présentation, comme le contrôleur plein écran utilisé pour afficher le texte de description vidéo dans le panneau des paramètres d'informations qui est trop grand pour tenir dans l'étiquette par défaut.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, faible) UIViewController *presentingViewController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Ce contrôleur de vue sera utilisé pour les fonctionnalités qui nécessitent un contrôleur de vue de présentation, comme le contrôleur plein écran utilisé pour afficher le texte de description vidéo dans le panneau des paramètres d'informations qui est trop grand pour tenir dans l'étiquette par défaut.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/jumpInterval" title="jumpInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/jumpInterval">&nbsp;&nbsp;Intervalle de saut</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Le temps en secondes pour revenir en arrière ou en avant lorsque le geste de saut en arrière/avant est invoqué. Le geste de saut est invoqué en cliquant sur le bord gauche ou droit du trackpad distant Siri. La valeur par défaut est 10 secondes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) NSTimeInterval jumpInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Le temps en secondes pour revenir en arrière ou en avant lorsque le geste de saut en arrière/avant est invoqué. Le geste de saut est invoqué en cliquant sur le bord gauche ou droit du trackpad distant Siri. La valeur par défaut est 10 secondes.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/fastForwardAndRewindRate" title="fastForwardAndRewindRate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/fastForwardAndRewindRate">&nbsp;&nbsp;FastForwardAndRewindTaux</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>La vitesse à laquelle l'AVPlayer utilisera lors de l'avance rapide ou du rembobinage est activée en appuyant longuement sur le bord gauche ou droit du trackpad distant Siri. La valeur par défaut est 24.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, attribuer) CGFloat fastForwardAndRewindRate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>La vitesse à laquelle l'AVPlayer utilisera lors de l'avance rapide ou du rembobinage est activée en appuyant longuement sur le bord gauche ou droit du trackpad distant Siri. La valeur par défaut est 24.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hideControlsInterval" title="hideControlsInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hideControlsInterval">&nbsp;&nbsp;masquerIntervalleContrôles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Le temps en secondes depuis la dernière touche avant d'effacer les commandes. La valeur par défaut est de 3 secondes. Voir <code>-resetHideControlsIntervalTimer</code> pour un usage connexe.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) NSTimeInterval hideControlsInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Le temps en secondes depuis la dernière touche avant d'effacer les commandes. La valeur par défaut est de 3 secondes. Voir <code>-resetHideControlsIntervalTimer</code> pour un usage connexe.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hideControlsAnimationDuration" title="hideControlsAnimationDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hideControlsAnimationDuration">&nbsp;&nbsp;masquerContrôlesAnimationDurée</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Le temps en secondes pour animer le masquage des contrôles. La valeur par défaut est de 0,5 seconde.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) NSTimeInterval hideControlsAnimationDuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Le temps en secondes pour animer le masquage des contrôles. La valeur par défaut est de 0,5 seconde.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showControlsAnimationDuration" title="showControlsAnimationDuration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showControlsAnimationDuration">&nbsp;&nbsp;showControlsAnimationDurée</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Le temps en secondes pour animer l'affichage des contrôles. La valeur par défaut est de 0,2 seconde.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) NSTimeInterval showControlsAnimationDuration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Le temps en secondes pour animer l'affichage des contrôles. La valeur par défaut est de 0,2 seconde.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/useLocalizedVariantForVideoInfo" title="useLocalizedVariantForVideoInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/useLocalizedVariantForVideoInfo">&nbsp;&nbsp;useLocalizedVariantForVideoInfo</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>S'il faut utiliser une variante de langue, si disponible, pour l'onglet d'informations sur la vidéo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) BOOL useLocalizedVariantForVideoInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>S'il faut utiliser une variante de langue, si disponible, pour l'onglet d'informations sur la vidéo.</p>
+
+<p>La valeur par défaut est OUI</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/automaticControlTypeSelection" title="automaticControlTypeSelection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/automaticControlTypeSelection">&nbsp;&nbsp;AutomaticControlTypeSelection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sélectionne automatiquement un <a href="../Classes/BCOVPUIBasicControlView.html">BCOVPUIBasicControlView</a> pour la vidéo en cours.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, assigner) BOOL automaticControlTypeSelection</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Sélectionne automatiquement un <a href="../Classes/BCOVPUIBasicControlView.html">BCOVPUIBasicControlView</a> pour la vidéo en cours.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVTVPlayerView.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/accessibilityDelegate" title="accessibilityDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accessibilityDelegate">&nbsp;&nbsp;accessibilitéDélégué</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, faible) id&lt;BCOVTVAccessibilityDelegate&gt; accessibilitéDelegate</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

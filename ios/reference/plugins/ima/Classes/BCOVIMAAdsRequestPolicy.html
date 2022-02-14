@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence de classe BCOVIMAAdsRequestPolicy</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/adsRequestPolicyFromCuePointPropertiesWithAdTag:adsCuePointProgressPolicy:">+ adsRequestPolicyFromCuePointPropertiesWithAdTag:adsCuePointProgressPolicy :</option>
+		
+		<option value="//api/name/adsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy:">+ adsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy :</option>
+		
+		<option value="//api/name/adsRequestPolicyWithVMAPAdTagUrl:">+ adsRequestPolicyWithVMAPAdTagUrl :</option>
+		
+		<option value="//api/name/videoPropertiesVMAPAdTagUrlAdsRequestPolicy">+ vidéoPropriétésVMAPAdTagUrlAdsRequestPolitique</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence de classe BCOVIMAAdsRequestPolicy</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Hérite de</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVIMAAdsRequestPolicy.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Objet de stratégie pour générer des IMAAdsRequests à utiliser par une session de lecture d'entrée donnée.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/videoPropertiesVMAPAdTagUrlAdsRequestPolicy" title="videoPropertiesVMAPAdTagUrlAdsRequestPolicy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/videoPropertiesVMAPAdTagUrlAdsRequestPolicy">+&nbsp;videoPropriétésVMAPAdTagUrlAdsRequestPolitique</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une règle de demande d'annonces qui vérifie l'objet BCOVVideo dans chaque session de lecture pour l'URL du tag d'emplacement publicitaire VMAP à demander. Si l'objet vidéo&rsquo;s properties contient une entrée dont la clé est <code>kBCOVIMAAdTag</code> , la valeur de cette entrée est supposée être une chaîne NSString contenant l'URL du tag d'emplacement publicitaire VMAP. Cette URL sera utilisée pour créer une demande VMAP IMAAdsRequest pour cette session de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (type d'instance)videoPropertiesVMAPAdTagUrlAdsRequestPolicy</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une règle de demande d'annonces qui génère des demandes VMAP IMAAdsRequests à partir des informations de chaque session de lecture&rsquo;s <code>BCOVVideo.properties</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une règle de demande d'annonces qui vérifie l'objet BCOVVideo dans chaque session de lecture pour l'URL du tag d'emplacement publicitaire VMAP à demander. Si l'objet vidéo&rsquo;s properties contient une entrée dont la clé est <code>kBCOVIMAAdTag</code> , la valeur de cette entrée est supposée être une chaîne NSString contenant l'URL du tag d'emplacement publicitaire VMAP. Cette URL sera utilisée pour créer une demande VMAP IMAAdsRequest pour cette session de lecture.</p>
+
+<p>Utilisez cette règle lorsque vous souhaitez avoir la possibilité de spécifier une URL de tag d'emplacement publicitaire VMAP différente pour différentes vidéos.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVIMAAdsRequestPolicy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/adsRequestPolicyWithVMAPAdTagUrl:" title="adsRequestPolicyWithVMAPAdTagUrl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adsRequestPolicyWithVMAPAdTagUrl:">+&nbsp;adsRequestPolicyWithVMAPAdTagUrl :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une règle de demande d'annonces qui génère une demande VMAP IMAAdsRequest avec l'URL de tag d'emplacement publicitaire spécifié et les emplacements associés pour chaque session de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (type d'instance)adsRequestPolicyWithVMAPAdTagUrl:(NSString *)<em>VMAPAdTagUrl</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">VMAPAdTagUrl<code></code></th>
+						<td><p>URL du tag de redirection à inclure dans la demande IMAAdsRequest générée par cette règle. Actuellement, seules les URL de tags d'emplacement publicitaire VMAP sont prises en charge.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une règle de demande d'annonces qui génère des demandes VMAP IMAAdsRequests à partir des paramètres spécifiés.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une règle de demande d'annonces qui génère une demande VMAP IMAAdsRequest avec l'URL de tag d'emplacement publicitaire spécifié et les emplacements associés pour chaque session de lecture.</p>
+
+<p>Utilisez cette règle lorsque vous souhaitez utiliser la même URL de tag d'emplacement publicitaire VMAP pour toutes les vidéos.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVIMAAdsRequestPolicy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/adsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy:" title="adsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy:">+&nbsp;adsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une politique de demande d'annonces qui vérifie chaque BCOVVideo pour les BCOVCuePoints de type &lsquo;kBCOVIMACuePointTypeAd&rsquo;. Si l'objet point de repère&rsquo;s properties contient une entrée dont la clé est <code>kBCOVIMAAdTag</code> , la valeur de cette entrée est supposée être une chaîne NSString contenant l'URL du tag d'emplacement publicitaire VAST. Cette URL sera utilisée pour créer une VAST IMAAdsRequest pour cette session de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (type d'instance)AdsRequestPolicyWithVASTAdTagsInCuePointsAndAdsCuePointProgressPolicy :(BCOVCuePointProgressPolicy *)<em>adsCuePointProgressPolicy</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">adsCuePointProgressPolicy<code></code></th>
+						<td><p>La règle de progression des points de repère spécifiée pour les annonces VAST demande des points de repère. Si ce paramètre est nul, <code>+[BCOVCuePointProgressPolicy progressPolicyProcessingCuePoints:BCOVProgressPolicyProcessAllCuePoints resumingPlaybackFrom:BCOVProgressPolicyResumeFromContentPlayhead ignoringPreviouslyProcessedCuePoints:NO]</code> sera utilisé par défaut.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une règle de demande d'annonces qui génère VAST IMAAdsRequests à partir des informations de chaque vidéo de lecture&rsquo;s <code>BCOVCuePoint.properties</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une politique de demande d'annonces qui vérifie chaque BCOVVideo pour les BCOVCuePoints de type &lsquo;kBCOVIMACuePointTypeAd&rsquo;. Si l'objet point de repère&rsquo;s properties contient une entrée dont la clé est <code>kBCOVIMAAdTag</code> , la valeur de cette entrée est supposée être une chaîne NSString contenant l'URL du tag d'emplacement publicitaire VAST. Cette URL sera utilisée pour créer une VAST IMAAdsRequest pour cette session de lecture.</p>
+
+<p>Utilisez cette règle lorsque vous souhaitez avoir la possibilité de spécifier une URL de tag d'emplacement publicitaire VAST différente pour différents points de repère.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVIMAAdsRequestPolicy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/adsRequestPolicyFromCuePointPropertiesWithAdTag:adsCuePointProgressPolicy:" title="adsRequestPolicyFromCuePointPropertiesWithAdTag:adsCuePointProgressPolicy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/adsRequestPolicyFromCuePointPropertiesWithAdTag:adsCuePointProgressPolicy:">+&nbsp;adsRequestPolicyFromCuePointPropertiesWithAdTag:adsCuePointProgressPolicy :</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une politique de demande d'annonces qui vérifie chaque BCOVVideo pour les BCOVCuePoints de type &lsquo;kBCOVIMACuePointTypeAd&rsquo;. Les propriétés du point de repère seront ajoutées au tag d'emplacement publicitaire en tant que paramètres de requête. Cette URL sera utilisée pour créer une VAST IMAAdsRequest pour cette session de lecture.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (type d'instance)adsRequestPolicyFromCuePointPropertiesWithAdTag:(NSString *)<em>étiquette publicitaire</em> adsCuePointProgressPolicy:(BCOVCuePointProgressPolicy *)<em>adsCuePointProgressPolicy</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>étiquette publicitaire</code></th>
+						<td><p>URL du tag de redirection à inclure dans la demande IMAAdsRequest générée par cette règle.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name">adsCuePointProgressPolicy<code></code></th>
+						<td><p>La règle de progression des points de repère spécifiée pour les annonces VAST demande des points de repère. Si ce paramètre est nul, <code>+[BCOVCuePointProgressPolicy progressPolicyProcessingCuePoints:BCOVProgressPolicyProcessAllCuePoints resumingPlaybackFrom:BCOVProgressPolicyResumeFromContentPlayhead ignoringPreviouslyProcessedCuePoints:NO]</code> sera utilisé par défaut.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>Une règle de demande d'annonces qui génère des demandes VAST IMAAdsRequests à partir de <code>étiquette publicitaire</code> et des informations dans chaque vidéo de lecture&rsquo;s <code>BCOVCuePoint.properties</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une politique de demande d'annonces qui vérifie chaque BCOVVideo pour les BCOVCuePoints de type &lsquo;kBCOVIMACuePointTypeAd&rsquo;. Les propriétés du point de repère seront ajoutées au tag d'emplacement publicitaire en tant que paramètres de requête. Cette URL sera utilisée pour créer une VAST IMAAdsRequest pour cette session de lecture.</p>
+
+<p>Utilisez cette règle lorsque vous souhaitez utiliser la même URL de tag d'emplacement publicitaire VAST pour tous les points de repère.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVIMAAdsRequestPolicy.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

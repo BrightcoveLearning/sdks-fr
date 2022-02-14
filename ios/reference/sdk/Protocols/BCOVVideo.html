@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Référence du protocole BCOVVideo</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title"> <a href="../index.html">Lecteur natif Brightcove pour iOS </a> </h1>
+
+			<p id="developer-home">
+				Brightcove<a href="../index.html"></a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Indice</a></li>
+<li><a href="../hierarchy.html">Hiérarchie</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							Sur cette page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Sauter à…</option>
+	
+	<option value="overview">Aperçu</option>
+	
+
+	
+	
+	<option value="tasks">Tâches</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/cuePoints">points de repère</option>
+		
+		<option value="//api/name/economics">économie</option>
+		
+		<option value="//api/name/iFramePlaylistURL">URL de la liste de lecture iFrame</option>
+		
+		<option value="//api/name/properties">Propriétés</option>
+		
+		<option value="//api/name/sources">sources</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/update:">- mettre à jour:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Référence du protocole BCOVVideo</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforme à</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Déclaré en</th>
+	<td>BCOVVideo.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Aperçu</h2>
+						<p>Une vidéo dans l'écosystème Brightcove Player SDK. Brightcove organise le contenu en entités appelées vidéos, qui peuvent avoir zéro ou plus <a href="#//api/name/sources">sources</a> contenant des informations spécifiques à l'accès au contenu. La vidéo fournit un conteneur pour référencer ces <a href="#//api/name/sources">sources</a> dans l'ensemble, et un endroit pour les métadonnées sur la vidéo ou la collection de <a href="#//api/name/sources">sources</a> sous la forme de <a href="#//api/name/properties">Propriétés</a>. En outre, une vidéo peut avoir une collection de points de repère, qui est un ensemble de points de repère qui décrivent des emplacements spécifiques dans la vidéo&rsquo;chronologie du contenu.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/cuePoints" title="cuePoints"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cuePoints">&nbsp;&nbsp;points de repère</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Les points de repère associés à cette vidéo. Ces points de repère s'appliquent également au contenu de chacune de cette vidéo&rsquo;s <a href="#//api/name/sources">sources</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, en lecture seule, copie) BCOVCuePointCollection *cuePoints</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Les points de repère associés à cette vidéo. Ces points de repère s'appliquent également au contenu de chacune de cette vidéo&rsquo;s <a href="#//api/name/sources">sources</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVVideo.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/properties" title="properties"></a>
+	<h3 class="method-title"><code><a href="#//api/name/properties">&nbsp;&nbsp;Propriétés</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Métadonnées ou propriétés liées à cette vidéo ou à ses <a href="#//api/name/sources">sources</a> dans l'ensemble. Vous pouvez trouver des constantes pour les clés que ce SDK utilise avec ce dictionnaire en haut de ce fichier d'en-tête.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, en lecture seule, copie) NSDictionary *properties</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Métadonnées ou propriétés liées à cette vidéo ou à ses <a href="#//api/name/sources">sources</a> dans l'ensemble. Vous pouvez trouver des constantes pour les clés que ce SDK utilise avec ce dictionnaire en haut de ce fichier d'en-tête.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVVideo.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/economics" title="economics"></a>
+	<h3 class="method-title"><code><a href="#//api/name/economics">&nbsp;&nbsp;économie</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Le domaine économique qui vient de Video Cloud. kBCOVEconomicsAdSupported est la valeur par défaut et signifie que les annonces doivent être affichées. kBCOVEconomicsFree signifie qu'aucune publicité ne doit être diffusée pendant la lecture vidéo.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique) BCOVEéconomie économique</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Le domaine économique qui vient de Video Cloud. kBCOVEconomicsAdSupported est la valeur par défaut et signifie que les annonces doivent être affichées. kBCOVEconomicsFree signifie qu'aucune publicité ne doit être diffusée pendant la lecture vidéo.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVVideo.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sources" title="sources"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sources">&nbsp;&nbsp;sources</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Les sources qui comprennent les destinations réelles auxquelles cette vidéo&rsquo;le contenu de s est accessible.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, en lecture seule, copie) NSArray&lt;BCOVSource*&gt; *sources</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Les sources qui comprennent les destinations réelles auxquelles cette vidéo&rsquo;le contenu de s est accessible.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVVideo.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/iFramePlaylistURL" title="iFramePlaylistURL"></a>
+	<h3 class="method-title"><code><a href="#//api/name/iFramePlaylistURL">&nbsp;&nbsp;URL de la liste de lecture iFrame</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>L'URL du manifeste I-FRAME à utiliser pour le nettoyage des miniatures.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (non atomique, lecture seule, copie, nullable) NSURL *iFramePlaylistURL</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>L'URL du manifeste I-FRAME à utiliser pour le nettoyage des miniatures.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVVideo.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/update:" title="update:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/update:">&ndash;&nbsp;mettre à jour:</a></code> <span class="task-item-suffix">méthode requise</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Renvoie une version modifiée de cette source. Étant donné que les objets BCOVVideo sont immuables, un tout nouveau BCOVVideo doit être créé même si une seule modification est nécessaire. Par conséquent, cette méthode fournit un moyen pratique d'obtenir une copie modifiable temporaire de cette instance et de la modifier (dans <code>updateBlock</code>).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)update :(void ( ^ ) ( id&lt;BCOVMutableVideo&gt; mutableVideo ))<em>updateBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Paramètres</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name">updateBlock<code></code></th>
+						<td><p>Un bloc qui est passé une copie mutable de cette vidéo.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Valeur de retour</h4>
+				<p>La copie de cette vidéo modifiée par <code>updateBlock</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Renvoie une version modifiée de cette source. Étant donné que les objets BCOVVideo sont immuables, un tout nouveau BCOVVideo doit être créé même si une seule modification est nécessaire. Par conséquent, cette méthode fournit un moyen pratique d'obtenir une copie modifiable temporaire de cette instance et de la modifier (dans <code>updateBlock</code>).</p>
+
+<p>N'essayez pas d'enregistrer une référence à la vidéo mutable transmise à <code>updateBlock</code> , car le comportement de cette opération n'est pas défini. Au lieu de cela, apportez les modifications nécessaires dans le bloc, puis capturez l'objet vidéo renvoyé par cette méthode.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Déclaré en</h4>
+				<p>BCOVVideo.h<code class="declared-in-ref"></code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">droits d'auteur &copy; 2021 Brightcove. Tous les droits sont réservés. Mis à jour: 2021-07-08</p>
+						
+						
+						<p class="generator">Généré par <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
