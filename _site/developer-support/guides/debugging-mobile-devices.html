@@ -1,0 +1,2369 @@
+﻿<!DOCTYPE html>
+<html lang="fr"> 
+    <head>
+        <title>Débogage sur les appareils mobiles</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dans cette rubrique, vous apprendrez à déboguer JavaScript sur les appareils mobiles. Pendant le développement, les tests et le débogage du contenu sur les plates-formes mobiles peuvent être très difficiles.">
+        
+        <!-- Google Font -->
+        <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+        <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+        
+        <!-- FontAwesome JS-->
+        
+        <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>  
+        
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.css">
+
+        <!-- Theme CSS -->  
+        <link id="theme-style" rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/css/theme.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/custom-css/styles.css">
+
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+        <script translate="no">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBJC11HF8Z');
+        </script>
+        <script src="/assets/s-site-assets-scripts/sixth-sense.js"></script>
+        <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
+        <script src="/assets/s-site-assets-scripts/feather.min.js"></script>
+
+    </head> 
+
+    <body class="docs-page">
+        
+
+<header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid position-relative py-2">
+      <div class="docs-logo-wrapper">
+        <button id="docs-sidebar-toggler" class="docs-sidebar-toggler"
+          type="button">
+          <span></span> <span></span> <span></span>
+        </button>
+        <div class="site-logo"><a class="navbar-brand" href="https://support.brightcove.com/" style="margin-left: 15px;"> <img class="logo-icon me-2" src="/assets/s-site-assets-template-stylesheets/images/bc_logo_black_1@1x.png" alt="logo" style="margin-bottom: 9px;"/>
+            <!-- <span class="logo-text">BRIGHTCOVE</span> -->
+          </a></div>
+      </div><!--//docs-logo-wrapper-->
+
+      <div class="docs-top-utilities d-flex justify-content-end
+        align-items-center">
+        
+        <!-- Search bar -->
+        <div id="nav-search-box" class="top-search-box d-none d-lg-flex" style="margin-right: 10px ;"></div>
+
+<select id="site_select" class="form-select select-focus" style="width:
+          20%; margin-right: 10px;" translate="no">
+          <option value="">Other Brightcove Docs</option>
+          
+          
+          <option value="https://support.brightcove.com" translate="no">Documentation Home</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD --</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+          
+          
+          
+          <option value="https://mstudio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Marketing Studio</option>
+          
+          
+          
+          <option value="https://player.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+          
+          
+          
+          <option value="https://apis.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+          
+          
+          
+          <option value="https://sdks.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+          
+          
+          
+          <option value="https://integrations.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+          
+          
+          
+          <option value="https://general.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO ESSENTIALS --</option>
+          
+          
+          
+          <option value="https://audience-insights.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
+          
+          
+          
+          <option value="https://beacon-help.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
+          
+          
+          
+          <option value="https://beacon.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
+          
+          
+          
+          <option value="https://corptv.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
+          
+          
+          
+          <option value="https://live.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+          
+          
+          
+          <option value="https://zencoder.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD ADD-ONS --</option>
+          
+          
+          
+          <option value="https://gallery.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com/social/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+          
+          
+          
+          <option value="https://interactivity.support.brightcove.com/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Interactivity</option>
+          
+          
+          
+          <option value="https://ssai.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+          
+          
+          
+          <option value="https://campaign.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+          
+          
+        </select>
+
+        <select id="language_select" class="form-select select-focus" style="width: 10%;"
+          onchange="doGTranslate(this);" translate="no">
+          <!-- <option value="">Select Language</option> -->
+          <option value="en|en" translate="No">English</option>
+          <option value="en|zh-TW" translate="No">繁體中文</option>
+          <option value="en|fr" translate="No">Français</option>
+          <option value="en|de" translate="No">Deutsche</option>
+          <option value="en|ja" translate="No">日本語</option>
+          <option value="en|ko" translate="No">한국어</option>
+          <option value="en|es" translate="No">Español</option>
+        </select>
+
+        <script translate="no">
+          /* <![CDATA[ */
+          function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+          /* ]]> */
+        </script>
+      </div>
+    </div>
+  </div>
+</header><!--//header-->
+
+<div class="docs-wrapper">
+  <div id="docs-sidebar" class="docs-sidebar" style="padding-right: 15px;">
+    <div id="nav-search-box" class="top-search-box d-lg-none p-3"></div>
+    <div class="row">
+      
+        <div id="side_nav" style="margin-left: 1em; display: inline-block; border-right: 1px solid #e5e5e6; padding-right: 1em;">
+          
+          <nav class="docs-nav sidenav" aria-label="Main">
+            <ul class="site-nav" style="list-style-type: none;">
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/index.html">Accueil</a></li>
+            
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/getting-started/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Commencer</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/brightcove-native-player-sdks.html">SDK natifs de Brightcove</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/developer-support/guides/debugging-mobile-devices.html" aria-current="page">Débogage sur les appareils mobiles</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/brightcove-native-sdks-feature-support.html">Tableau de prise en charge des fonctionnalités</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/native-video-playback.html">Lecture vidéo native</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/brightcove-native-sdk-features.html">Fonctionnalités natives du SDK</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/running-sample-apps-native-sdk-android.html">Exécuter des exemples d'applications Android</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/running-sample-apps-native-sdk-ios.html">Exécuter des exemples d'applications iOS/tvOS</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/brightcove-native-sdks-training-videos.html">Vidéos de formation</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/features/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Caractéristiques</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/using-360deg-videos-native-sdks.html">Vidéo à 360 degrés</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/advertising-sdks.html">Publicité</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/analytics-sdks.html">Analytique</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/audio-only-with-sdks.html">Audio uniquement</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/bumper-video-with-sdks.html">Vidéos sur les pare-chocs</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/using-captions-brightcove-native-sdks.html">Légendes</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/china-delivery-sdks.html">Livraison en Chine</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item">Chromecast<a class="nav-link" href="/features/chromecast-with-sdks.html"></a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/connected-tv-set-top-box-apps.html">Télévision connectée</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/cross-device-resume-sdks.html">CV multi-appareils</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/using-delivery-rules-with-sdks.html">Règles de livraison</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/fallback-hdcp-sdks.html">Fallback HDCP</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/forensic-watermarking-with-sdks.html">Filigrane médico-légal</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/live-streams-native-sdks.html">Diffusion en direct</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/multiple-audio-tracks-native-sdks.html">Plusieurs pistes audio</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/playback-restrictions-with-sdks.html">Restrictions de lecture</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/brightcove-native-player-controls.html">Contrôles du joueur</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/picture-picture-native-sdks.html">Image dans l'image</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/thumbnails-native-sdks.html">Recherche de vignettes</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/features/video-formats-and-captioning-native-sdks.html">Formats vidéo et sous-titrage</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/android/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Développement Android</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/basics/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Principes de base</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/overview-brightcove-player-sdk-android.html">version 8.0.0 : Présentation du SDK natif pour Android</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/android-sdk-8-release.html">Version du SDK natif v8.0.0</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item">Architecture<a class="nav-link" href="/android/basics/architecture-brightcove-player-sdk-android.html"></a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/android-understanding-brightcoveplayer-class.html">Classe BrightcovePlayer</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/android-choosing-video-view.html">Choisir une vue vidéo</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/android-brightcove-registration.html">Inscription Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/understanding-events-native-sdk-android.html">Comprendre les événements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/android-working-media-content.html">Travailler avec du contenu multimédia</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/training-demand-developing-brightcove-native-player-sdk-android.html">Vidéos de formation sur le SDK natif</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/basics/step-step-simple-video-app-using-native-sdk-android.html">Étape par étape : Application vidéo simple</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/advertising/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Publicité</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/advertising/android-ad-ui-customization-server-side-ad-insertion-ssai.html">Personnalisation de l'interface utilisateur publicitaire avec SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonce</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/advertising/migrating-to-ima-plugin.html">Plugin IMA de Brightcove 8.0.0</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/advertising/ssai-seeking-behavior.html">Plugin SSAI de Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des publicités côté client (CSAI)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/advertising/using-pulse-plugin-native-sdk-android.html">Plugin Invidi Pulse</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/analytics/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Analytique</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/analytics/analytics-related-offline-playback-native-sdks.html">Analyses liées à la lecture hors ligne</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/analytics/sending-brightcove-analytics-native-sdk-android.html">Envoi d'analyses Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage de Brightcove Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/captions/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Légendes</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/captions/removing-android-captions-background-image.html">Suppression de l'image d'arrière-plan des sous-titres</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/captions/selecting-captions-programmatically-native-sdk-android.html">Sélection de sous-titres par programmation</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/synchronizing-webvtt-captions.html">Synchronisation des sous-titres WebVTT</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/tv/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;TV connectée</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/chromecast-with-sdks.html">Plugin Chromecast</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/tv/customizing-android-tv-controls.html">Personnalisation des commandes Android TV</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/content-protection/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Protection du contenu</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/fallback-hdcp-sdks.html">Fallback HDCP</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/playback-restrictions-with-sdks.html">Restrictions de lecture</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/framework/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Cadre</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/android-adding-viewmanaging-layout.html">Ajouter une vue/Gérer la mise en page</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/android-pie-support-native-sdk-android.html">Prise en charge de la tarte Android</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/creating-plugin-native-sdk-android.html">Création d'un plugin</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/migrating-exoplayer-2-framework.html">Migration vers le framework ExoPlayer 2</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/android-sdk-7-release.html">Version 7.0.1 du SDK natif</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/framework/resizing-video-view.html">Redimensionner la vue vidéo</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/live/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;En direct</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/using-live-ssai-native-sdks.html">Utiliser Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/client-side-ads-with-live-ssai.html">Annonces pré-roll côté client avec Live SSAI</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/playback/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Rediffusion</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/bumper-video-with-sdks.html">Vidéos sur les pare-chocs</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/hevc-selection-native-sdk-android.html">Sélection HEVC</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/hls-playback-native-sdk-android.html">Lecture HLS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/multiple-audio-tracks-offline-playback-native-sdk-android.html">Plusieurs pistes audio pour la lecture hors ligne</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/playhead-position-and-video-duration.html">Position de la tête de lecture et durée de la vidéo</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/setting-playback-speed-android.html">Réglage de la vitesse de lecture</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/android-source-selection.html">Sélection de la source</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/video-and-playlist-objects-json.html">Objets vidéo et liste de lecture de JSON</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/troubleshooting/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Dépannage</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/troubleshooting/error-messages-native-sdk-android.html">Guide des messages d'erreur</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/troubleshooting/removing-android-log-messages.html">Suppression des messages de journal Android</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/ui/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;INTERFACE UTILISATEUR</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/brightcove-native-player-controls.html">Commandes de base du joueur</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/localization-with-native-sdks.html">Localiser le lecteur</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/android-managing-player-controls.html">Gestion des commandes du lecteur</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/playback/handling-orientation-change-native-sdk-android.html">Changement d'orientation</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/android/resources/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Ressources</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/BrightcoveOS/android-player-samples">Exemples de code Android</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/resources/code-snippets-using-native-sdk-android.html">Extraits de code</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/reference/javadoc/index.html">Référence du SDK natif pour Android</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://docs.brightcove.com/index.html">Références de plugins</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/resources/brightcove-player-sdk-android-previous-sdk-information.html">Versions précédentes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/android/resources/brightcove-native-sdk-android-release-notes.html">Notes de version</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/ios/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Développement iOS</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/basics/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Principes de base</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/overview-brightcove-player-sdk-ios.html">version 6.12.0 : Présentation du SDK natif pour iOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item">Architecture<a class="nav-link" href="/ios/basics/architecture-brightcove-player-sdk-ios.html"></a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/ios-brightcove-registration.html">Inscription Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/ios-working-media-content.html">Travailler avec du contenu multimédia</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/understanding-events-native-sdk-ios.html">Comprendre les événements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/training-demand-developing-brightcove-native-player-sdk-ios.html">Vidéos de formation sur le SDK natif</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/step-step-simple-video-app-using-objective-c.html">Étape par étape : Application vidéo simple utilisant Objective-C</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/step-step-simple-video-app-using-swift.html">Étape par étape : Application vidéo simple utilisant Swift</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/advertising/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Publicité</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des publicités côté client (CSAI)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonce</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/analytics/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Analytique</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/analytics/sending-brightcove-analytics-native-sdk-ios.html">Envoi d'analyses Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage de Brightcove Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/captions/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Légendes</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/synchronizing-webvtt-captions.html">Synchronisation des sous-titres WebVTT</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/tv/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;TV connectée</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/chromecast-with-sdks.html">Plugin Chromecast</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/content-protection/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Protection du contenu</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/fallback-hdcp-sdks.html">Fallback HDCP</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/playback-restrictions-with-sdks.html">Restrictions de lecture</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/framework/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Cadre</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/framework/working-app-transport-security-ats.html">Travailler avec App Transport Security (ATS)</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/live/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;En direct</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/using-live-ssai-native-sdks.html">Utiliser Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/client-side-ads-with-live-ssai.html">Annonces pré-roll côté client avec Live SSAI</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/playback/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Rediffusion</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/bumper-video-with-sdks.html">Vidéos sur les pare-chocs</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/offline-playback-native-player-sdks.html">Lecture hors ligne</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/playback/ios-source-selection.html">Sélection de la source</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/privacy/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Confidentialité</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/privacy/app-tracking-transparency.html">Transparence du suivi des applications</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/troubleshooting/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Dépannage</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/troubleshooting/error-handling-native-sdk-ios.html">La gestion des erreurs</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/ui/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;INTERFACE UTILISATEUR</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/brightcove-native-player-controls.html">Commandes de base du joueur</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/localization-with-native-sdks.html">Localiser le lecteur</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ios/resources/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Ressources</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/BrightcoveOS/ios-player-samples">Exemples de code iOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/resources/code-snippets-using-native-sdk-ios.html">Extraits de code</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/reference/sdk/index.html">Référence du SDK natif pour iOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://docs.brightcove.com/index.html">Références de plugins</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/CHANGELOG.md">Notes de version</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/resources/brightcove-player-sdk-ios-previous-sdk-information.html">Versions précédentes</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/tvos/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Développement de tvOS</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/basics/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Principes de base</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/tvos/basics/overview-brightcove-player-sdk-tvos.html">version 6.12.0 : Présentation du SDK natif pour tvOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item">Architecture<a class="nav-link" href="/ios/basics/architecture-brightcove-player-sdk-ios.html"></a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/ios-brightcove-registration.html">Inscription Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/ios-working-media-content.html">Travailler avec du contenu multimédia</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/understanding-events-native-sdk-ios.html">Comprendre les événements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/connected-tv-set-top-box-apps.html">Applications TV connectées</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/basics/training-demand-developing-brightcove-native-player-sdk-ios.html">Vidéos de formation sur le SDK natif</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/tvos/basics/step-step-simple-tv-video-app-using-swift.html">Étape par étape : Application vidéo TV simple utilisant Swift</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/advertising/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Publicité</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/implementing-client-side-ads-native-sdks.html">Implémentation des publicités côté client (CSAI)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/implementing-server-side-ads-native-player-sdks.html">Implémentation des annonces côté serveur (SSAI)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/appending-ad-query-params-native-sdks.html">Ajout de paramètres de requête d'annonce</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/ima-open-measurement-native-sdks.html">Mesure ouverte IMA</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/analytics/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Analytique</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/analytics/sending-brightcove-analytics-native-sdk-ios.html">Envoi d'analyses Brightcove</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/viewing-brightcove-analytics-player-sdks.html">Affichage de Brightcove Analytics</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/captions/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Légendes</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/synchronizing-webvtt-captions.html">Synchronisation des sous-titres WebVTT</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/content-protection/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Protection du contenu</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/tvos/content-protection/adding-fairplay-protection-your-apple-tv-apps.html">Apple TV avec FairPlay</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/content-security-drm-native-player-sdks.html">Sécurité du contenu (DRM)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/fallback-hdcp-sdks.html">Fallback HDCP</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/playback-restrictions-with-sdks.html">Restrictions de lecture</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/framework/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Cadre</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/framework/working-app-transport-security-ats.html">Travailler avec App Transport Security (ATS)</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/live/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;En direct</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/using-live-ssai-native-sdks.html">Utiliser Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/using-player-enhancements-live-ssai-native-sdks.html">Améliorations du lecteur pour Live SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/client-side-ads-with-live-ssai.html">Annonces pré-roll côté client avec Live SSAI</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/playback/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Rediffusion</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/bumper-video-with-sdks.html">Vidéos sur les pare-chocs</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/playback/ios-source-selection.html">Sélection de la source</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/privacy/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Confidentialité</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/privacy/app-tracking-transparency.html">Transparence du suivi des applications</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/troubleshooting/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Dépannage</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/troubleshooting/error-handling-native-sdk-ios.html">La gestion des erreurs</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/ui/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;INTERFACE UTILISATEUR</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/tvos/playback/apple-tv-ui-controls-native-sdk-tvos.html">Contrôles de l'interface utilisateur Apple TV</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/features/localization-with-native-sdks.html">Localiser le lecteur</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/tvos/resources/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Ressources</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/Player/AppleTV">Exemple de base d'Apple TV</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/BrightcoveOS/ios-player-samples/tree/master/SSAI/BasicSSAItvOSPlayer">Apple TV avec SSAI</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ios/reference/sdk/index.html">Référence du SDK natif pour iOS</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://docs.brightcove.com/index.html">Références de plugins</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/brightcove/brightcove-player-sdk-ios/blob/master/CHANGELOG.md">Notes de version</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/tvos/resources/brightcove-player-sdk-tvos-previous-sdk-information.html">Versions précédentes</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/developer-support/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Assistance aux développeurs</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/developer-support/announcements/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Annonces</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/announcements/native-sdk-android-will-eol-support-exoplayer-1.html">Prise en charge EOL du SDK Android pour ExoPlayer 1</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/announcements/announcement-brightcove-sdk-android-version-support.html">Prise en charge des versions Android</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/announcements/apple-announces-new-app-submission-requirement.html">Exigence de soumission d'application Apple</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/announcements/native-sdk-ios-eol-support-iostvos-10.html">Support EOL du SDK iOS pour iOS/tvOS 10</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/developer-support/guides/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Guides</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/guides/concepts-javascript-debugging-basics.html">Notions de base du débogage JavaScript</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/guides/create-json-web-token.html">Création d'un jeton Web JSON (JWT)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item section-doc"><a class="nav-link" href="/developer-support/guides/debugging-mobile-devices.html" aria-current="page">Débogage sur les appareils mobiles</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/developer-support/questions/index.html"> <span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;Questions et problèmes</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/questions/release-notes-brightcove-native-sdks.html">Notes de version</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/questions/known-issues-brightcove-native-player-sdks.html">Problèmes connus</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://groups.google.com/forum/#!forum/brightcove-native-player-sdks">Liste de diffusion/archives du forum</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/questions/faq-brightcove-native-player-sdks.html">Questions fréquemment posées</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/developer-support/questions/report-issue-brightcove-native-sdks.html">Signaler un problème</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/support/index.html"><span class="theme-icon-holder me-2"> <i class="fa-solid fa-plus"></i></span>&nbsp;Soutenir</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/viewing-brightcove-system-status-page.html">Affichage de la page État du système Brightcove</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/contact-sales.html">Contactez le service commercial</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/opening-case-with-brightcove-support.html">Ouverture d'un dossier de support</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/reset-support-portal-password.html">Réinitialiser le mot de passe du portail</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+          </ul>
+          </nav>
+        </div>
+      </div>
+    </div><!--//docs-sidebar-->
+  </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div class="docs-content" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="docs-overview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/">Accueil</a></li>
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/developer-support/">Soutien aux développeurs</a></li>
+            
+            
+            
+            <li class="breadcrumb-item">Guides<a class="theme-link" href="/developer-support/guides/"></a></li>
+            
+            
+            
+            <li class="breadcrumb-item active" aria-current="page">Débogage sur les appareils mobiles</li>
+            
+            
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="docs-content">
+  <div class="container">
+    <div class="docs-overview py-5">
+      
+      <div class="centered-inpage-nav" id="centered_inpage_nav">
+        <nav id="centered_toc">
+          <select id="centered_in_page_toc" class="form-select select-focus"></select>
+        </nav>
+      </div>
+      <br/>
+      
+      
+<article class="bcls-article">
+  <h1>Débogage sur les appareils mobiles</h1>
+  <summary>Dans cette rubrique, vous apprendrez à déboguer JavaScript sur les appareils mobiles. Pendant le développement, les tests et le débogage du contenu sur les plates-formes mobiles peuvent être très difficiles.</summary>
+
+  <section class="bcls-section">
+    <h2 id="Overview">Aperçu</h2>
+    <p>Dans ce document, vous apprendrez comment démarrer le débogage sur les appareils mobiles et couvre les solutions suivantes :</p>
+    <ul>
+      <li>Débogage sur les appareils iOS</li>
+      <li>Débogage sur les appareils Android</li>
+      <li>Utilisation de Charles sur les appareils mobiles</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Ce document sert de point de départ aux développeurs pour déboguer sur les appareils mobiles. Il ne couvre pas toutes les méthodes de débogage mobile. Pour plus d'informations sur le débogage en général, consultez la documentation de base du débogage <a href="/developer-support/guides/concepts-javascript-debugging-basics.html">JavaScript</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Debugging_with_iOS">Débogage avec iOS</h2>
+    <div class="BCL-concept">
+      <div class="BCL-subsection">
+        <h3>Configuration minimale requise pour le débogage iOS</h3>
+        <ul>
+          <li>Safari version 6+ sous Mac macOS</li>
+          <li>iPhone ou iPad avec iOS 6+</li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--information">Remarque : si vous utilisez iOS 10.3 ou une version ultérieure, ouvrez les paramètres et accédez à Général &gt; À propos &gt; Paramètres de confiance des certificats, recherchez le certificat Charles Proxy et activez-le pour lui donner une confiance totale.</aside>
+      </div>
+      <div class="BCL-subsection">
+        <h3>Utilisation du débogage à distance Safari</h3>
+        <p>La mise à jour iOS 6 d'Apple a introduit Safari Remote Debogging, qui vous permet de déboguer des pages Web dans l'application Safari sur les appareils iOS. Pour commencer, suivez les étapes ci-dessous :</p>
+        <ol class="bcls-tasklist">
+          <li>Connectez votre appareil iOS à votre machine via un câble USB.</li>
+          <li>Sur votre appareil, ouvrez le <strong>Paramètres</strong> application. Sélectionner <strong>Safari</strong> , faites défiler vers le bas de la page et ouvrez le <strong>Avancé</strong> menu. Activer le <strong>Inspecteur Web</strong> option.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Inspecteur Web" src="/assets/images/s-misc-img/developer/debugging-on-mobile/ios/01-iOS.png"/>
+              <figcaption class="bcls-caption--image">Inspecteur Web</figcaption>
+            </figure>
+          </li>
+          <li>Toujours sur votre appareil, ouvrez l'application <strong>Safari</strong> et accédez à n'importe quelle page Web.</li>
+          <li>Sur votre Mac, lancez <strong>Safari</strong>, ouvrez les <strong>Préférences</strong> (<strong>Safari &gt; Préférences</strong>) et accédez à la section <strong>Avancée</strong> section. Activez le menu <strong>Afficher le développement dans l'</strong> option de barre de menus.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Afficher le menu Développer" src="/assets/images/s-misc-img/developer/debugging-on-mobile/ios/02-iOS.png"/>
+              <figcaption class="bcls-caption--image">Afficher le menu Développer</figcaption>
+            </figure>
+          </li>
+          <li>Ouvrez le <strong>Développer</strong> menu. Vous verrez votre appareil iOS dans la liste. Lorsque vous passez la souris sur le nom de votre appareil, l'URL du site que vous avez consultée s'affiche sur votre appareil.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Trouver l'appareil" src="/assets/images/s-misc-img/developer/debugging-on-mobile/ios/03-iOS.png"/>
+              <figcaption class="bcls-caption--image">Trouver l'appareil</figcaption>
+            </figure>
+          </li>
+          <li>Sélectionnez l'URL et une fenêtre <strong>Web Inspector</strong> s'ouvre, vous permettant de prévisualiser, d'inspecter et de déboguer le contenu de votre navigateur mobile à partir de votre bureau.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Débogage sur le Bureau" src="/assets/images/s-misc-img/developer/debugging-on-mobile/ios/04-iOS.png"/>
+              <figcaption class="bcls-caption--image">Débogage sur le Bureau</figcaption>
+            </figure>
+          </li>
+          <li>Dans le <strong>Ressources</strong> section, vous pouvez prévisualiser et inspecter la page Web. Le survol des éléments dans l' <strong>Inspecteur Web</strong> met en surbrillance les éléments correspondants dans le navigateur de votre appareil iOS.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Inspection des éléments" src="/assets/images/s-misc-img/developer/debugging-on-mobile/ios/05-iOS.png"/>
+              <figcaption class="bcls-caption--image">Inspection des éléments</figcaption>
+            </figure>
+          </li>
+          <li>Vous pouvez également utiliser les sections <strong>Débogueur</strong> et <strong>Console</strong> pour déboguer davantage votre page en définissant des points d'arrêt, en journalisant des données, etc.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--information">Pour plus d'informations sur l'utilisation de Safari Web Inspector, visitez le <a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html">La documentation développeur d'Apple</a>.</aside>
+      </div>
+    </div>
+  </section>
+  <!-- div id="ios" -->
+  
+  <section class="bcls-section">
+    <h2 id="Debugging_with_Android">Débogage avec Android</h2>
+    <div class="BCL-concept">
+      <div class="BCL-subsection">
+        <h3>Configuration minimale requise pour le débogage Android</h3>
+        <ul>
+          <li>Chrome 32+ s'exécutant sur Mac ou Windows</li>
+          <li>Appareil Android avec Chrome pour Android 32+</li>
+        </ul>
+        <p class="BCL-aside">Remarque : Les étapes de cette section ont été écrites à l'aide d'un appareil fonctionnant sous Android 11.</p>
+        <!-- <p class="BCL-aside">Note: The steps in this section were written using a device running Android 4.3.</p> -->
+      </div>
+      <div class="BCL-subsection">
+        <h3>Activation du débogage sur votre appareil</h3>
+        <p>Avant de pouvoir commencer à déboguer du contenu sur votre appareil, vous devez activer le débogage USB dans les paramètres de votre appareil.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Si vous exécutez Android 4.2+, vous devez activer les <strong>options développeur</strong> de votre appareil avant de pouvoir activer le débogage USB. Sur votre appareil, ouvrez le <strong>Paramètres</strong> l'application et sélectionnez le <strong>A propos du téléphone</strong> menu. Localisez le <strong>numéro de construction</strong> de votre appareil et touchez-le sept fois.
+            <aside class="bcls-aside bcls-aside--tip">Si vous utilisez une ancienne version d'Android, vous pouvez activer le débogage USB en allant directement dans Paramètres&gt; Options de développeur.</aside>
+          </li>
+          <li>Saisissez le mot de passe de votre appareil. Vous devriez voir apparaître un message indiquant que <strong>vous êtes maintenant un développeur.</strong></li>
+          <li>Pour accéder à vos <strong>options de développeur</strong> dans Android 11, retournez dans <strong>Paramètres</strong> et sélectionnez <strong>Système</strong>.</li>
+          <li>Développez <strong>Avancé</strong>, puis appuyez sur <strong>Options du développeur</strong>.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Options du développeur" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/system.png"/>
+              <figcaption class="bcls-caption--image">Options du développeur</figcaption>
+            </figure>
+          </li>
+          <li>Faites défiler vers le bas jusqu'au <strong>débogage USB</strong> et activez la bascule.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Activer le débogage USB" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/enable-usb.png"/>
+              <figcaption class="bcls-caption--image">Activer le débogage USB</figcaption>
+            </figure>
+          </li>
+          <li>Pour plus de détails, voir le document <a href="https://developer.android.com/studio/debug/dev-options">Configurer les options de développement sur l'appareil d'</a> Android.</li>
+          </li>
+        </ol>
+      </div>
+      <div class="BCL-subsection">
+        <h3>Débogage à distance à l'aide de Chrome pour Android</h3>
+        <p>Maintenant que le débogage USB est activé sur votre appareil, procédez comme suit pour démarrer le débogage à distance avec Chrome :</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Sur votre ordinateur, lancez <strong>Chrome</strong> et accédez à <code translate="No">chrome://inspect#devices</code>.</li>
+          <li>Cochez la case <strong>Découvrir les périphériques USB</strong>.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Découvrir les périphériques USB" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/discover-devices.png"/>
+              <figcaption class="bcls-caption--image">Découvrir les périphériques USB</figcaption>
+            </figure>
+          </li>
+          <li>Connectez votre appareil à votre machine à l'aide d'un câble USB. Sur votre appareil, une boîte de dialogue vous demandera si vous souhaitez autoriser le débogage USB. Sélectionnez <strong>Autoriser</strong> pour permettre à votre ordinateur de se connecter à votre appareil.
+            <figure class="bcls-figure"><img width="400" class="bcls-image" alt="Autoriser la connexion au périphérique" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/device-connection.png"/>
+              <figcaption class="bcls-caption--image">Autoriser la connexion au périphérique</figcaption>
+            </figure>
+            <aside class="bcls-aside bcls-aside--information">Si vous êtes sur une machine Windows, vous devrez peut-être installer des pilotes USB. Pour plus d'informations, consultez la documentation du développeur <a href="//developer.android.com/tools/extras/oem-usb.html">Android</a>.</aside>
+          </li>
+          <li>Sur votre appareil, ouvrez l'application <strong>Chrome</strong> et accédez à une page Web.</li>
+          <li>Revenir à <strong>Chrome</strong> sur votre ordinateur. Sur la <code translate="No">chrome://inspect#devices</code> page, vous devriez voir votre appareil connecté. Sous le nom de votre appareil, vous pourrez voir une liste de toutes les pages ouvertes dans Chrome sur votre appareil.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Périphériques connectés" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/connected-devices.png"/>
+              <figcaption class="bcls-caption--image">Périphériques connectés</figcaption>
+            </figure>
+          </li>
+          <li>Pour commencer le débogage d'une page Web, sélectionnez le lien <strong>Inspecter</strong> sous l'URL de la page. Cela ouvrira les outils de <strong>développement de Chrome</strong>.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Inspecter la page Web" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/inspect-page.png"/>
+              <figcaption class="bcls-caption--image">Inspecter la page Web</figcaption>
+            </figure>
+          </li>
+          <li>A gauche du <strong>Éléments</strong> onglet, vous pouvez sélectionner l'icône de l'appareil pour ouvrir la fonction Screencast de DevTool. Cela vous permet d'ouvrir un aperçu en direct du contenu tel qu'il apparaît sur votre appareil mobile. Pour plus d'informations sur la façon dont vous pouvez utiliser le screencasting pour interagir avec votre appareil, consultez <a href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging#screencasting">la documentation de Google</a>.</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--information">Pour plus d'informations sur l'utilisation des outils de développement Chrome, consultez la page <a href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging">Documentation développeur de Google</a>.</aside>
+      </div>
+    </div>
+  </section>
+  <!-- div id="android" -->
+  
+  <section class="bcls-section">
+    <h2 id="Setting_up_Charles_Proxy">Mise en place de Charles Proxy</h2>
+      <p>Charles est un proxy web qui peut être exécuté sur votre propre ordinateur, vous permettant d'enregistrer les données envoyées et reçues via votre navigateur Web. Visitez le <a href="//www.charlesproxy.com/">site Web de Charles</a> pour plus d'informations sur cette application.</p>
+      <div class="BCL-subsection">
+        <h3>Exigences minimales pour Charles</h3>
+        <ul>
+          <li>Charles est compatible avec Windows, Mac et Linux</li>
+          <li>Appareil iOS et/ou Android</li>
+        </ul>
+      </div>
+        <p>Suivez les étapes ci-dessous pour faire fonctionner Charles sur votre machine.</p>
+        <ol class="bcls-tasklist-restart">
+          <li><a href="//www.charlesproxy.com/download/">Télécharger</a> et installer Charles sur votre appareil.</li>
+          <!-- <li>On your computer, run <strong>Charles</strong>. From the menu, select <strong>Proxy &gt; Proxy Settings</strong>. Ensure a port has been assigned (e.g., 8888) and the <strong>Enable transparent HTTP proxying</strong> option is selected.</li> -->
+          <li>Sur votre ordinateur, exécutez <strong>Charles</strong>. Dans le menu, sélectionnez <strong>Proxy &gt; Paramètres proxy</strong>. Assurez-vous qu'un port a été attribué (par exemple, 8888).
+            <figure class="bcls-figure"><img class="bcls-image" alt="Paramètres du proxy" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/proxy-settings.png"/>
+              <figcaption class="bcls-caption--image">Paramètres du proxy</figcaption>
+            </figure>
+          </li>
+          <li>Sélectionnez <strong>OK</strong> pour enregistrer les modifications et fermer la boîte de dialogue.</li>
+          <li>Dans le menu, sélectionnez <strong>Proxy &gt; SSL Proxy Settings</strong>. Assurez-vous que <strong>Activer le proxy SSL</strong> l'option est sélectionnée.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Paramètres du proxy SSL" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/ssl-proxy-settings.png"/>
+              <figcaption class="bcls-caption--image">Paramètres du proxy SSL</figcaption>
+            </figure>
+          </li>
+          <li>Dans le <strong>Emplacement</strong> rubrique, sélectionnez le <strong>Ajouter</strong> bouton. Dans le <strong>Modifier l'emplacement</strong> boîte de dialogue, accédez à la <strong>Port</strong> champ et entrez <strong>443</strong>. Sélectionner <strong>D'accord</strong> pour enregistrer cette modification.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Emplacement port 443" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/port-443.png"/>
+              <figcaption class="bcls-caption--image">Emplacement port 443</figcaption>
+            </figure>
+          </li>
+          <li>Sélectionner <strong>D'accord</strong> pour fermer le <strong>Modifier l'emplacement</strong> dialogue.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Paramètres SSL avec emplacement" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/ssl-settings-location.png"/>
+              <figcaption class="bcls-caption--image">Paramètres SSL avec emplacement</figcaption>
+            </figure>
+          </li>
+          <li>Sélectionner <strong>d'accord</strong> pour sortir du <strong>Paramètres de proxy SSL</strong> dialogue.</li>
+          <li>Accédez à <strong>Aide &gt; SSL Proxying &gt; Installer le certificat racine Charles sur un appareil mobile ou un navigateur distant</strong>.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Installer le certificat racine" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/01-root-certificate.png"/>
+              <figcaption class="bcls-caption--image">Installer le certificat racine</figcaption>
+            </figure>
+          </li>
+          <li id="proxy_hostname_value">Vous devriez voir un message qui identifie l'adresse IP et le numéro de port du serveur local (8888) que vous utiliserez pour configurer le périphérique. Vous devriez également voir l'URL pour télécharger et installer le certificat. Copiez ces fichiers sur votre ordinateur pour une utilisation ultérieure.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Message de certificat" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/02-certificate-msg.png"/>
+              <figcaption class="bcls-caption--image">Message de certificat</figcaption>
+            </figure>
+            <aside class="bcls-aside bcls-aside--information">Notez que vous devrez activer le certificat Charles pour qu'il soit approuvé.</aside>
+          </li>
+        </ol>
+      </section>
+      
+      <section class="bcls-section">
+        <h2 id="Using_Charles_with_iOS_devices">Utiliser Charles avec des appareils iOS</h2>
+        <p>Dans cette section, vous apprendrez à configurer votre appareil iOS pour qu'il fonctionne avec Charles sur votre ordinateur.</p>
+        <ol class="bcls-tasklist-restart">
+          <li>Sur votre appareil, assurez-vous que vous êtes connecté au même réseau que votre ordinateur. Vous pouvez le vérifier en accédant aux <strong>paramètres &gt; Wifi</strong> et en sélectionnant le nom du réseau pour afficher les options avancées.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Réseau de périphériques" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/03-device-network.png"/>
+              <figcaption class="bcls-caption--image">Réseau de périphériques</figcaption>
+            </figure>
+          </li>
+          <li>Dans la section HTTP en bas, sélectionnez <strong>Manuel</strong> mode. Ensuite, ajoutez l'adresse IP du serveur et le numéro de port (8888) que vous avez copiés à partir de Charles lors d'une étape précédente.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Détails Wifi" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/04-wifi-details.png"/>
+              <figcaption class="bcls-caption--image">Détails Wifi</figcaption>
+            </figure>
+          </li>
+          <li>Sur votre appareil, ouvrez un navigateur et accédez à <a href="//www.charlesproxy.com/getssl/">https://www.charlesproxy.com/getssl</a>. Vous serez redirigé vers les paramètres de votre appareil où vous serez invité à installer le <strong>Certificat racine personnalisé du proxy Charles</strong> profil. Cliquez sur le bouton <strong>Installer</strong> pour installer le certificat Charles sur votre appareil.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Installer le certificat Charles" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/06-charles-install.png"/>
+              <figcaption class="bcls-caption--image">Installer le certificat Charles</figcaption>
+            </figure>
+          </li>
+          <li>Suivez les étapes pour installer le certificat Charles. Lorsque vous avez terminé, sélectionnez <strong>Terminé</strong>.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Profil Charles installé" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/09-profile-installed.png"/>
+              <figcaption class="bcls-caption--image">Profil Charles installé</figcaption>
+            </figure>
+          </li>
+          <li>Ensuite, vous êtes prêt à vous assurer que votre appareil approuve le certificat Charles. Sur votre appareil, accédez à <strong>Généralités à &gt; propos des paramètres &gt; d'approbation des certificats</strong>. Ici vous devriez trouver le certificat Charles Proxy.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Paramètres de confiance des certificats" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/certificate-trust-settings.png"/>
+              <figcaption class="bcls-caption--image">Paramètres de confiance des certificats</figcaption>
+            </figure>
+          </li>
+          <li>Activez le certificat Charles. Notez le message d'avertissement. Vous pouvez désactiver ce certificat lorsque vous ne déboguez pas avec Charles.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Activer le certificat d'approbation" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/enable-trust.png"/>
+              <figcaption class="bcls-caption--image">Activer le certificat d'approbation</figcaption>
+            </figure>
+          </li>
+          <li>Maintenant, vous pourrez voir toutes les données envoyées et reçues dans Charles.
+            <figure class="bcls-figure"><img class="bcls-image" alt="Voir les données Charles" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/11-charles-data.png"/>
+              <figcaption class="bcls-caption--image">Voir les données Charles</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </section>
+
+      <section class="bcls-section">
+        <h2 id="Using_Charles_with_Android_11">Utilisation de Charles avec Android 11</h2>
+        <p>Dans cette section, vous apprendrez à configurer votre appareil Android pour qu'il fonctionne avec Charles sur votre ordinateur.</p>
+        <aside class="bcls-aside bcls-aside--information">Ces étapes ont été réalisées sur un appareil fonctionnant sous Android 11.</aside>
+        
+        <ol class="bcls-tasklist-restart">
+          <li>Sur votre appareil, allez dans <strong>Paramètres</strong> &gt; <strong>Réseau &amp; internet</strong>.</li>
+          <li>Appuyez sur <strong></strong>Wi-Fi. Vous verrez la liste des réseaux auxquels vous êtes connecté sur votre appareil.</li>
+          <li>Sélectionnez le réseau sans fil auquel vous êtes actuellement connecté. N'oubliez pas que ce réseau doit correspondre à celui auquel vous êtes connecté sur votre ordinateur...</li>
+          <li>Appuyez sur l'icône en forme de crayon pour modifier vos paramètres Internet.</li>
+          <li>Réglez <strong>Proxy</strong> sur <strong>Manuel</strong>.</li>
+          <li>Collez la valeur de votre nom d'hôte Charles <strong>Proxy</strong>, que vous auriez dû copier dans votre bloc-notes à <a href="#proxy_hostname_value">l'étape ci-dessus</a>. Pour le port <strong>proxy</strong>, entrez <code translate="No">8888</code>.
+            <figure class="bcls-figure"><img width="400" class="bcls-image" alt="Valeurs de l'hôte/du port du proxy" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/host-port-values.png"/>
+              <figcaption class="bcls-caption--image">Valeurs de l'hôte/du port du proxy</figcaption>
+            </figure>
+          </li>
+          <li>Appuyez sur <strong>Enregistrer</strong>.</li>
+          <li>Sur votre appareil, ouvrez un navigateur, naviguez jusqu'à <a href="//www.charlesproxy.com/getssl/">https://www.charlesproxy.com/getssl/</a>. Le certificat SSL de Charles devrait être automatiquement téléchargé sur votre appareil.</li>
+          <li>Pour installer le certificat avec Android 11, procédez comme suit :
+            <ol>
+              <li>Ouvrir les <strong>paramètres</strong>.</li>
+              <li>Naviguer vers <strong>Sécurité</strong> &gt; <strong>Chiffrement &amp; informations d'identification</strong> &gt; <strong>Installer un certificat</strong>.</li>
+              <li>Sélectionnez <strong>Certificat CA</strong>.</li>
+              <li>Un avertissement s'affiche. Sélectionnez <strong>Installer quand même</strong>.
+                <figure class="bcls-figure"><img width="400" class="bcls-image" alt="Installer quand même" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/install-anyway.png"/>
+                  <figcaption class="bcls-caption--image">Installer quand même</figcaption>
+                </figure>
+              </li>
+              <li>Sélectionnez le certificat SSL du proxy Charles.</li>
+              <li>Confirmez l'installation du certificat.</li>
+            </ol>
+          </li>
+          <li>Dans le navigateur par défaut de votre appareil, accédez à un site Web. Vous pourrez voir toutes les données envoyées et reçues dans Charles. Notez qu'il peut être utile de filtrer la liste des structures (dans ce cas, filtre pour <strong>brightcove</strong>).
+            <figure class="bcls-figure"><img class="bcls-image" alt="Voir Transfert de données" src="/assets/images/s-misc-img/developer/debugging-on-mobile/charles/07-charles.png"/>
+              <figcaption class="bcls-caption--image">Voir Transfert de données</figcaption>
+            </figure>
+          </li>
+          <li>Pour filtrer le trafic réseau afin de ne voir que le trafic provenant de votre appareil Android et non de votre machine locale, procédez comme suit :
+            <ol>
+              <li>Dans le menu supérieur de Charles, sélectionnez <strong>Proxy</strong>.</li>
+              <li>Décochez la case <strong>Proxy macOS</strong> (ou <strong>Proxy Windows</strong>).</li>
+            </ol>
+          </li>
+          <li><strong>Facultatif</strong>: Pour effacer les certificats de votre appareil (exécutant Android 11) :
+            <ol>
+              <li>Sur votre appareil, ouvrez <strong>Paramètres</strong>.</li>
+              <li>Naviguez vers <strong>Sécurité</strong> &gt; <strong>Chiffrement &amp; credentials</strong>.</li>
+              <li>Appuyez sur <strong>Effacer les informations d'identification</strong>.</li>
+              <li>Appuyez sur <strong>OK</strong> pour confirmer.</li>
+            </ol>
+          </li>
+        </ol>
+    </section>
+
+    <section class="bcls-section">
+      <h2 id="Using_Charles_with_Android_7">Utilisation de Charles avec Android 7</h2>
+      <p>À partir d'Android 7 (SDK v24), le réseau SSL n'est plus directement visible car cette version du SDK a introduit une nouvelle fonctionnalité de sécurité. Pour voir le trafic réseau via Charles, vous devez indiquer explicitement à votre application Android d'autoriser les interceptions SSL.</p>
+      
+      <ol class="bcls-tasklist-restart">
+        <li>
+          <p>Dans votre application, ouvrez le <strong>AndroidManifest.xml</strong> déposer.</p>
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="Fichier manifeste Android" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/android-manifest.png"/>
+          </figure>
+        </li>
+        <li>
+          <p>Dans la <code translate="No">application</code> section, ajoutez une <code translate="No">networkSecurityConfig</code> option.</p>
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="Option de sécurité du réseau" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/network-security.png"/>
+          </figure>
+        </li>
+        <li>
+          <p>Dans un dossier de ressources XML, ajoutez un <code translate="No">network_security_config.xml</code> fichier comme suit :</p>
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="Fichier xml de sécurité du réseau" src="/assets/images/s-misc-img/developer/debugging-on-mobile/android/network-security-config.png"/>
+          </figure>
+        </li>
+        <li>C'est ça. Vous devriez maintenant voir tout le trafic réseau passer par Charles.</li>
+      </ol>
+      <h3>Ressources</h3>
+      <p>Pour plus de détails, voir les points suivants :</p>
+      <ul>
+        <li><a href="https://medium.com/mobile-app-development-publication/android-nougat-charlesing-ssl-network-efa0951e66de">Activer Android Nougat pour le réseau Charles SSL</a></li>
+        <li><a href="https://sdks.support.brightcove.com/android/framework/android-pie-support-native-sdk-android.html">Prise en charge d'Android Pie avec le SDK natif pour Android</a></li>
+      </ul>
+  </section>
+  </article>
+<!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
+  
+  <nav class="right-side-nav" id="right_side_nav">
+    <h6 class="toc">Contenu de la page</h6>
+    <ul id="in_page_nav" class="list-none"></ul>
+  </nav>
+  
+<!-- </div> -->
+</div>
+</div>
+</div>
+<div class="page-content" style="background-color: rgb(1, 5, 14);">
+  <div class="container" style="width: 50%;">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Assistance Brightcove</h5>
+          <ul class="list-unstyled text-small" style="color: white ;">
+            <li><a class="a-text" href="https://status.brightcove.com">État du système</a></li>
+            <li><a class="a-text" href="https://supportportal.brightcove.com">Contacter le support</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/search.html">Rechercher dans toute la documentation</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Formation</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Cours en ligne</a></li>
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/register-training.html">S'inscrire à un cours</a></li>
+            <li><a class="a-text" href="https://academy.brightcove.com/">Académie Brightcove</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://www.brightcove.com">BrightCove.com</a></li>
+            <li><a class="a-text" href="https://community.brightcove.com/s/">Forum communautaire Bright Spot</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/product-updates.html">Notes de mise à jour du produit</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/doc-updates.html">Mise à jour de la documentation</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© Brightcove Inc. Tous droits réservés.</p>
+      <a class="a-text" href="https://www.brightcove.com/en/legal/privacy">Protection de la vie privée</a> <a class="a-text" href="https://www.brightcove.com/en/terms-and-conditions">Conditions d'utilisation &amp; Conditions</a>
+
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" target="_blank" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a href="https://twitter.com/brightcove" title="Twitter" target="_blank" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a href="https://www.facebook.com/Brightcove" title="Facebook" target="_blank" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+      </ul>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<script translate="no">
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documentation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder,
+    styling: {
+      components: {
+        
+        input: {
+          container: {
+          backgroundColor: 'white',
+          }
+        
+        }
+      }
+    },
+    maxSuggestions: 5, // Maximum number of suggestions to show
+      attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+
+  
+
+
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+    window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+  </script>
+  
+  <!-- Javascript -->          
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/popper.min.js"></script>
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+  <!-- Page Specific JS -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/smoothscroll.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script> -->
+  <!-- <script src="/assets/s-site-assets-template-stylesheets/js/highlight-custom.js"></script>  -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+  <script src="/assets/s-site-assets-template-stylesheets/js/docs.js"></script> 
+
+  <!-- original footer components -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="/assets/s-site-assets-scripts/https-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  <script src="/assets/s-site-assets-scripts/selector.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  <script src="/assets/s-site-assets-scripts/prism-normalize.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
+  <!-- <script src="/assets/s-site-assets-scripts/site.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/tabs.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/toc-new-template.js"></script>
+  
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <script src="/assets/s-site-assets-scripts/local-link-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/sajari-reindex.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/sajari-search-foot.js"></script>
+  
+  <script translate="no">
+    feather.replace()
+  </script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/in-app.js"></script>
+  <style translate="no">
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+  </body>
+</html> 
